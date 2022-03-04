@@ -530,14 +530,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8231577420667140658}
   - component: {fileID: 8231577420667140657}
-  - component: {fileID: 8231577420667140671}
-  - component: {fileID: 8231577420667140670}
   - component: {fileID: 8231577420667140659}
-  - component: {fileID: 8231577420667140669}
-  - component: {fileID: 8231577420667140668}
   - component: {fileID: 8231577420667140665}
-  - component: {fileID: 8231577420667140664}
-  - component: {fileID: 8231577420667140666}
   m_Layer: 8
   m_Name: Character_Red
   m_TagString: Player
@@ -573,47 +567,6 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
---- !u!114 &8231577420667140671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231577420667140656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a4cd5dcde65bc469618075ec0dac7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CC2D: {fileID: 8231577420667140670}
-  animator: {fileID: 8231577420667140659}
-  m_Sword: {fileID: 8231577420667140664}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  m_gameObject:
-  - {fileID: 8231577422071373415}
-  hitForce: 200
-  Speed: 5
-  walkSpeed: 2
-  jumpForce: 450
---- !u!114 &8231577420667140670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231577420667140656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42b46ac0b78d5194db91604bb0a386c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody2D: {fileID: 8231577420667140669}
-  groundCheck: {fileID: 8231577420603574700}
-  Groundlayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!95 &8231577420667140659
 Animator:
   serializedVersion: 3
@@ -633,53 +586,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &8231577420667140669
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231577420667140656}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: c6e25db32f427694583caa7362cb91be, type: 2}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &8231577420667140668
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231577420667140656}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.010304302, y: -0.07339442}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0389261, y: 1.2383809}
-  m_EdgeRadius: 0
 --- !u!82 &8231577420667140665
 AudioSource:
   m_ObjectHideFlags: 0
@@ -776,59 +682,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8231577420667140664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231577420667140656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6599dbabfa1b15c40bfd585feafdfb57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  demage: 50
-  hitRange: 1.57
-  hitRayPosition: {fileID: 8231577420667140658}
---- !u!114 &8231577420667140666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231577420667140656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3905a7a146ba1694a838895d358c5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 300
-  currentHealth: 0
-  armor: 0
-  m_bloodParticle: {fileID: 4926108010992927306, guid: b8fa9b1a1f341484394a49e232ccdff8,
-    type: 3}
-  healthBarDamageTakenEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  deathEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8231577420667140671}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: Death
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  damgaeTakenEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &8231577420671802011
 GameObject:
   m_ObjectHideFlags: 0
