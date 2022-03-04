@@ -1,36 +1,25 @@
-using System.Collections;
+using System;
+using TigerForge;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 namespace SandBox.Scripts
 {
     public class CharacterHealthBar : MonoBehaviour
     {
-        [SerializeField] private Image hpValueImage;
-        [SerializeField] private bool isPersistance;
         [SerializeField] private Character character;
+        [SerializeField] private ProcessBar processBar;
+
+        private CharacterStat HealthStat => character.stats.GetStat(CharacterStatType.Health);
         
-
-        private void UpdateHealthBar()
+        private void Awake()
         {
-            var healthStat = character.stats.GetStat(CharacterStatType.Health);
-            hpValueImage.fillAmount = healthStat.current / healthStat.Value;
+            HealthStat.OnValueChanged += OnHealthValueChanged;
         }
 
-        private void ShowInAwhile()
+        private void OnHealthValueChanged()
         {
-            StartCoroutine(ShowHealthBarInAwhile());
+            processBar.UpdateView(HealthStat.Percent);
+            Debug.Log($"{HealthStat.Current}/{HealthStat.Value}");
         }
-
-        private IEnumerator ShowHealthBarInAwhile()
-        {
-            Show();
-            yield return new WaitForSeconds(1f);
-            Hide();
-        }
-
-        private void Show() => hpValueImage.gameObject.SetActive(true);
-        private void Hide() => hpValueImage.gameObject.SetActive(false);
     }
 }

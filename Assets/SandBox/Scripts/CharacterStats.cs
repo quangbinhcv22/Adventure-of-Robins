@@ -16,6 +16,8 @@ namespace SandBox.Scripts
 
         public void AddStat(CharacterStatType statType, CharacterStat stat)
         {
+            
+            if (_stats.ContainsKey(statType)) return;
             _stats.Add(statType, stat);
         }
     }

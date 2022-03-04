@@ -22,6 +22,8 @@ namespace SandBox.Scripts
         private void Start()
         {
             stats.AddStat(CharacterStatType.Health,new CharacterStat(1000));
+            Debug.Log(stats.GetStat(CharacterStatType.Health).Value);
+
             stats.GetStat(CharacterStatType.Health).ResetCurrentByValue();
             
             stats.AddStat(CharacterStatType.Damage,new CharacterStat(100));
@@ -29,8 +31,7 @@ namespace SandBox.Scripts
 
         public void OnHealthChange(float damage)
         {
-            stats.GetStat(CharacterStatType.Health).current -= damage;
-            Debug.Log(stats.GetStat(CharacterStatType.Health).current);
+            stats.GetStat(CharacterStatType.Health).Current -= damage;
         }
     }
 }

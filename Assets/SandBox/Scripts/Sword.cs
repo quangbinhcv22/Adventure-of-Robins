@@ -11,8 +11,7 @@ namespace SandBox.Scripts
             var targetCharacter = collider2D.GetComponent<Character>();
             if (targetCharacter)
             {
-                EventManager.EmitEventData(EventName.Mechanism.Character.TakeDamage(targetCharacter.ID),
-                    100);
+                targetCharacter.stats.GetStat(CharacterStatType.Health).Current -= 100;
             }
         }
     }

@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8231577421072466937, guid: 2f2aee711f589e048955db7e4ab36928, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8231577421072466943, guid: 2f2aee711f589e048955db7e4ab36928, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -416,7 +420,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &362994022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,7 +476,7 @@ GameObject:
   - component: {fileID: 405992601}
   - component: {fileID: 405992600}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: 'Main Camera '
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +573,7 @@ GameObject:
   - component: {fileID: 493610573}
   - component: {fileID: 493610572}
   m_Layer: 0
-  m_Name: EventSystem (1)
+  m_Name: 'EventSystem '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,7 +638,7 @@ GameObject:
   - component: {fileID: 541907787}
   - component: {fileID: 541907786}
   m_Layer: 0
-  m_Name: Network (1)
+  m_Name: 'Network '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -678,6 +682,8 @@ GameObject:
   - component: {fileID: 646276518}
   - component: {fileID: 646276520}
   - component: {fileID: 646276519}
+  - component: {fileID: 646276522}
+  - component: {fileID: 646276521}
   m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
@@ -743,6 +749,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646276517}
   m_CullTransparentMesh: 1
+--- !u!114 &646276521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646276517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e2b425d39ea0e4291ec877ea105ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1958198628}
+  processBar: {fileID: 646276522}
+--- !u!114 &646276522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646276517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efcba7be564406a92020cf7e695b6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueBar: {fileID: 1830812345}
 --- !u!1 &771868929
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +788,6 @@ GameObject:
   - component: {fileID: 771868934}
   - component: {fileID: 771868933}
   - component: {fileID: 771868932}
-  - component: {fileID: 771868931}
   m_Layer: 8
   m_Name: EnemyHealthBarCanvas
   m_TagString: Untagged
@@ -783,21 +815,6 @@ RectTransform:
   m_AnchoredPosition: {x: 962.79974, y: 539.7214}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &771868931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771868929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1efcba7be564406a92020cf7e695b6bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpValueImage: {fileID: 1830812345}
-  isPersistance: 0
-  character: {fileID: 1958198628}
 --- !u!114 &771868932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,7 +1266,7 @@ GameObject:
   - component: {fileID: 995498878}
   - component: {fileID: 995498877}
   m_Layer: 7
-  m_Name: Square (6)
+  m_Name: 'Square '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1375,7 @@ GameObject:
   - component: {fileID: 1082428645}
   - component: {fileID: 1082428644}
   m_Layer: 7
-  m_Name: Square (7)
+  m_Name: 'Square '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1472,10 +1489,9 @@ GameObject:
   - component: {fileID: 1084200134}
   - component: {fileID: 1084200133}
   - component: {fileID: 1084200132}
-  - component: {fileID: 1084200131}
   - component: {fileID: 1084200130}
   m_Layer: 8
-  m_Name: Player (1)
+  m_Name: 'Player '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1493,22 +1509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561dfa13a6a7e444d9f4dc5acd3a5dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitBox: {fileID: 362994021}
---- !u!114 &1084200131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084200129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1efcba7be564406a92020cf7e695b6bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpValueImage: {fileID: 2030139596}
-  isPersistance: 0
-  character: {fileID: 1084200133}
 --- !u!114 &1084200132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1663,6 +1663,8 @@ GameObject:
   - component: {fileID: 1246424048}
   - component: {fileID: 1246424050}
   - component: {fileID: 1246424049}
+  - component: {fileID: 1246424052}
+  - component: {fileID: 1246424051}
   m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
@@ -1728,6 +1730,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246424047}
   m_CullTransparentMesh: 1
+--- !u!114 &1246424051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246424047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e2b425d39ea0e4291ec877ea105ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1084200133}
+  processBar: {fileID: 1246424052}
+--- !u!114 &1246424052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246424047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efcba7be564406a92020cf7e695b6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueBar: {fileID: 2030139596}
 --- !u!1 &1529989166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,9 +1809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efcba7be564406a92020cf7e695b6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpValueImage: {fileID: 2030139596}
-  isPersistance: 0
-  character: {fileID: 1084200133}
+  valueBar: {fileID: 0}
 --- !u!114 &1529989169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,7 +1883,7 @@ GameObject:
   - component: {fileID: 1659445109}
   - component: {fileID: 1659445108}
   m_Layer: 7
-  m_Name: Square (5)
+  m_Name: 'Square '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1992,10 +2019,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: c10816e9bba95b8428e332375bc1f662, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -2041,43 +2068,13 @@ GameObject:
   - component: {fileID: 1958198629}
   - component: {fileID: 1958198628}
   - component: {fileID: 1958198627}
-  - component: {fileID: 1958198626}
-  - component: {fileID: 1958198625}
   m_Layer: 8
-  m_Name: Enemy (1)
+  m_Name: 'Enemy '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1958198625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958198624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1efcba7be564406a92020cf7e695b6bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpValueImage: {fileID: 1830812345}
-  isPersistance: 0
-  character: {fileID: 1958198628}
---- !u!114 &1958198626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958198624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e2b425d39ea0e4291ec877ea105ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 1958198628}
 --- !u!114 &1958198627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2198,10 +2195,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: c10816e9bba95b8428e332375bc1f662, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -2246,7 +2243,7 @@ GameObject:
   - component: {fileID: 2141833457}
   - component: {fileID: 2141833456}
   m_Layer: 7
-  m_Name: Square (4)
+  m_Name: 'Square '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

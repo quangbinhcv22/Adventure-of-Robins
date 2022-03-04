@@ -1,14 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using UnityEngine.Events;
 
 namespace SandBox.Scripts
 {
     [Serializable]
     public class CharacterStat
     {
-        public float current;
+        private float current;
         public float BaseValue;
+
+        protected bool _isDirty = true;
+        protected float _value;
+        protected float lastBaseValue = float.MinValue;
+        protected readonly List<StatModifier> statModifiers;
+        protected readonly ReadOnlyCollection<StatModifier> StatModifiers;
 
         public virtual float Value
         {
@@ -25,13 +32,19 @@ namespace SandBox.Scripts
             }
         }
 
-        protected bool _isDirty = true;
-        protected float _value;
-        protected float lastBaseValue = float.MinValue;
+        public virtual float Current
+        {
+            get => current;
 
-        protected readonly List<StatModifier> statModifiers;
-        protected readonly ReadOnlyCollection<StatModifier> StatModifiers;
+            set
+            {
+                current = value;
+                OnValueChanged?.Invoke();
+            }
+        }
+        public float Percent => Value is (float) default ? default : current / Value;
 
+        public UnityAction OnValueChanged;
         public CharacterStat()
         {
             statModifiers = new List<StatModifier>();
@@ -43,11 +56,16 @@ namespace SandBox.Scripts
             BaseValue = baseValue;
         }
 
+        public void ResetCurrentByValue() => current = Value;
+
         public virtual void AddModifier(StatModifier mod)
         {
             _isDirty = true;
+            
             statModifiers.Add(mod);
             statModifiers.Sort(CompareModifierOrder);
+            
+            OnValueChanged?.Invoke();
         }
 
         public virtual bool RemoveModifier(StatModifier mod)
@@ -55,8 +73,9 @@ namespace SandBox.Scripts
             if (statModifiers.Remove(mod))
             {
                 _isDirty = true;
+                OnValueChanged?.Invoke();
             }
-
+            
             return false;
         }
 
@@ -70,6 +89,8 @@ namespace SandBox.Scripts
                     _isDirty = true;
                     didRemove = true;
                     statModifiers.RemoveAt(i);
+                    
+                    OnValueChanged?.Invoke();
                 }
             }
 
@@ -84,7 +105,7 @@ namespace SandBox.Scripts
                 return 1;
             return 0;
         }
-        
+
         protected virtual float CalculateFinalValue()
         {
             float finalValue = BaseValue;
@@ -115,7 +136,5 @@ namespace SandBox.Scripts
 
             return (float) Math.Round(finalValue, 4);
         }
-
-        public void ResetCurrentByValue() => current = Value;
     }
 }
