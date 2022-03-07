@@ -21,7 +21,7 @@ namespace SandBox.Scripts
         {
             get
             {
-                if (_isDirty || BaseValue != lastBaseValue)
+                if (_isDirty || (BaseValue != lastBaseValue))
                 {
                     lastBaseValue = BaseValue;
                     _value = CalculateFinalValue();

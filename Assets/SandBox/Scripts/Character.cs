@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 namespace SandBox.Scripts
 {
@@ -22,16 +19,15 @@ namespace SandBox.Scripts
         private void Start()
         {
             stats.AddStat(CharacterStatType.Health,new CharacterStat(1000));
-            Debug.Log(stats.GetStat(CharacterStatType.Health).Value);
-
-            stats.GetStat(CharacterStatType.Health).ResetCurrentByValue();
             
-            stats.AddStat(CharacterStatType.Damage,new CharacterStat(100));
+            // var temp1 = stats;
+             var temp = stats.GetStat(CharacterStatType.Health);
+             Debug.Log(temp);
+            //
+            // stats.GetStat(CharacterStatType.Health).ResetCurrentByValue();
+            //
+            // stats.AddStat(CharacterStatType.Damage,new CharacterStat(100));
         }
-
-        public void OnHealthChange(float damage)
-        {
-            stats.GetStat(CharacterStatType.Health).Current -= damage;
-        }
+        
     }
 }

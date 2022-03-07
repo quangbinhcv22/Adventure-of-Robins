@@ -1,5 +1,4 @@
-using System;
-using TigerForge;
+
 using UnityEngine;
 
 namespace SandBox.Scripts

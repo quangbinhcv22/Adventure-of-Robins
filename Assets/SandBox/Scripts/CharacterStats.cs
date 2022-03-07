@@ -10,13 +10,12 @@ namespace SandBox.Scripts
 
         public CharacterStat GetStat(CharacterStatType statType)
         {
-            if (_stats.ContainsKey(statType) is false) AddStat(statType, new CharacterStat());
+            //if (_stats.ContainsKey(statType) == false) AddStat(statType, new CharacterStat());
             return _stats[statType];
         }
 
         public void AddStat(CharacterStatType statType, CharacterStat stat)
         {
-            
             if (_stats.ContainsKey(statType)) return;
             _stats.Add(statType, stat);
         }

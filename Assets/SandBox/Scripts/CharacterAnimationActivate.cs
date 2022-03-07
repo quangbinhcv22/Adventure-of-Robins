@@ -6,7 +6,7 @@ namespace SandBox.Scripts
 {
     public class CharacterAnimationActivate : MonoBehaviour
     {
-        [SerializeField] private new Animator animator;
+        [SerializeField] private Animator animator;
         [SerializeField] private Transform groundCheck;
         [SerializeField] private LayerMask ground;
         
