@@ -30,6 +30,7 @@ namespace SandBox.Scripts
 
                 return _value;
             }
+           
         }
 
         public virtual float Current

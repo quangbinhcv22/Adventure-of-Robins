@@ -8,17 +8,17 @@ namespace SandBox.Scripts
         [SerializeField] private Character character;
         [SerializeField] private ProcessBar processBar;
 
-        private CharacterStat HealthStat => character.stats.GetStat(CharacterStatType.Health);
+        
         
         private void Awake()
         {
-            HealthStat.OnValueChanged += OnHealthValueChanged;
+            character.Health.OnValueChanged += OnHealthValueChanged;
         }
 
         private void OnHealthValueChanged()
         {
-            processBar.UpdateView(HealthStat.Percent);
-            Debug.Log($"{HealthStat.Current}/{HealthStat.Value}");
+            processBar.UpdateView(character.Health.Percent);
+            Debug.Log($"{character.Health.Current}/{character.Health.Value}");
         }
     }
 }

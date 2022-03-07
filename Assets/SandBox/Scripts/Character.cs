@@ -6,8 +6,18 @@ namespace SandBox.Scripts
     public class Character : MonoBehaviour
     {
         [SerializeField] private string id;
+        [SerializeField] private CharacterStat health;
+        [SerializeField] private CharacterStat damage;
 
-        public CharacterStats stats;
+        public CharacterStat Health
+        {
+            get => health;
+        }
+
+        public CharacterStat Damage => damage;
+
+        
+        //public CharacterStats stats;
         // [SerializeField] private CharacterStat strength;
         // [SerializeField] private CharacterStat vitality;
         // [SerializeField] private CharacterStat dexterity;
@@ -18,12 +28,10 @@ namespace SandBox.Scripts
         
         private void Start()
         {
-            stats.AddStat(CharacterStatType.Health,new CharacterStat(1000));
+            health.ResetCurrentByValue();
+            damage.ResetCurrentByValue();
             
-            // var temp1 = stats;
-             var temp = stats.GetStat(CharacterStatType.Health);
-             Debug.Log(temp);
-            //
+            // stats.AddStat(CharacterStatType.Health,new CharacterStat(1000));
             // stats.GetStat(CharacterStatType.Health).ResetCurrentByValue();
             //
             // stats.AddStat(CharacterStatType.Damage,new CharacterStat(100));

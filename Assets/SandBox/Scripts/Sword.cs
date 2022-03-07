@@ -13,7 +13,7 @@ namespace SandBox.Scripts
             var targetCharacter = collider2D.GetComponent<Character>();
             if (targetCharacter)
             {
-                targetCharacter.stats.GetStat(CharacterStatType.Health).Current -= 100;
+                targetCharacter.Health.Current -= damage;
             }
         }
     }
