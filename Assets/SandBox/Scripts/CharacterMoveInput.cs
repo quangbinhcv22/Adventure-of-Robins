@@ -6,7 +6,6 @@ namespace SandBox.Scripts
     public class CharacterMoveInput : MonoBehaviour
     {
         [SerializeField] private CharacterMove characterMove;
-        [SerializeField] private CharacterAttack characterAttack;
         [SerializeField] private CharacterJump characterJump;
 
         void OnEnable()
