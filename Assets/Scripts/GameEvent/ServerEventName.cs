@@ -34,5 +34,12 @@ namespace GameEvent
             public const string Gladiator = "Gladiator";
             public const string RobinHood = "RobinHood";
         }
+
+        public enum ItemsName
+        {
+            Sword,
+            Arrow,
+            BigSword,
+        }
     }
 }

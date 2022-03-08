@@ -18,12 +18,12 @@ namespace SandBox.Scripts
         {
             switch (character.ID)
             {
-                case GameEvent.EventName.CharactorID.Gladiator:
+                case CharactorID.Gladiator:
                 {
                     StartCoroutine(SkillActive(objectRotator.gameObject));
                     break;
                 }
-                case GameEvent.EventName.CharactorID.RobinHood:
+                case CharactorID.RobinHood:
                 {
                     character.Damage.Current += 100;
                     break;
@@ -36,7 +36,7 @@ namespace SandBox.Scripts
         {
             switch (character.ID)
             {
-                case GameEvent.EventName.CharactorID.Gladiator:
+                case CharactorID.Gladiator:
                 {
                     var jumpVelocity = rigidbody2D.velocity;
                     jumpVelocity.x = skillForce;
@@ -44,12 +44,12 @@ namespace SandBox.Scripts
                     rigidbody2D.velocity = jumpVelocity;
                     break;
                 }
-                case GameEvent.EventName.CharactorID.RobinHood:
+                case CharactorID.RobinHood:
                 {
                     for (int i = 0; i < wayPoints.Length; i++)
                     {
                         var skill2 = Instantiate(objectRotator.gameObject,wayPoints[i]);
-                        ShowSkill(skill2);
+                        StartCoroutine(SkillActive(skill2));
                     }
                     break;
                 }
@@ -57,19 +57,22 @@ namespace SandBox.Scripts
             
         }
         
+
         public void ActivateSkill3()
         {
-            var skill3 = Instantiate(objectRotator.gameObject,wayPoints[1]);
-            skill3.transform.DOScale(3f, 1f);
+            var skill3 = Instantiate(objectRotator.gameObject,wayPoints[0]);
+            
             switch (character.ID)
             {
-                case GameEvent.EventName.CharactorID.Gladiator:
+                case CharactorID.Gladiator:
                 {
+                    skill3.transform.DOScale(3f, 1f);
                     StartCoroutine(SkillActive(skill3));
                     break;
                 }
-                case GameEvent.EventName.CharactorID.RobinHood:
+                case CharactorID.RobinHood:
                 {
+                    skill3.transform.DOScale(7f, .5f);
                     StartCoroutine(SkillActive(skill3));
                     break;
                 }
