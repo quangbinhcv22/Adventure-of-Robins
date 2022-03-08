@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3012521386961236929}
   - component: {fileID: 3012521386961236928}
+  - component: {fileID: 3199709316389224794}
   m_Layer: 0
   m_Name: LoadingScreen
   m_TagString: Untagged
@@ -126,6 +127,20 @@ MonoBehaviour:
   loadingScreen: {fileID: 3012521387038541175}
   slider: {fileID: 3012521387937805932}
   progressText: {fileID: 3012521387718089871}
+--- !u!114 &3199709316389224794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012521386961236930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a101df91f8443746aa0bc11e1f4564f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 10
+  type: 1
 --- !u!1 &3012521387038541175
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7117489437332787810}
+  - component: {fileID: 1359259403398141575}
   m_Layer: 5
   m_Name: WaitingScreen
   m_TagString: Untagged
@@ -40,6 +41,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1359259403398141575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699405206858453691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a101df91f8443746aa0bc11e1f4564f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 40
+  type: 1
 --- !u!1 &3730604365941329478
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +544,7 @@ GameObject:
   - component: {fileID: 7959844920609016878}
   - component: {fileID: 4963279962738578839}
   - component: {fileID: 981647728728573577}
+  - component: {fileID: 1946741740052593329}
   m_Layer: 5
   m_Name: StopButton
   m_TagString: Untagged
@@ -650,6 +666,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1946741740052593329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6520745332348777973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de69578b74c621439c33a7a40ac89ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 981647728728573577}
+  request:
+    action: 2
+    id: 40
 --- !u!1 &6983224858829283886
 GameObject:
   m_ObjectHideFlags: 0

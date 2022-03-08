@@ -145,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8921548310345634975}
+  - component: {fileID: 2217455231918577887}
   m_Layer: 5
   m_Name: UpdatePopup
   m_TagString: Untagged
@@ -172,6 +173,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2217455231918577887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253683289793165189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a101df91f8443746aa0bc11e1f4564f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2020
+  type: 2
 --- !u!1 &1625176678014666747
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +199,7 @@ GameObject:
   - component: {fileID: 1827783849313014838}
   - component: {fileID: 9168784587733124206}
   - component: {fileID: 1475270806978313893}
+  - component: {fileID: 8383520834042941543}
   m_Layer: 5
   m_Name: YesButton
   m_TagString: Untagged
@@ -293,6 +309,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8383520834042941543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625176678014666747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de69578b74c621439c33a7a40ac89ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1475270806978313893}
+  request:
+    action: 2
+    id: 2020
 --- !u!1 &4659286215515639925
 GameObject:
   m_ObjectHideFlags: 0
