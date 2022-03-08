@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace SandBox.Scripts
 {
     public static class EventName

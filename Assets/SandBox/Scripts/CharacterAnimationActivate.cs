@@ -1,6 +1,7 @@
 using System;
 using TigerForge;
 using UnityEngine;
+using static GameEvent.EventName;
 
 namespace SandBox.Scripts
 {
@@ -12,32 +13,29 @@ namespace SandBox.Scripts
         
         private bool _isLanding;
 
-        private static readonly int IsLanding = Animator.StringToHash("isLanding");
-        private static readonly int IsRunning = Animator.StringToHash("isRunning");
-        private static readonly int IsJumping = Animator.StringToHash("Jump");
-        private static readonly int IsAttacking = Animator.StringToHash("Attack");
-        private static readonly int Fall = Animator.StringToHash("Fall");
+        
 
         void Start()
         {
-            EventManager.StartListening("StartIdleAnimation", Idle);
-            EventManager.StartListening("StartRunAnimation", Run);
-            EventManager.StartListening("StartJumpAnimation", Jump);
-            EventManager.StartListening("StartAttackAnimation", Attack);
-            EventManager.StartListening("Landing", Landing);
-            EventManager.StartListening("FallDuringRun", FallDuringRun);
+            EventManager.StartListening(GameEvent.EventName.CharacterInput.StartIdleAnimation, Idle);
+            EventManager.StartListening(GameEvent.EventName.CharacterInput.StartRunAnimation, Run);
+            EventManager.StartListening(GameEvent.EventName.CharacterInput.StartJumpAnimation, Jump);
+            EventManager.StartListening(GameEvent.EventName.CharacterInput.StartAttackAnimation, Attack);
+            EventManager.StartListening(GameEvent.EventName.CharacterInput.IsLanding, Landing);
+            EventManager.StartListening(GameEvent.EventName.CharacterInput.FallDuringRun, FallDuringRun);
         }
 
         private void Update()
         {
             _isLanding = IsOnGround();
+            
         }
 
         private void Idle()
         {
             if (_isLanding)
             {
-                animator.SetBool(IsRunning, false);
+                animator.SetBool(GameEvent.EventName.CharacterInput.IsRunning, false);
             }
         }
 
@@ -45,28 +43,29 @@ namespace SandBox.Scripts
         {
             if (_isLanding)
             {
-                animator.SetBool(IsRunning, true);
+                animator.SetBool(GameEvent.EventName.CharacterInput.IsRunning, true);
             }
         }
 
         private void Jump()
         {
-            animator.SetTrigger(IsJumping);
-            animator.SetTrigger(Fall);
+            animator.SetTrigger(GameEvent.EventName.CharacterInput.Jump);
+            animator.SetTrigger(GameEvent.EventName.CharacterInput.Fall);
         }
 
         private void Attack()
         {
-            animator.SetTrigger(IsAttacking);
+            animator.SetTrigger(GameEvent.EventName.CharacterInput.Attack);
         }
 
         private void Landing()
         {
             if (_isLanding)
             {
-                animator.SetBool(IsLanding, true);
-                animator.ResetTrigger(IsJumping);
-                animator.ResetTrigger(Fall);
+                animator.SetBool(GameEvent.EventName.CharacterInput.IsLanding, true);
+                animator.ResetTrigger(GameEvent.EventName.CharacterInput.Jump);
+                animator.ResetTrigger(GameEvent.EventName.CharacterInput.Fall);
+                
             }
         }
 
@@ -74,7 +73,7 @@ namespace SandBox.Scripts
         {
             if (!_isLanding)
             {
-                animator.SetBool(IsLanding, false);
+                animator.SetBool(GameEvent.EventName.CharacterInput.IsLanding, false);
             }
         }
 

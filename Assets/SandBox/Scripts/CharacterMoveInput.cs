@@ -7,17 +7,18 @@ namespace SandBox.Scripts
     {
         [SerializeField] private CharacterMove characterMove;
         [SerializeField] private CharacterJump characterJump;
+        
 
         void OnEnable()
         {
-            EventManager.StartListening("Moving", Moving);
-            EventManager.StartListening("Jump", Jump);
+            EventManager.StartListening(GameEvent.EventName.CharacterInput.Moving, Moving);
+            EventManager.StartListening(GameEvent.EventName.CharacterInput.Jump, Jump);
         }
 
         void OnDisable()
         {
-            EventManager.StopListening("Moving", Moving);
-            EventManager.StopListening("Jump", Jump);
+            EventManager.StopListening(GameEvent.EventName.CharacterInput.Moving, Moving);
+            EventManager.StopListening(GameEvent.EventName.CharacterInput.Jump, Jump);
         }
 
         private void Jump()
@@ -26,10 +27,11 @@ namespace SandBox.Scripts
         }
         private void Moving()
         {
-            var boxingMovingValue = EventManager.GetData("Moving");
+            var boxingMovingValue = EventManager.GetData(GameEvent.EventName.CharacterInput.Moving);
             var movingValue = (float) boxingMovingValue;
 
             characterMove.Moving(movingValue);
         }
+        
     }
 }
