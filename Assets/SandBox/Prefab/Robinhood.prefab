@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &207571866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 207571867}
+  m_Layer: 8
+  m_Name: WayPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &207571867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207571866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.15, y: 0.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5186894733772119025}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &609514499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 609514500}
+  m_Layer: 8
+  m_Name: WayPoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &609514500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609514499}
+  m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
+  m_LocalPosition: {x: 2.1499999, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5186894733772119025}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15}
 --- !u!1 &1296863864
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +240,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1820876473}
   processBar: {fileID: 1738666320}
+--- !u!1 &1915539293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915539294}
+  m_Layer: 8
+  m_Name: WayPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1915539294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915539293}
+  m_LocalRotation: {x: 0, y: 0, z: -0.13052624, w: 0.9914449}
+  m_LocalPosition: {x: 2.15, y: -0.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5186894733772119025}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15}
 --- !u!1 &2078921864
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +387,9 @@ GameObject:
   - component: {fileID: 1820876476}
   - component: {fileID: 1820876477}
   - component: {fileID: 1820876479}
+  - component: {fileID: 1370705336}
+  - component: {fileID: 1370705337}
+  - component: {fileID: 1370705338}
   m_Layer: 0
   m_Name: Robinhood
   m_TagString: Untagged
@@ -369,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b4d9a33793e7541850ae13b3eb4a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Robinhood
+  id: RobinHood
   health:
     BaseValue: 1000
   damage:
@@ -450,6 +543,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterMove: {fileID: 1820876474}
   characterJump: {fileID: 1820876475}
+  characterAttack: {fileID: 1370705338}
+--- !u!114 &1370705336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2153958166212582075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912169f9b4f098048b2b0ecfa788b15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1820876473}
+  wayPoints:
+  - {fileID: 609514500}
+  - {fileID: 207571867}
+  - {fileID: 1915539294}
+  objectRotator: {fileID: -3418733278095104656, guid: 24faeadf2a76ff14e926894ece980efa, type: 3}
+  rigidbody2D: {fileID: 3461838136365894003, guid: 24faeadf2a76ff14e926894ece980efa, type: 3}
+  skillForce: 20
+--- !u!114 &1370705337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2153958166212582075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6e79c4de6017c438e16aef22fd3037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterSkillActivate: {fileID: 1370705336}
+--- !u!114 &1370705338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2153958166212582075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561dfa13a6a7e444d9f4dc5acd3a5dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 3461838136365894002, guid: 24faeadf2a76ff14e926894ece980efa, type: 3}
+  shootPoint: {fileID: 207571867}
 --- !u!1001 &7655793306943218581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -851,13 +992,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3298141482510006372, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
   m_PrefabInstance: {fileID: 7655793306943218581}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &5186894733772119027 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3298141482510006374, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
-  m_PrefabInstance: {fileID: 7655793306943218581}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5186894732850738145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3298141483126771828, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
+  m_PrefabInstance: {fileID: 7655793306943218581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5186894733772119027 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3298141482510006374, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
   m_PrefabInstance: {fileID: 7655793306943218581}
   m_PrefabAsset: {fileID: 0}

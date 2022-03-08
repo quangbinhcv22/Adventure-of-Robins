@@ -2,35 +2,78 @@ using System;
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using static GameEvent.EventName;
 
 namespace SandBox.Scripts
 {
     public class CharacterSkillActivate : MonoBehaviour
     {
-        [SerializeField] private Transform wayPoints;
+        [SerializeField] private Character character;
+        [SerializeField] private Transform[] wayPoints;
         [SerializeField] private ObjectRotator objectRotator;
         [SerializeField] private new Rigidbody2D rigidbody2D;
-        [SerializeField] private float skill2Force;
-        [SerializeField] private float duration;
-        
+        [SerializeField] private float skillForce;
+
         public void ActivateSkill1()
         {
-            StartCoroutine(SkillActive(objectRotator.gameObject));
+            switch (character.ID)
+            {
+                case GameEvent.EventName.CharactorID.Gladiator:
+                {
+                    StartCoroutine(SkillActive(objectRotator.gameObject));
+                    break;
+                }
+                case GameEvent.EventName.CharactorID.RobinHood:
+                {
+                    character.Damage.Current += 100;
+                    break;
+                }
+            }
+            
         }
             
         public void ActivateSkill2()
         {
-            var jumpVelocity = rigidbody2D.velocity;
-            jumpVelocity.x = skill2Force;
+            switch (character.ID)
+            {
+                case GameEvent.EventName.CharactorID.Gladiator:
+                {
+                    var jumpVelocity = rigidbody2D.velocity;
+                    jumpVelocity.x = skillForce;
 
-            rigidbody2D.velocity = jumpVelocity;
+                    rigidbody2D.velocity = jumpVelocity;
+                    break;
+                }
+                case GameEvent.EventName.CharactorID.RobinHood:
+                {
+                    for (int i = 0; i < wayPoints.Length; i++)
+                    {
+                        var skill2 = Instantiate(objectRotator.gameObject,wayPoints[i]);
+                        ShowSkill(skill2);
+                    }
+                    break;
+                }
+            }
+            
         }
         
         public void ActivateSkill3()
         {
-            var skill3 = Instantiate(objectRotator.gameObject,wayPoints);
+            var skill3 = Instantiate(objectRotator.gameObject,wayPoints[1]);
             skill3.transform.DOScale(3f, 1f);
-            StartCoroutine(SkillActive(skill3));
+            switch (character.ID)
+            {
+                case GameEvent.EventName.CharactorID.Gladiator:
+                {
+                    StartCoroutine(SkillActive(skill3));
+                    break;
+                }
+                case GameEvent.EventName.CharactorID.RobinHood:
+                {
+                    StartCoroutine(SkillActive(skill3));
+                    break;
+                }
+            }
         }
 
 

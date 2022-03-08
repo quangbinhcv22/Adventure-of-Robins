@@ -28,6 +28,11 @@ namespace GameEvent
             public const string Skill2 = "Skill2";
             public const string Skill3 = "Skill3";
         }
-        
+
+        public static class CharactorID
+        {
+            public const string Gladiator = "Gladiator";
+            public const string RobinHood = "RobinHood";
+        }
     }
 }

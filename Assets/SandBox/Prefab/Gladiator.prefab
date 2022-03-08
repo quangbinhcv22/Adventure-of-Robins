@@ -3201,7 +3201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b4d9a33793e7541850ae13b3eb4a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Player
+  id: Gladiator
   health:
     BaseValue: 1000
   damage:
@@ -3284,7 +3284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wayPoints: {fileID: 506003767}
-  objectRotator: {fileID: 8471242139454765349, guid: f2268de96db84cd4fabf748c4213e394, type: 3}
+  objectRotator: {fileID: 8471242138531555615}
   rigidbody2D: {fileID: 5545696211761319113}
   skill2Force: 5
   duration: 1
@@ -3391,3 +3391,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8471242139454765347, guid: f2268de96db84cd4fabf748c4213e394, type: 3}
   m_PrefabInstance: {fileID: 1241190458}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8471242138531555615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8471242139454765349, guid: f2268de96db84cd4fabf748c4213e394, type: 3}
+  m_PrefabInstance: {fileID: 1241190458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196e85b5046d1bd409680766ea19ad34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
