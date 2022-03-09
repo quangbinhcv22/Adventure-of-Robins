@@ -73,6 +73,8 @@ namespace SandBox.Scripts
                 {
                     var newObjectPooler = objectPooler.SpawnFromPool("BigSword", wayPoints[1].position, wayPoints[1].rotation);
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
+                    newObjectPooler.transform.DOBlendableMoveBy(new Vector3(.7f, .5f, 0), 1f);
+                    newObjectPooler.transform.DORotate(new Vector3(0,0,-90), 1f);
                     
                     StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;
