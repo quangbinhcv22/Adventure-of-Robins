@@ -8,24 +8,30 @@ namespace SandBox.Scripts
 {
     public class CharacterSkillActivate : MonoBehaviour
     {
+        [SerializeField] private ObjectPooler objectPooler;
         [SerializeField] private Character character;
+        
+        
         [SerializeField] private Transform[] wayPoints;
-        [SerializeField] private ObjectRotator objectRotator;
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private float skillForce;
+        [SerializeField] private float objectSize;
+        [SerializeField] private float objectSizeDuration;
 
         public void ActivateSkill1()
         {
-            switch (character.ID)
+            switch (character.Info.ID)
             {
                 case CharactorID.Gladiator:
                 {
-                    StartCoroutine(SkillActive(objectRotator.gameObject));
+                    var newObjectPooler = objectPooler.SpawnFromPool("RotateSword", wayPoints[0].position, wayPoints[0].rotation);
+                    
+                    StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;
                 }
                 case CharactorID.RobinHood:
                 {
-                    character.Damage.Current += 100;
+                    character.Info.Damage.Current += 100;
                     break;
                 }
             }
@@ -34,7 +40,7 @@ namespace SandBox.Scripts
             
         public void ActivateSkill2()
         {
-            switch (character.ID)
+            switch (character.Info.ID)
             {
                 case CharactorID.Gladiator:
                 {
@@ -48,8 +54,10 @@ namespace SandBox.Scripts
                 {
                     for (int i = 0; i < wayPoints.Length; i++)
                     {
-                        var skill2 = Instantiate(objectRotator.gameObject,wayPoints[i]);
-                        StartCoroutine(SkillActive(skill2));
+                        var newObjectPooler = objectPooler.SpawnFromPool("Arrow", wayPoints[i].position, wayPoints[i].rotation);
+                        newObjectPooler.GetComponent<Arrow>().ShootArrow();
+
+                        StartCoroutine(SkillDuration(newObjectPooler,3f));
                     }
                     break;
                 }
@@ -57,44 +65,34 @@ namespace SandBox.Scripts
             
         }
         
-
         public void ActivateSkill3()
         {
-            var skill3 = Instantiate(objectRotator.gameObject,wayPoints[0]);
-            
-            switch (character.ID)
+            switch (character.Info.ID)
             {
                 case CharactorID.Gladiator:
                 {
-                    skill3.transform.DOScale(3f, 1f);
-                    StartCoroutine(SkillActive(skill3));
+                    var newObjectPooler = objectPooler.SpawnFromPool("BigSword", wayPoints[1].position, wayPoints[1].rotation);
+                    newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
+                    
+                    StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;
                 }
                 case CharactorID.RobinHood:
                 {
-                    skill3.transform.DOScale(7f, .5f);
-                    StartCoroutine(SkillActive(skill3));
+                    var newObjectPooler = objectPooler.SpawnFromPool("BigArrow", wayPoints[1].position, wayPoints[1].rotation);
+                    newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
+                    newObjectPooler.GetComponent<Arrow>().ShootArrow();
+                    
+                    StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;
                 }
             }
         }
 
-
-        private IEnumerator SkillActive(GameObject skill)
+        private IEnumerator SkillDuration(GameObject gameObject,float duration)
         {
-            ShowSkill(skill);
-            yield return new WaitForSeconds(3f);
-            HideSkill(skill);
+            yield return new WaitForSeconds(duration);
+            gameObject.SetActive(false);
         }
-        private void HideSkill(GameObject skill)
-        {
-            skill.SetActive(false);
-        }
-
-        private void ShowSkill(GameObject skill)
-        {
-            skill.SetActive(true);
-        }
-        
     }
 }

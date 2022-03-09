@@ -11,24 +11,46 @@ namespace SandBox.Scripts
         [SerializeField] private LayerMask ground;
 
         private bool _isOnGround;
+        private bool _isDoubleJump;
+        private int jumpCount;
 
         void Update()
         {
-            _isOnGround = IsOnGround();
+            _isOnGround = GameEvent.EventName.CheckTouching.IsTouchingLayer(groundCheck, ground);
         }
 
+        public void SetMaxCount(int maxCount)
+        {
+            jumpCount = maxCount;
+        }
+
+        public void SetCanJump(bool canJump)
+        {
+            _isDoubleJump = canJump;
+        }
+
+        public void SetJumpForce(float jumpForce)
+        {
+            var jumpVelocity = rigidbody2D.velocity;
+            jumpVelocity.y = jumpForce;
+
+            rigidbody2D.velocity = jumpVelocity;
+        }
         public void Jump()
         {
             if (_isOnGround)
             {
-                var jumpVelocity = rigidbody2D.velocity;
-                jumpVelocity.y = jumpSpeed;
-
-                rigidbody2D.velocity = jumpVelocity;
+                SetMaxCount(jumpCount);
+                SetJumpForce(jumpSpeed);
+                jumpCount--;
+                _isOnGround = false;
+                SetCanJump(_isDoubleJump);
+                if (_isDoubleJump && jumpCount > 0)
+                {
+                    SetJumpForce(jumpSpeed);
+                }
             }
         }
-
-        private bool IsOnGround()
-            => Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground) != null;
+        
     }
 }

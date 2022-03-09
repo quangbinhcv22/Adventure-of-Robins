@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8471242139454765347}
   - component: {fileID: 8471242139454765344}
-  - component: {fileID: 8471242139454765349}
   - component: {fileID: 8471242139454765346}
   - component: {fileID: -6115651719015346634}
   - component: {fileID: -2523162107503858402}
+  - component: {fileID: 2499220160877210619}
   m_Layer: 0
-  m_Name: Sword
+  m_Name: Big Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,25 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8471242139454765349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8471242139454765345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196e85b5046d1bd409680766ea19ad34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: Sword
-  offset: {x: 0, y: 0, z: 0}
-  speed: 3
-  xRange: 3
-  zRange: 0
-  renderer: {fileID: 8471242139454765344}
-  rigidbody2D: {fileID: -2523162107503858402}
 --- !u!114 &8471242139454765346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73f1766a748464ebfc5ead16bb3db31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 200
+  character: {fileID: 5545696211761319111, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
+  objectName: 0
 --- !u!61 &-6115651719015346634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +148,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2499220160877210619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8471242139454765345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4005dc03be846a7911d7863b0f59efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idObject: BigSword
+  size: 1
+  objectPrefab: {fileID: 8471242139454765345}

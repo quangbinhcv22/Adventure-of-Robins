@@ -11,7 +11,9 @@ namespace SandBox.Scripts
         public void InstantiateArrow()
         {
             var arrow = Instantiate(arrowPrefab,shootPoint);
-            var newArrow = arrow.GetComponent<ObjectRotator>();
+            var newArrow = arrow.GetComponent<Arrow>();
+            
+            newArrow.ShootArrow();
         }
     }
 }

@@ -1,5 +1,7 @@
 
 
+using UnityEngine;
+
 namespace GameEvent
 {
     public static class EventName
@@ -35,11 +37,24 @@ namespace GameEvent
             public const string RobinHood = "RobinHood";
         }
 
-        public enum ItemsName
+        public static class CheckTouching
+        {
+            public static bool IsTouchingLayer(Transform checkPosition, LayerMask layerMask)
+                => Physics2D.OverlapCircle(checkPosition.position, 0.1f, layerMask) != null;
+        }
+        
+        public enum ObjectName
         {
             Sword,
             Arrow,
-            BigSword,
+            BigArrow,
+        }
+        
+        public enum CharacterTeam
+        {
+            Blue = 1,
+            Red = 2,
+            Hostile = 9,
         }
     }
 }

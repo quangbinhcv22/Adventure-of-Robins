@@ -27,8 +27,7 @@ namespace SandBox.Scripts
 
         private void Update()
         {
-            _isLanding = IsOnGround();
-            
+            _isLanding = GameEvent.EventName.CheckTouching.IsTouchingLayer(groundCheck, ground);
         }
 
         private void Idle()
@@ -76,8 +75,6 @@ namespace SandBox.Scripts
                 animator.SetBool(GameEvent.EventName.CharacterInput.IsLanding, false);
             }
         }
-
-        private bool IsOnGround()
-            => Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground) != null;
+        
     }
 }

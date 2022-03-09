@@ -29,7 +29,7 @@ namespace SandBox.Scripts
         private void Moving()
         {
             var boxingMovingValue = EventManager.GetData(GameEvent.EventName.CharacterInput.Moving);
-            var movingValue = (float) boxingMovingValue;
+            var movingValue = new Vector2((float) boxingMovingValue,0);
 
             characterMove.Moving(movingValue);
         }
