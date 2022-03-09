@@ -329,7 +329,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stop
+  m_text: 'Next
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b9e8a75216830e64383947df22767e6b, type: 2}
   m_sharedMaterial: {fileID: 1920299462097675543, guid: b9e8a75216830e64383947df22767e6b, type: 2}
@@ -569,8 +571,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -330}
-  m_SizeDelta: {x: 277.2571, y: 44.8634}
+  m_AnchoredPosition: {x: -0.000030517578, y: -284}
+  m_SizeDelta: {x: 183.4034, y: 28.3716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7959844920609016878
 CanvasRenderer:
@@ -600,7 +602,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6603c6694c9b3ae4cb78353eb582edda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97aa9a2fec009064caf1daa140819561, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -680,8 +682,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 981647728728573577}
   request:
-    action: 2
-    id: 40
+    action: 4
+    id: 50
 --- !u!1 &6983224858829283886
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,15 +742,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.58431375, g: 1, b: 0.6952639, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 85370cbec2daf954db43c75690e7d9e9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
