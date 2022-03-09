@@ -20,7 +20,7 @@ namespace SandBox.Scripts
 
         public void ActivateSkill1()
         {
-            switch (character.Info.ID)
+            switch (character.Info.id)
             {
                 case CharactorID.Gladiator:
                 {
@@ -40,7 +40,7 @@ namespace SandBox.Scripts
             
         public void ActivateSkill2()
         {
-            switch (character.Info.ID)
+            switch (character.Info.id)
             {
                 case CharactorID.Gladiator:
                 {
@@ -67,7 +67,7 @@ namespace SandBox.Scripts
         
         public void ActivateSkill3()
         {
-            switch (character.Info.ID)
+            switch (character.Info.id)
             {
                 case CharactorID.Gladiator:
                 {

@@ -1,13 +1,15 @@
-using UnityEngine;
+
+using System;
 
 namespace SandBox.Scripts
 {
-    public class CharacterInfo : MonoBehaviour
+    [Serializable]
+    public class CharacterInfo
     {
-        [SerializeField] private string id;
-        [SerializeField] private GameEvent.EventName.CharacterTeam team;
-        [SerializeField] private CharacterStat health;
-        [SerializeField] private CharacterStat damage;
+        public string id;
+        public GameEvent.EventName.CharacterTeam team;
+        public CharacterStat health;
+        public CharacterStat damage;
 
         public CharacterStat Health
         {
@@ -25,8 +27,7 @@ namespace SandBox.Scripts
         // [SerializeField] private CharacterStat dexterity;
         // [SerializeField] private CharacterStat intelligence;
         // [SerializeField] private CharacterStat damage;
-
-        public string ID => id;
+        
         
         private void Start()
         {

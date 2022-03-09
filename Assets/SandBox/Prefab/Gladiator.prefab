@@ -3095,7 +3095,6 @@ GameObject:
   - component: {fileID: 8258618918072101736}
   - component: {fileID: 5545696211761319108}
   - component: {fileID: 5545696211761319111}
-  - component: {fileID: 3588767321578841243}
   - component: {fileID: 1716214842}
   - component: {fileID: 1716214841}
   - component: {fileID: 2503057288866915705}
@@ -3217,8 +3216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcfddf744442144980f73ae1be58c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterMove: {fileID: 0}
-  characterJump: {fileID: 0}
+  mover: {fileID: 5545696211761319115}
+  jumper: {fileID: 5545696211761319108}
 --- !u!114 &5545696211761319108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3249,25 +3248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b4d9a33793e7541850ae13b3eb4a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 3588767321578841243}
---- !u!114 &3588767321578841243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5545696211761319107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3716c3bd8dd7374e88f5924a366d0ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: Gladiator
-  team: 1
-  health:
-    BaseValue: 1000
-  damage:
-    BaseValue: 0
 --- !u!212 &1716214842
 SpriteRenderer:
   m_ObjectHideFlags: 0

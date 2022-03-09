@@ -4,13 +4,12 @@ using UnityEngine;
 
 namespace SandBox.Scripts
 {
-    public class CharacterStathBar : MonoBehaviour
+    public class CharacterStatBar : MonoBehaviour
     {
         [SerializeField] private CharacterStatType statType;
         [SerializeField] private Character character;
         [SerializeField] private ProcessBar processBar;
 
-        
         
         private void Awake()
         {

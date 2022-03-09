@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SandBox.Scripts
 {
-    public class CharacterJump : MonoBehaviour
+    public class Jumper : MonoBehaviour
     {
         [SerializeField] private float jumpSpeed;
         [SerializeField] private new Rigidbody2D rigidbody2D;

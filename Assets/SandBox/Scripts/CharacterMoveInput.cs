@@ -5,8 +5,8 @@ namespace SandBox.Scripts
 {
     public class CharacterMoveInput : MonoBehaviour
     {
-        [SerializeField] private CharacterMove characterMove;
-        [SerializeField] private CharacterJump characterJump;
+        [SerializeField] private Mover mover;
+        [SerializeField] private Jumper jumper;
 
 
         void OnEnable()
@@ -23,7 +23,7 @@ namespace SandBox.Scripts
 
         private void Jump()
         {
-            characterJump.Jump();
+            jumper.Jump();
         }
 
         private void Moving()
@@ -31,7 +31,7 @@ namespace SandBox.Scripts
             var boxingMovingValue = EventManager.GetData(GameEvent.EventName.CharacterInput.Moving);
             var movingValue = new Vector2((float) boxingMovingValue,0);
 
-            characterMove.Moving(movingValue);
+            mover.Moving(movingValue);
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SandBox.Scripts
 {
-    public class CharacterMove : MonoBehaviour
+    public class Mover : MonoBehaviour
     {
         [SerializeField] private float runSpeed;
         [SerializeField] private new Rigidbody2D rigidbody2D;

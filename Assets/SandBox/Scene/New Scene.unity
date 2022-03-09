@@ -410,6 +410,22 @@ PrefabInstance:
       propertyPath: objectPooler
       value: 
       objectReference: {fileID: 624740829}
+    - target: {fileID: 1738666319, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
+      propertyPath: statType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820876473, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
+      propertyPath: info.id
+      value: RobinHood
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820876473, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
+      propertyPath: info.team
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820876473, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
+      propertyPath: info.health.BaseValue
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 2153958166212582075, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
       propertyPath: m_Name
       value: Robinhood
@@ -457,6 +473,14 @@ PrefabInstance:
     - target: {fileID: 2503675126626823626, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974788969888630185, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974788969888630185, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.07
       objectReference: {fileID: 0}
     - target: {fileID: 5186894732068406347, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
       propertyPath: m_Mesh
@@ -813,29 +837,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1272947462 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1137161249476769165, guid: e415305f3bee34d4e9ee45728a1b11af, type: 3}
-  m_PrefabInstance: {fileID: 1137161250221934829}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1272947468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272947462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3716c3bd8dd7374e88f5924a366d0ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: Enemy
-  team: 9
-  health:
-    BaseValue: 1000
-  damage:
-    BaseValue: 0
 --- !u!1 &1659445107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1222,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5545696211598980081, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
+      propertyPath: statType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5545696211648508921, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1228,6 +1233,18 @@ PrefabInstance:
     - target: {fileID: 5545696211761319107, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
       propertyPath: m_Name
       value: Gladiator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545696211761319111, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
+      propertyPath: info.id
+      value: Gladiator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545696211761319111, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
+      propertyPath: info.team
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545696211761319111, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
+      propertyPath: info.health.BaseValue
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5545696211761319118, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
       propertyPath: m_RootOrder
@@ -1274,6 +1291,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8258618918072101736, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
+      propertyPath: mover
+      value: 
+      objectReference: {fileID: 1738511919}
+    - target: {fileID: 8258618918072101736, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
+      propertyPath: jumper
+      value: 
+      objectReference: {fileID: 1738511916}
+    - target: {fileID: 8258618918072101736, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
       propertyPath: characterJump
       value: 
       objectReference: {fileID: 1738511916}
@@ -1281,7 +1306,8 @@ PrefabInstance:
       propertyPath: characterMove
       value: 
       objectReference: {fileID: 1738511919}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3588767321578841243, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
 --- !u!1001 &1137161250221934829
 PrefabInstance:
@@ -1317,7 +1343,19 @@ PrefabInstance:
     - target: {fileID: 1137161249476769161, guid: e415305f3bee34d4e9ee45728a1b11af, type: 3}
       propertyPath: info
       value: 
-      objectReference: {fileID: 1272947468}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137161249476769161, guid: e415305f3bee34d4e9ee45728a1b11af, type: 3}
+      propertyPath: info.id
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137161249476769161, guid: e415305f3bee34d4e9ee45728a1b11af, type: 3}
+      propertyPath: info.team
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137161249476769161, guid: e415305f3bee34d4e9ee45728a1b11af, type: 3}
+      propertyPath: info.health.BaseValue
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 1137161249476769162, guid: e415305f3bee34d4e9ee45728a1b11af, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1409,6 +1447,10 @@ PrefabInstance:
     - target: {fileID: 1137161250409843152, guid: e415305f3bee34d4e9ee45728a1b11af, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137161250784161092, guid: e415305f3bee34d4e9ee45728a1b11af, type: 3}
+      propertyPath: statType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1137161250799306916, guid: e415305f3bee34d4e9ee45728a1b11af, type: 3}
       propertyPath: m_Mesh
