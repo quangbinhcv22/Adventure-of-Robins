@@ -9,46 +9,46 @@ namespace SandBox.Scripts
         {
             if (Input.GetKey(KeyCode.A))
             {
-                EventManager.EmitEventData(GameEvent.EventName.CharacterInput.Moving,-1f);
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.StartRunAnimation);
+                EventManager.EmitEventData(CharacterInput.Moving,-1f);
+                EventManager.EmitEvent(CharacterInput.StartRunAnimation);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                EventManager.EmitEventData(GameEvent.EventName.CharacterInput.Moving,1f);
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.StartRunAnimation);
+                EventManager.EmitEventData(CharacterInput.Moving,1f);
+                EventManager.EmitEvent(CharacterInput.StartRunAnimation);
             }
             if (Input.GetKeyUp(KeyCode.D) ||Input.GetKeyUp(KeyCode.A))
             {
-                EventManager.EmitEventData(GameEvent.EventName.CharacterInput.Moving,0f);
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.StartIdleAnimation);
+                EventManager.EmitEventData(CharacterInput.Moving,0f);
+                EventManager.EmitEvent(CharacterInput.StartIdleAnimation);
             }
             if (Input.GetKey(KeyCode.K))
             {
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.Jump);
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.StartJumpAnimation);
+                EventManager.EmitEvent(CharacterInput.Jump);
+                EventManager.EmitEvent(CharacterInput.StartJumpAnimation);
             }
             if (Input.GetKey(KeyCode.J))
             {
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.Attack);
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.StartAttackAnimation);
+                EventManager.EmitEvent(CharacterInput.Attack);
+                EventManager.EmitEvent(CharacterInput.StartAttackAnimation);
             }
             if (Input.GetKey(KeyCode.U))
             {
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.Skill1);
+                EventManager.EmitEvent(CharacterInput.Skill1);
             }
 
             if (Input.GetKey(KeyCode.I))
             {
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.Skill2);
+                EventManager.EmitEvent(CharacterInput.Skill2);
             }
 
             if (Input.GetKey(KeyCode.O))
             {
-                EventManager.EmitEvent(GameEvent.EventName.CharacterInput.Skill3);
+                EventManager.EmitEvent(CharacterInput.Skill3);
             }
-            EventManager.EmitEvent(GameEvent.EventName.CharacterInput.Fall);
-            EventManager.EmitEvent(GameEvent.EventName.CharacterInput.FallDuringRun);
-            EventManager.EmitEvent(GameEvent.EventName.CharacterInput.IsLanding);
+            EventManager.EmitEvent(CharacterInput.Fall);
+            EventManager.EmitEvent(CharacterInput.FallDuringRun);
+            EventManager.EmitEvent(CharacterInput.IsLanding);
         }
     }
 }

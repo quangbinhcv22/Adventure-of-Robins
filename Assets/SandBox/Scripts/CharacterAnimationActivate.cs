@@ -17,24 +17,24 @@ namespace SandBox.Scripts
 
         void Start()
         {
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.StartIdleAnimation, Idle);
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.StartRunAnimation, Run);
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.StartJumpAnimation, Jump);
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.StartAttackAnimation, Attack);
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.IsLanding, Landing);
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.FallDuringRun, FallDuringRun);
+            EventManager.StartListening(CharacterInput.StartIdleAnimation, Idle);
+            EventManager.StartListening(CharacterInput.StartRunAnimation, Run);
+            EventManager.StartListening(CharacterInput.StartJumpAnimation, Jump);
+            EventManager.StartListening(CharacterInput.StartAttackAnimation, Attack);
+            EventManager.StartListening(CharacterInput.IsLanding, Landing);
+            EventManager.StartListening(CharacterInput.FallDuringRun, FallDuringRun);
         }
 
         private void Update()
         {
-            _isLanding = GameEvent.EventName.CheckTouching.IsTouchingLayer(groundCheck, ground);
+            _isLanding = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
         }
 
         private void Idle()
         {
             if (_isLanding)
             {
-                animator.SetBool(GameEvent.EventName.CharacterInput.IsRunning, false);
+                animator.SetBool(CharacterInput.IsRunning, false);
             }
         }
 
@@ -42,28 +42,28 @@ namespace SandBox.Scripts
         {
             if (_isLanding)
             {
-                animator.SetBool(GameEvent.EventName.CharacterInput.IsRunning, true);
+                animator.SetBool(CharacterInput.IsRunning, true);
             }
         }
 
         private void Jump()
         {
-            animator.SetTrigger(GameEvent.EventName.CharacterInput.Jump);
-            animator.SetTrigger(GameEvent.EventName.CharacterInput.Fall);
+            animator.SetTrigger(CharacterInput.Jump);
+            animator.SetTrigger(CharacterInput.Fall);
         }
 
         private void Attack()
         {
-            animator.SetTrigger(GameEvent.EventName.CharacterInput.Attack);
+            animator.SetTrigger(CharacterInput.Attack);
         }
 
         private void Landing()
         {
             if (_isLanding)
             {
-                animator.SetBool(GameEvent.EventName.CharacterInput.IsLanding, true);
-                animator.ResetTrigger(GameEvent.EventName.CharacterInput.Jump);
-                animator.ResetTrigger(GameEvent.EventName.CharacterInput.Fall);
+                animator.SetBool(CharacterInput.IsLanding, true);
+                animator.ResetTrigger(CharacterInput.Jump);
+                animator.ResetTrigger(CharacterInput.Fall);
                 
             }
         }
@@ -72,7 +72,7 @@ namespace SandBox.Scripts
         {
             if (!_isLanding)
             {
-                animator.SetBool(GameEvent.EventName.CharacterInput.IsLanding, false);
+                animator.SetBool(CharacterInput.IsLanding, false);
             }
         }
         

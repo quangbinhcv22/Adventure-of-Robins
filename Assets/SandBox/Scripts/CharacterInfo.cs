@@ -7,7 +7,7 @@ namespace SandBox.Scripts
     public class CharacterInfo
     {
         public string id;
-        public GameEvent.EventName.CharacterTeam team;
+        public CharacterTeam team;
         public CharacterStat health;
         public CharacterStat damage;
 
@@ -18,7 +18,7 @@ namespace SandBox.Scripts
 
         public CharacterStat Damage => damage;
 
-        public GameEvent.EventName.CharacterTeam Team => team;
+        public CharacterTeam Team => team;
 
 
         //public CharacterStats stats;

@@ -11,14 +11,14 @@ namespace SandBox.Scripts
 
         void OnEnable()
         {
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.Moving, Moving);
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.Jump, Jump);
+            EventManager.StartListening(CharacterInput.Moving, Moving);
+            EventManager.StartListening(CharacterInput.Jump, Jump);
         }
 
         void OnDisable()
         {
-            EventManager.StopListening(GameEvent.EventName.CharacterInput.Moving, Moving);
-            EventManager.StopListening(GameEvent.EventName.CharacterInput.Jump, Jump);
+            EventManager.StopListening(CharacterInput.Moving, Moving);
+            EventManager.StopListening(CharacterInput.Jump, Jump);
         }
 
         private void Jump()
@@ -28,7 +28,7 @@ namespace SandBox.Scripts
 
         private void Moving()
         {
-            var boxingMovingValue = EventManager.GetData(GameEvent.EventName.CharacterInput.Moving);
+            var boxingMovingValue = EventManager.GetData(CharacterInput.Moving);
             var movingValue = new Vector2((float) boxingMovingValue,0);
 
             mover.Moving(movingValue);

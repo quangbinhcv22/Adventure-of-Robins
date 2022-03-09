@@ -6,7 +6,7 @@ namespace SandBox.Scripts
     public class Arrow : MonoBehaviour
     {
         [SerializeField] private float damage;
-        [SerializeField] private GameEvent.EventName.ObjectName objectName;
+        [SerializeField] ObjectName objectName;
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private float objectForce;
 
@@ -23,7 +23,7 @@ namespace SandBox.Scripts
             var targetCharacter = collider2D.GetComponent<Character>();
             if (targetCharacter)
             {
-                if (targetCharacter.Info.Team == GameEvent.EventName.CharacterTeam.Hostile)
+                if (targetCharacter.Info.Team == CharacterTeam.Hostile)
                 {
                     targetCharacter.Info.Health.Current -= damage;
                 }

@@ -8,14 +8,14 @@ namespace SandBox.Scripts
     {
         [SerializeField] private float damage;
         [SerializeField] private Character character;
-        [SerializeField] private GameEvent.EventName.ObjectName objectName;
+        [SerializeField] private ObjectName objectName;
 
             private void OnTriggerEnter2D(Collider2D collider2D)
         {
             var targetCharacter = collider2D.GetComponent<Character>();
             if (targetCharacter)
             {
-                if (targetCharacter.Info.Team ==  GameEvent.EventName.CharacterTeam.Hostile)
+                if (targetCharacter.Info.Team ==  CharacterTeam.Hostile)
                 {
                     targetCharacter.Info.Health.Current -= damage;
                 }

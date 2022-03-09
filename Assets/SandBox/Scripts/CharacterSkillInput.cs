@@ -8,16 +8,16 @@ namespace SandBox.Scripts
         [SerializeField] private CharacterSkillActivate characterSkillActivate;
         void OnEnable()
         {
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.Skill1, Skill1);
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.Skill2, Skill2);
-            EventManager.StartListening(GameEvent.EventName.CharacterInput.Skill3, Skill3);
+            EventManager.StartListening(CharacterInput.Skill1, Skill1);
+            EventManager.StartListening(CharacterInput.Skill2, Skill2);
+            EventManager.StartListening(CharacterInput.Skill3, Skill3);
         }
 
         void OnDisable()
         {
-            EventManager.StopListening(GameEvent.EventName.CharacterInput.Skill1, Skill1);
-            EventManager.StopListening(GameEvent.EventName.CharacterInput.Skill2, Skill2);
-            EventManager.StopListening(GameEvent.EventName.CharacterInput.Skill3, Skill3);
+            EventManager.StopListening(CharacterInput.Skill1, Skill1);
+            EventManager.StopListening(CharacterInput.Skill2, Skill2);
+            EventManager.StopListening(CharacterInput.Skill3, Skill3);
         }
 
         private void Skill1()

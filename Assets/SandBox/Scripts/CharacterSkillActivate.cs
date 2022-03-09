@@ -22,14 +22,14 @@ namespace SandBox.Scripts
         {
             switch (character.Info.id)
             {
-                case CharactorID.Gladiator:
+                case CharacterID.Gladiator:
                 {
                     var newObjectPooler = objectPooler.SpawnFromPool("RotateSword", wayPoints[0].position, wayPoints[0].rotation);
                     
                     StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;
                 }
-                case CharactorID.RobinHood:
+                case CharacterID.RobinHood:
                 {
                     character.Info.Damage.Current += 100;
                     break;
@@ -42,7 +42,7 @@ namespace SandBox.Scripts
         {
             switch (character.Info.id)
             {
-                case CharactorID.Gladiator:
+                case CharacterID.Gladiator:
                 {
                     var jumpVelocity = rigidbody2D.velocity;
                     jumpVelocity.x = skillForce;
@@ -50,7 +50,7 @@ namespace SandBox.Scripts
                     rigidbody2D.velocity = jumpVelocity;
                     break;
                 }
-                case CharactorID.RobinHood:
+                case CharacterID.RobinHood:
                 {
                     for (int i = 0; i < wayPoints.Length; i++)
                     {
@@ -69,7 +69,7 @@ namespace SandBox.Scripts
         {
             switch (character.Info.id)
             {
-                case CharactorID.Gladiator:
+                case CharacterID.Gladiator:
                 {
                     var newObjectPooler = objectPooler.SpawnFromPool("BigSword", wayPoints[1].position, wayPoints[1].rotation);
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
@@ -79,7 +79,7 @@ namespace SandBox.Scripts
                     StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;
                 }
-                case CharactorID.RobinHood:
+                case CharacterID.RobinHood:
                 {
                     var newObjectPooler = objectPooler.SpawnFromPool("BigArrow", wayPoints[1].position, wayPoints[1].rotation);
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);

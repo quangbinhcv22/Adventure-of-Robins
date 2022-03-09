@@ -16,7 +16,7 @@ namespace SandBox.Scripts
 
         void Update()
         {
-            _isOnGround = GameEvent.EventName.CheckTouching.IsTouchingLayer(groundCheck, ground);
+            _isOnGround = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
         }
 
         public void SetMaxCount(int maxCount)
