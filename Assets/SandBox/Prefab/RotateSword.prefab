@@ -117,8 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  character: {fileID: 5545696211761319111, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
-  objectName: 0
+  enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
 --- !u!61 &-6115651719015346634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,6 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4005dc03be846a7911d7863b0f59efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idObject: RotateSword
+  idObject: 3
   size: 3
   objectPrefab: {fileID: 8471242139454765345}

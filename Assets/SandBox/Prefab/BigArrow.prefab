@@ -105,6 +105,7 @@ MonoBehaviour:
   objectName: 2
   rigidbody2D: {fileID: 3461838136365894003}
   objectForce: 10
+  objectPooler: {fileID: 3857204922706722799, guid: 364f2d772f104394bb4fddf633f3d856, type: 3}
 --- !u!61 &3461838136365894000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,7 +147,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4005dc03be846a7911d7863b0f59efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idObject: BigArrow
+  idObject: 2
   size: 1
   objectPrefab: {fileID: 3461838136365894002}
 --- !u!1 &3461838136455201592

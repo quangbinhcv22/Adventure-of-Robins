@@ -4,7 +4,7 @@ namespace SandBox.Scripts
 {
     public class ObjectPool : MonoBehaviour
     {
-        [SerializeField] public string idObject;
+        [SerializeField] public ObjectName idObject;
         [SerializeField] public int size;
         [SerializeField] public GameObject objectPrefab;
         // [SerializeField] private Transform[] wayPoints;

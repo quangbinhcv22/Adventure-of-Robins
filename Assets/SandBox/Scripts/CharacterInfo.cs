@@ -1,5 +1,6 @@
 
 using System;
+using TMPro;
 
 namespace SandBox.Scripts
 {
@@ -28,11 +29,9 @@ namespace SandBox.Scripts
         // [SerializeField] private CharacterStat intelligence;
         // [SerializeField] private CharacterStat damage;
         
-        
         private void Start()
         {
-            health.ResetCurrentByValue();
-            damage.ResetCurrentByValue();
+            
 
             // stats.AddStat(CharacterStatType.Health,new CharacterStat(1000));
             // stats.GetStat(CharacterStatType.Health).ResetCurrentByValue();

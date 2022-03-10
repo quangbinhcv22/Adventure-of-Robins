@@ -102,9 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  objectName: 1
   rigidbody2D: {fileID: 3461838136365894003}
   objectForce: 10
+  enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
 --- !u!61 &3461838136365894000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4005dc03be846a7911d7863b0f59efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idObject: Arrow
+  idObject: 1
   size: 3
   objectPrefab: {fileID: 3461838136365894002}
 --- !u!1 &3461838136455201592

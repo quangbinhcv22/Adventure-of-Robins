@@ -1463,11 +1463,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b4d9a33793e7541850ae13b3eb4a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Enemy
-  health:
-    BaseValue: 1000
-  damage:
-    BaseValue: 0
+  info:
+    id: Enemy
+    team: 9
+    health:
+      BaseValue: 1000
+    damage:
+      BaseValue: 0
 --- !u!114 &1137161249476769166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3750,6 +3752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e2b425d39ea0e4291ec877ea105ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statType: 1
   character: {fileID: 1137161249476769161}
   processBar: {fileID: 1137161250784161095}
 --- !u!1 &1137161250799306922

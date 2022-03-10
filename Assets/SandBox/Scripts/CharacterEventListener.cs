@@ -13,11 +13,11 @@ namespace SandBox.Scripts
             EventManager.StartListening("CharacterMove",CharacterMoverment);
             EventManager.StartListening("CharacterJump",CharacterJump);
             EventManager.StartListening("CharacterAttack",CharacterAttack);
-            EventManager.StartListening("CharacterSkillAttack",CharacterSkillAttack);
+            EventManager.StartListening("CharacterSkill1Activate",CharacterSkill1ActivateAttack);
+            EventManager.StartListening("CharacterSkill2Activate",CharacterSkill2ActivateAttack);
+            EventManager.StartListening("CharacterSkill3Activate",CharacterSkill3ActivateAttack);
             EventManager.StartListening("CharacterGetHit",CharacterGetHit);
-            EventManager.StartListening("CharacterHealthChange",CharacterHealthChange);
-            EventManager.StartListening("CharacterManaChange",CharacterManaChange);
-            EventManager.StartListening("CharacterPowerUp",CharacterPowerUp);
+            EventManager.StartListening("CharacterStatChange",CharacterStatChange);
         }
 
         private void Update()
@@ -46,29 +46,28 @@ namespace SandBox.Scripts
             
         }
 
-        private void CharacterSkillAttack()
+        private void CharacterSkill1ActivateAttack()
         {
             
         }
+        private void CharacterSkill2ActivateAttack()
+        {
+            
+        }private void CharacterSkill3ActivateAttack()
+        {
+            
+        }
+        
 
         private void CharacterGetHit()
         {
             
         }
 
-        private void CharacterHealthChange()
+        private void CharacterStatChange()
         {
             
         }
-
-        private void CharacterManaChange()
-        {
-            
-        }
-
-        private void CharacterPowerUp()
-        {
-            
-        }
+        
     }
 }

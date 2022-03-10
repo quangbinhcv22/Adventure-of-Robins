@@ -24,7 +24,7 @@ namespace SandBox.Scripts
             {
                 case CharacterID.Gladiator:
                 {
-                    var newObjectPooler = objectPooler.SpawnFromPool("RotateSword", wayPoints[0].position, wayPoints[0].rotation);
+                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.RotateSword, wayPoints[0].position, wayPoints[0].rotation);
                     
                     StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;
@@ -54,7 +54,7 @@ namespace SandBox.Scripts
                 {
                     for (int i = 0; i < wayPoints.Length; i++)
                     {
-                        var newObjectPooler = objectPooler.SpawnFromPool("Arrow", wayPoints[i].position, wayPoints[i].rotation);
+                        var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.Arrow, wayPoints[i].position, wayPoints[i].rotation);
                         newObjectPooler.GetComponent<Arrow>().ShootArrow();
 
                         StartCoroutine(SkillDuration(newObjectPooler,3f));
@@ -71,7 +71,7 @@ namespace SandBox.Scripts
             {
                 case CharacterID.Gladiator:
                 {
-                    var newObjectPooler = objectPooler.SpawnFromPool("BigSword", wayPoints[1].position, wayPoints[1].rotation);
+                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.BigSword, wayPoints[1].position, wayPoints[1].rotation);
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
                     newObjectPooler.transform.DOBlendableMoveBy(new Vector3(.7f, .5f, 0), 1f);
                     newObjectPooler.transform.DORotate(new Vector3(0,0,-90), 1f);
@@ -81,7 +81,7 @@ namespace SandBox.Scripts
                 }
                 case CharacterID.RobinHood:
                 {
-                    var newObjectPooler = objectPooler.SpawnFromPool("BigArrow", wayPoints[1].position, wayPoints[1].rotation);
+                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.BigArrow, wayPoints[1].position, wayPoints[1].rotation);
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
                     newObjectPooler.GetComponent<Arrow>().ShootArrow();
                     

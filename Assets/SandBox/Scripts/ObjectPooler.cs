@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +7,12 @@ namespace SandBox.Scripts
 {
     public class ObjectPooler : MonoBehaviour
     {
-        public Dictionary<string, Queue<GameObject>> poolDictionary;
+        public Dictionary<ObjectName, Queue<GameObject>> poolDictionary;
         public List<ObjectPool> objectPools;
 
         private void Start()
         {
-            poolDictionary = new Dictionary<string, Queue<GameObject>>();
+            poolDictionary = new Dictionary<ObjectName, Queue<GameObject>>();
 
             foreach (ObjectPool objectPool in objectPools)
             {
@@ -28,7 +29,7 @@ namespace SandBox.Scripts
             }
         }
 
-        public GameObject SpawnFromPool(string objectName, Vector3 position,
+        public GameObject SpawnFromPool(ObjectName objectName, Vector3 position,
             Quaternion rotation)
         {
             GameObject objectToSpawn = poolDictionary[objectName].Dequeue();
@@ -41,6 +42,16 @@ namespace SandBox.Scripts
 
             return objectToSpawn;
         }
+
+        public IEnumerator HideObject(GameObject gameObject, float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            Hide(gameObject);
+        }
         
+        private void Hide(GameObject gameObject)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

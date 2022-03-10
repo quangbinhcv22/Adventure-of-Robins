@@ -767,8 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  character: {fileID: 0}
-  objectName: 0
+  enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
 --- !u!1 &5545696210401177016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,6 +3247,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b4d9a33793e7541850ae13b3eb4a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info:
+    id: Gladiator
+    team: 1
+    health:
+      BaseValue: 1000
+    damage:
+      BaseValue: 0
 --- !u!212 &1716214842
 SpriteRenderer:
   m_ObjectHideFlags: 0

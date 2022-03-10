@@ -4,16 +4,14 @@ namespace SandBox.Scripts
 {
     public class CharacterAnimatorEvent : MonoBehaviour
     {
-        [SerializeField] private GameObject arrowPrefab;
+        [SerializeField] private ObjectPooler objectPooler;
         [SerializeField] private Transform shootPoint;
         
         
         public void InstantiateArrow()
         {
-            var arrow = Instantiate(arrowPrefab,shootPoint);
-            var newArrow = arrow.GetComponent<Arrow>();
-            
-            newArrow.ShootArrow();
+            var newArrow = objectPooler.SpawnFromPool(ObjectName.Arrow, shootPoint.position, shootPoint.rotation);
+            newArrow.GetComponent<Arrow>().ShootArrow();
         }
     }
 }
