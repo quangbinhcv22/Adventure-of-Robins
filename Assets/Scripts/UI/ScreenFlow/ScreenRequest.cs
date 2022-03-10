@@ -1,6 +1,6 @@
 using System;
 
-namespace UI
+namespace UI.ScreenFlow
 {
     [Serializable]
     public class ScreenRequest

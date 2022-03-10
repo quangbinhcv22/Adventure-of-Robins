@@ -1,4 +1,5 @@
 using UI;
+using UI.ScreenFlow;
 using UnityEngine;
 
 public class Test : MonoBehaviour
@@ -9,12 +10,12 @@ public class Test : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            screenframe.Request(new ScreenRequest{action = ScreenAction.New, id = ScreenID.BattleResultWindow});
+            screenframe.Request(new ScreenRequest{action = ScreenAction.OpenNew, id = ScreenID.BattleResultWindow});
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            screenframe.Request(new ScreenRequest{action = ScreenAction.Recall, id = ScreenID.BattleResultWindow});
+            screenframe.Request(new ScreenRequest{action = ScreenAction.Remove, id = ScreenID.BattleResultWindow});
 
         }
 
