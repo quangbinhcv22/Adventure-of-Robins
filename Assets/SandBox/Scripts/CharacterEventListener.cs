@@ -8,14 +8,14 @@ namespace SandBox.Scripts
     {
         [SerializeField] private CharacterMove characterMove;
         [SerializeField] private CharacterJump characterJump;
+        [SerializeField] private CharacterSkillAttack characterSkillAttack;
+        [SerializeField] private CharacterGetHit characterGetHit;
+        [SerializeField] private CharacterStatChange characterStatChange;
         void Start()
         {
             EventManager.StartListening("CharacterMove",CharacterMoverment);
             EventManager.StartListening("CharacterJump",CharacterJump);
-            EventManager.StartListening("CharacterAttack",CharacterAttack);
-            EventManager.StartListening("CharacterSkill1Activate",CharacterSkill1ActivateAttack);
-            EventManager.StartListening("CharacterSkill2Activate",CharacterSkill2ActivateAttack);
-            EventManager.StartListening("CharacterSkill3Activate",CharacterSkill3ActivateAttack);
+            EventManager.StartListening("CharacterSkillAttack",CharacterSkillAttack);
             EventManager.StartListening("CharacterGetHit",CharacterGetHit);
             EventManager.StartListening("CharacterStatChange",CharacterStatChange);
         }
@@ -36,37 +36,33 @@ namespace SandBox.Scripts
         private void CharacterJump()
         {
             var boxingJumpObject = EventManager.GetData("CharacterJump");
-            var movermentData =  (CharacterJumping)boxingJumpObject;
+            var jumpData =  (CharacterJumping)boxingJumpObject;
 
-            characterJump.Jumping(movermentData);
-        }
-
-        private void CharacterAttack()
-        {
-            
+            characterJump.Jumping(jumpData);
         }
 
-        private void CharacterSkill1ActivateAttack()
+        private void CharacterSkillAttack()
         {
-            
+            var boxingSkillObject = EventManager.GetData("CharacterSkill1Activate");
+            var skillData =  (CharacterSkillAttacking)boxingSkillObject;
+
+            characterSkillAttack.SkillAttacking(skillData);
         }
-        private void CharacterSkill2ActivateAttack()
-        {
-            
-        }private void CharacterSkill3ActivateAttack()
-        {
-            
-        }
-        
 
         private void CharacterGetHit()
         {
-            
+            var boxingGetHitObject = EventManager.GetData("CharacterGetHit");
+            var getHitData =  (CharacterGetHitting)boxingGetHitObject;
+
+            characterGetHit.GetHitting(getHitData);
         }
 
         private void CharacterStatChange()
         {
-            
+            var boxingStatChangeObject = EventManager.GetData("CharacterStatChange");
+            var statChangeData =  (CharacterStatChanging)boxingStatChangeObject;
+
+            characterStatChange.StatChanging(statChangeData);
         }
         
     }
