@@ -9,14 +9,12 @@ using Photon.Realtime;
 using TigerForge;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
+using EventName = Network.Events.EventName;
 
 namespace Network
 {
-    public class NetworkConnector : MonoBehaviourPunCallbacks, IOnEventCallback
+    public class NetworkController : MonoBehaviourPunCallbacks, IOnEventCallback
     {
-        [SerializeField] private bool connectOnAwake = true;
-
-
         private readonly Stopwatch stopwatch = new Stopwatch();
 
         private const string ConnectingLog = "Connecting to server...";
@@ -25,12 +23,17 @@ namespace Network
             $"Connected to <color=yellow>{PhotonNetwork.CloudRegion}</color> sever in <color=yellow>{stopwatch.ElapsedMilliseconds}</color> ms";
 
 
+        public static NetworkController Instance;
+
         public EventGroup events;
-        
-        public static NetworkConnector
+
+        [SerializeField] private bool connectOnAwake = true;
+
 
         private void Awake()
         {
+            Instance ??= this;
+
             if (connectOnAwake is false) return;
 
             LogConnectingStatus();
@@ -47,11 +50,11 @@ namespace Network
             stopwatch.Stop();
 
             LogConnectedStatus();
-            EmitEventServerConnected();
+            // EmitEventServerConnected();
 
 
             void LogConnectedStatus() => print(ConnectedLog);
-            void EmitEventServerConnected() => EventManager.EmitEvent(EventName.Server.Connected);
+            // void EmitEventServerConnected() => EventManager.EmitEvent(EventName.Server.Connected);
         }
 
         public override void OnConnectedToMaster()
