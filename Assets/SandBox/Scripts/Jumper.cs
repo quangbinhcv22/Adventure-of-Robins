@@ -9,6 +9,7 @@ namespace SandBox.Scripts
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private Transform groundCheck;
         [SerializeField] private LayerMask ground;
+        
 
         private bool _isOnGround;
         private bool _isDoubleJump;
@@ -35,6 +36,8 @@ namespace SandBox.Scripts
             jumpVelocity.y = jumpForce;
 
             rigidbody2D.velocity = jumpVelocity;
+            
+            
         }
         public void Jump()
         {
@@ -45,9 +48,11 @@ namespace SandBox.Scripts
                 jumpCount--;
                 _isOnGround = false;
                 SetCanJump(_isDoubleJump);
+                
                 if (_isDoubleJump && jumpCount > 0)
                 {
                     SetJumpForce(jumpSpeed);
+                    
                 }
             }
         }

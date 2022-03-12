@@ -7,6 +7,7 @@ namespace SandBox.Scripts
     {
         [SerializeField] private Mover mover;
         [SerializeField] private Jumper jumper;
+        [SerializeField] private AudioClip jumpSound;
 
 
         void OnEnable()
@@ -24,6 +25,8 @@ namespace SandBox.Scripts
         private void Jump()
         {
             jumper.Jump();
+            var newSound = gameObject.GetComponent<AudioSource>();
+            newSound.PlayOneShot(jumpSound,1f);
         }
 
         private void Moving()

@@ -8,6 +8,7 @@ namespace SandBox.Scripts
         [SerializeField] private float runSpeed;
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private Transform model;
+        
 
         private bool _isMoving = true;
         private void UpdateFacing()
@@ -27,6 +28,8 @@ namespace SandBox.Scripts
             movingVelocity.x = speed * runSpeed;
             
             rigidbody2D.velocity = movingVelocity;
+
+            
         }
         public void Moving(Vector2 direction)
         {

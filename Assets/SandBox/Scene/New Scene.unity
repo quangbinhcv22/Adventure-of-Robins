@@ -820,6 +820,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1716214841, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
+      propertyPath: objectPooler
+      value: 
+      objectReference: {fileID: 624740829}
     - target: {fileID: 5545696209880867617, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
       propertyPath: m_Mesh
       value: 

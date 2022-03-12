@@ -1485,6 +1485,7 @@ MonoBehaviour:
   runSpeed: 3
   rigidbody2D: {fileID: 1137161249476769160}
   model: {fileID: 1137161250434354335}
+  moveSound: {fileID: 0}
 --- !u!1 &1137161249511205264
 GameObject:
   m_ObjectHideFlags: 0
