@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Photon.Pun;
 using Photon.Realtime;
 using TigerForge;
+using TMPro;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using EventName = Network.Events.EventName;
@@ -28,6 +29,7 @@ namespace Network
         public EventGroup events;
 
         [SerializeField] private bool connectOnAwake = true;
+        [SerializeField] private TMP_Text logText;
 
 
         private void Awake()
@@ -59,28 +61,36 @@ namespace Network
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log("On connected to master");
+            logText.SetText("On connected to master");
             PhotonNetwork.JoinLobby(TypedLobby.Default);
         }
 
         public override void OnJoinedLobby()
         {
-            Debug.Log("On joined lobby");
+            logText.SetText("On joined lobby");
             PhotonNetwork.JoinRandomOrCreateRoom();
         }
 
         public override void OnJoinedRoom()
         {
-            Debug.Log("On joined room");
+            logText.SetText($"On joined room: {PhotonNetwork.CurrentRoom.Name}");
         }
 
         public void OnEvent(EventData photonEvent)
         {
             if (photonEvent.Code != Message.StandardEvent) return;
 
-            var response = JsonConvert.DeserializeObject<Response<object>>((string)photonEvent.CustomData);
-            EventManager.EmitEventData(eventName: response.id, response);
+            var message = (string)photonEvent.CustomData;
+            var response = JsonConvert.DeserializeObject<Response<object>>(message);
 
+            switch (response.id)
+            {
+                case EventName.Server.Character.Move:
+                    events.characterMove.OnResponse(message);
+                    break;
+            }
+
+            EventManager.EmitEventData(eventName: response.id, response);
             Debug.Log($"Response: <color=yellow>{photonEvent.CustomData}</color>");
         }
     }

@@ -1,5 +1,6 @@
 using System;
 using Network.Messages;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Network.Events
@@ -7,16 +8,17 @@ namespace Network.Events
     [CreateAssetMenu(fileName = nameof(CharacterMoveEvent), menuName = "Server/Event/CharacterMove")]
     public class CharacterMoveEvent : ScriptableObject
     {
-        [SerializeField] private Response<CharacterMoveResponse> response;
+        [NonSerialized] private Response<CharacterMoveResponse> response;
+        public Response<CharacterMoveResponse> Response => response;
 
         public void SendRequest(CharacterMoveRequest request)
         {
             Message.Instance().SetID(EventName.Server.Character.Move).SetRequest(request).Send();
         }
 
-        public Response<CharacterMoveResponse> OnResponse(Response<object> drawResponse)
+        public Response<CharacterMoveResponse> OnResponse(string message)
         {
-            response = drawResponse.ToType<CharacterMoveResponse>();
+            response = JsonConvert.DeserializeObject<Response<CharacterMoveResponse>>(message);
             return response;
         }
     }
