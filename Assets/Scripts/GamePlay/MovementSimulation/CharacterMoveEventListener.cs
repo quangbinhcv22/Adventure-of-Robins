@@ -6,28 +6,22 @@ using EventName = Network.Events.EventName;
 
 // namespace SandBox.Scripts
 // {
-public class CharacterMoveInput : MonoBehaviour
+public class CharacterMoveEventListener : MonoBehaviour
 {
     [SerializeField] private Character character;
     [SerializeField] private Mover mover;
     [SerializeField] private Jumper jumper;
-    [SerializeField] private AudioClip jumpSound;
-
-
+    
     void OnEnable()
     {
         EventManager.StartListening(EventName.Server.Character.Move, OnMove);
-
-        // EventManager.StartListening(CharacterInput.Moving, Moving);
-        EventManager.StartListening(CharacterInput.Jump, Jump);
+        EventManager.StartListening(EventName.Server.Character.Jump, OnJump);
     }
 
     void OnDisable()
     {
         EventManager.StopListening(EventName.Server.Character.Move, OnMove);
-
-        // EventManager.StopListening(CharacterInput.Moving, Moving);
-        EventManager.StopListening(CharacterInput.Jump, Jump);
+        EventManager.StopListening(EventName.Server.Character.Jump, OnJump);
     }
 
     private void OnMove()
@@ -38,19 +32,11 @@ public class CharacterMoveInput : MonoBehaviour
         mover.Moving(new Vector2(moveResponse.direction, default));
     }
 
-    private void Jump()
+    private void OnJump()
     {
+        var jumpResponse = NetworkController.Instance.events.characterJump.Response.data;
+        if (character.Info.id != jumpResponse.characterId) return;
+
         jumper.Jump();
-        var newSound = gameObject.GetComponent<AudioSource>();
-        newSound.PlayOneShot(jumpSound, 1f);
-    }
-
-    private void Moving()
-    {
-        var boxingMovingValue = EventManager.GetData(CharacterInput.Moving);
-        var movingValue = new Vector2((float)boxingMovingValue, 0);
-
-        mover.Moving(movingValue);
     }
 }
-// }

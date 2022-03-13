@@ -5,16 +5,14 @@ using static GameEvent.EventName;
 
 namespace SandBox.Scripts
 {
-    public class CharacterAnimationActivate : MonoBehaviour
+    public class CharacterAnimator : MonoBehaviour
     {
         [SerializeField] private Animator animator;
         [SerializeField] private Transform groundCheck;
         [SerializeField] private LayerMask ground;
         
         private bool _isLanding;
-
         
-
         void Start()
         {
             EventManager.StartListening(CharacterInput.StartIdleAnimation, Idle);
