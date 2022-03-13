@@ -28,15 +28,15 @@ namespace SandBox.Scripts
             movingVelocity.x = speed * runSpeed;
             
             rigidbody2D.velocity = movingVelocity;
-
-            
         }
+        
         public void Moving(Vector2 direction)
         {
             if (_isMoving)
             {
                 SetSpeed(direction.x);
             }
+            
             UpdateFacing();
         }
     }
