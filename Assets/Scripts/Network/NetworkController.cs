@@ -85,8 +85,26 @@ namespace Network
 
             switch (response.id)
             {
+                case EventName.Server.Character.Attack:
+                    events.characterAttack.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Die:
+                    events.characterDie.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Jump:
+                    events.characterJump.OnResponse(message);
+                    break;
                 case EventName.Server.Character.Move:
                     events.characterMove.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Skill1:
+                    events.characterSkill1.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Skill2:
+                    events.characterSkill2.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Skill3:
+                    events.characterSkill3.OnResponse(message);
                     break;
             }
 

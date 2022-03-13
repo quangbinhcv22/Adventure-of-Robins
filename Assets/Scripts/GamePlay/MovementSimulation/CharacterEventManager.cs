@@ -1,7 +1,8 @@
+using SandBox.Scripts;
 using TigerForge;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace GamePlay.MovementSimulation
 {
     public class CharacterEventManager : MonoBehaviour
     {

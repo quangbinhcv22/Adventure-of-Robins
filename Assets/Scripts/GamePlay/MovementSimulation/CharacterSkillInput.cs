@@ -1,8 +1,9 @@
-using GamePlay.MovementSimulation;
+using SandBox.Scripts;
 using TigerForge;
 using UnityEngine;
+using EventName = Network.Events.EventName;
 
-namespace SandBox.Scripts
+namespace GamePlay.MovementSimulation
 {
     public class CharacterSkillInput : MonoBehaviour
     {

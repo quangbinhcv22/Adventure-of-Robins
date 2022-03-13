@@ -4,39 +4,45 @@ using TigerForge;
 using UnityEngine;
 using EventName = Network.Events.EventName;
 
-// namespace SandBox.Scripts
-// {
-public class CharacterMoveEventListener : MonoBehaviour
+namespace GamePlay.MovementSimulation
 {
-    [SerializeField] private Character character;
-    [SerializeField] private Mover mover;
-    [SerializeField] private Jumper jumper;
-    
-    void OnEnable()
+    public class CharacterMoveEventListener : MonoBehaviour
     {
-        EventManager.StartListening(EventName.Server.Character.Move, OnMove);
-        EventManager.StartListening(EventName.Server.Character.Jump, OnJump);
-    }
+        [SerializeField] private Character character;
+        [SerializeField] private Mover mover;
+        [SerializeField] private Jumper jumper;
 
-    void OnDisable()
-    {
-        EventManager.StopListening(EventName.Server.Character.Move, OnMove);
-        EventManager.StopListening(EventName.Server.Character.Jump, OnJump);
-    }
+        private void OnEnable()
+        {
+            EventManager.StartListening(EventName.Server.Character.Move, OnMove);
+            EventManager.StartListening(EventName.Server.Character.Jump, OnJump);
+        }
 
-    private void OnMove()
-    {
-        var moveResponse = NetworkController.Instance.events.characterMove.Response.data;
-        if (character.Info.id != moveResponse.characterId) return;
+        private void OnDisable()
+        {
+            EventManager.StopListening(EventName.Server.Character.Move, OnMove);
+            EventManager.StopListening(EventName.Server.Character.Jump, OnJump);
+        }
 
-        mover.Moving(new Vector2(moveResponse.direction, default));
-    }
+        private void OnMove()
+        {
+            var moveResponse = NetworkController.Instance.events.characterMove.Response.data;
+            if (character.Info.id != moveResponse.characterId) return;
 
-    private void OnJump()
-    {
-        var jumpResponse = NetworkController.Instance.events.characterJump.Response.data;
-        if (character.Info.id != jumpResponse.characterId) return;
+            mover.Moving(new Vector2(moveResponse.direction, default));
+            
+            if (moveResponse.direction == 0) EventManager.EmitEvent(CharacterInput.StartIdleAnimation);
+            else  EventManager.EmitEvent(CharacterInput.StartRunAnimation);
+        }
 
-        jumper.Jump();
+        private void OnJump()
+        {
+            var jumpResponse = NetworkController.Instance.events.characterJump.Response.data;
+            if (character.Info.id != jumpResponse.characterId) return;
+
+            jumper.Jump();
+            EventManager.EmitEvent(CharacterInput.StartJumpAnimation);
+        }
+        
     }
 }

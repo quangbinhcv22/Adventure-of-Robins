@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
-using UnityEngine;
 using DG.Tweening;
-using static GameEvent.EventName;
+using SandBox.Scripts;
+using UnityEngine;
 
-namespace SandBox.Scripts
+namespace GamePlay.MovementSimulation
 {
     public class CharacterSkillActivate : MonoBehaviour
     {

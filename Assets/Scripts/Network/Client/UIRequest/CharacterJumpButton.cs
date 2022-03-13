@@ -1,3 +1,4 @@
+using System;
 using Network.Events;
 using TMPro;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Network.Client.UIRequest
 {
-    public class CharacterSkill3Button : MonoBehaviour
+    public class CharacterJumpButton : MonoBehaviour
     {
         [SerializeField] private Button button;
         [SerializeField] private string characterId => characterIdInput.text;
@@ -19,9 +20,9 @@ namespace Network.Client.UIRequest
         void SendRequest()
         {
            
-            var request = new CharacterSkill3Request { characterId = characterId};
+            var request = new CharacterJumpRequest { characterId = characterId};
 
-            NetworkController.Instance.events.characterSkill3.SendRequest(request);
+            NetworkController.Instance.events.characterJump.SendRequest(request);
         }
     }
 }

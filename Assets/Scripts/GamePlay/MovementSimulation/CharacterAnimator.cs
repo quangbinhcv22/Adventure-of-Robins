@@ -1,9 +1,8 @@
-using System;
+using SandBox.Scripts;
 using TigerForge;
 using UnityEngine;
-using static GameEvent.EventName;
 
-namespace SandBox.Scripts
+namespace GamePlay.MovementSimulation
 {
     public class CharacterAnimator : MonoBehaviour
     {
@@ -19,6 +18,7 @@ namespace SandBox.Scripts
             EventManager.StartListening(CharacterInput.StartRunAnimation, Run);
             EventManager.StartListening(CharacterInput.StartJumpAnimation, Jump);
             EventManager.StartListening(CharacterInput.StartAttackAnimation, Attack);
+            EventManager.StartListening(CharacterInput.StartDieAnimation, Die);
             EventManager.StartListening(CharacterInput.IsLanding, Landing);
             EventManager.StartListening(CharacterInput.FallDuringRun, FallDuringRun);
         }
@@ -54,7 +54,12 @@ namespace SandBox.Scripts
         {
             animator.SetTrigger(CharacterInput.Attack);
         }
-
+        
+        private void Die()
+        {
+            animator.SetTrigger(CharacterInput.Die);
+        }
+        
         private void Landing()
         {
             if (_isLanding)

@@ -1,4 +1,5 @@
 using System;
+using Network.Events;
 using TigerForge;
 using UnityEngine;
 
@@ -8,8 +9,8 @@ namespace SandBox.Scripts
     {
         [SerializeField] private CharacterMove characterMove;
         [SerializeField] private CharacterJump characterJump;
-        [SerializeField] private CharacterSkillAttack characterSkillAttack;
-        [SerializeField] private CharacterGetHit characterGetHit;
+       
+        
         [SerializeField] private CharacterStatChange characterStatChange;
         void Start()
         {
@@ -36,33 +37,27 @@ namespace SandBox.Scripts
         private void CharacterJump()
         {
             var boxingJumpObject = EventManager.GetData("CharacterJump");
-            var jumpData =  (CharacterJumping)boxingJumpObject;
+            var jumpData =  (CharacterJumpEvent)boxingJumpObject;
 
             characterJump.Jumping(jumpData);
         }
 
         private void CharacterSkillAttack()
         {
-            var boxingSkillObject = EventManager.GetData("CharacterSkill1Activate");
-            var skillData =  (CharacterSkillAttacking)boxingSkillObject;
+            
+           
 
-            characterSkillAttack.SkillAttacking(skillData);
+           
         }
 
         private void CharacterGetHit()
         {
-            var boxingGetHitObject = EventManager.GetData("CharacterGetHit");
-            var getHitData =  (CharacterGetHitting)boxingGetHitObject;
-
-            characterGetHit.GetHitting(getHitData);
+            
         }
 
         private void CharacterStatChange()
         {
-            var boxingStatChangeObject = EventManager.GetData("CharacterStatChange");
-            var statChangeData =  (CharacterStatChanging)boxingStatChangeObject;
-
-            characterStatChange.StatChanging(statChangeData);
+            
         }
         
     }

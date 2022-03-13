@@ -1,3 +1,4 @@
+using Network.Events;
 using UnityEngine;
 
 namespace SandBox.Scripts
@@ -6,25 +7,25 @@ namespace SandBox.Scripts
     {
         [SerializeField] private Jumper jumper;
         
-        public void Jumping(CharacterJumping characterJumping)
+        public void Jumping(CharacterJumpEvent characterJumpEvent)
         {
-            switch (characterJumping.characterID)
-            {
-                case CharacterID.Gladiator:
-                {
-                    jumper.SetCanJump(true);
-                    jumper.SetJumpForce(20f);
-                    jumper.SetMaxCount(2);
-                    break;
-                }
-                case CharacterID.RobinHood:
-                {
-                    jumper.SetCanJump(true);
-                    jumper.SetJumpForce(20f);
-                    jumper.SetMaxCount(2);
-                    break;
-                }
-            }
+            // switch (characterJumpEvent.characterID)
+            // {
+            //     case CharacterID.Gladiator:
+            //     {
+            //         jumper.SetCanJump(true);
+            //         jumper.SetJumpForce(20f);
+            //         jumper.SetMaxCount(2);
+            //         break;
+            //     }
+            //     case CharacterID.RobinHood:
+            //     {
+            //         jumper.SetCanJump(true);
+            //         jumper.SetJumpForce(20f);
+            //         jumper.SetMaxCount(2);
+            //         break;
+            //     }
+            // }
         }
         
     }

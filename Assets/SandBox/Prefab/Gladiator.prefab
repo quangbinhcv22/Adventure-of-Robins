@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506003766}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2.22, y: 1.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5545696211761319118}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &1465652251455333771
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,13 +53,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465652251455333771}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2.56, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5545696211761319118}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &5545696209670557110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,6 +3194,11 @@ GameObject:
   - component: {fileID: 1716214842}
   - component: {fileID: 1716214841}
   - component: {fileID: 2503057288866915705}
+  - component: {fileID: 427618215}
+  - component: {fileID: 427618214}
+  - component: {fileID: 427618212}
+  - component: {fileID: 427618211}
+  - component: {fileID: 427618210}
   m_Layer: 8
   m_Name: Gladiator
   m_TagString: Untagged
@@ -3312,10 +3317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcfddf744442144980f73ae1be58c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 5545696211761319111}
   mover: {fileID: 5545696211761319115}
   jumper: {fileID: 5545696211761319108}
-  jumpSound: {fileID: 8300000, guid: 38a0ab29a6df8bf4793b362f30969ba0, type: 3}
-  moveSound: {fileID: 8300000, guid: 7ea13db12c9ca154c9803acd2cf259d5, type: 3}
 --- !u!114 &5545696211761319108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3347,7 +3351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info:
-    id: Gladiator
+    id: 002
     team: 1
     health:
       BaseValue: 1000
@@ -3416,7 +3420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912169f9b4f098048b2b0ecfa788b15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPooler: {fileID: 0}
+  objectPooler: {fileID: 2012263740335400906, guid: b0cf8d244a3a78749a372db460791052, type: 3}
   character: {fileID: 5545696211761319111}
   wayPoints:
   - {fileID: 2795664297397135608}
@@ -3438,3 +3442,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSkillActivate: {fileID: 1716214841}
+--- !u!114 &427618215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545696211761319107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18e078b3f8c4eb5a8617def7f67d332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 5545696211761319111}
+--- !u!114 &427618214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545696211761319107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bcfddf744442144980f73ae1be58c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 5545696211761319111}
+  mover: {fileID: 5545696211761319115}
+  jumper: {fileID: 5545696211761319108}
+--- !u!114 &427618212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545696211761319107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d941a022ecb34e85b16d340c443dc023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 5545696211761319111}
+--- !u!114 &427618211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545696211761319107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98265f1820a4138b73e926fc2e7096e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 5545696211761319111}
+--- !u!114 &427618210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545696211761319107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7fa439261142688d3a33a41b2501bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 5545696211761319111}
