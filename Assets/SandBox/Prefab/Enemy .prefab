@@ -1390,7 +1390,6 @@ GameObject:
   - component: {fileID: 1137161249476769163}
   - component: {fileID: 1137161249476769160}
   - component: {fileID: 1137161249476769161}
-  - component: {fileID: 1137161249476769166}
   m_Layer: 8
   m_Name: 'Enemy '
   m_TagString: Untagged
@@ -1470,21 +1469,6 @@ MonoBehaviour:
       BaseValue: 1000
     damage:
       BaseValue: 0
---- !u!114 &1137161249476769166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137161249476769165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b35069a4348629b40b954d24b7875f2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runSpeed: 3
-  rigidbody2D: {fileID: 1137161249476769160}
-  model: {fileID: 1137161250434354335}
 --- !u!1 &1137161249511205264
 GameObject:
   m_ObjectHideFlags: 0
