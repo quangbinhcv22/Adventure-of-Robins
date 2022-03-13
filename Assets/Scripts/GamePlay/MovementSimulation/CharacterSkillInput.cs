@@ -24,17 +24,26 @@ namespace GamePlay.MovementSimulation
 
         private void Skill1()
         {
-            characterSkillActivate.ActivateSkill1();
+            var boxingCharacterID = EventManager.GetData(CharacterInput.Skill1);
+            var characterID = (string) boxingCharacterID;
+            
+            characterSkillActivate.ActivateSkill1(characterID);
         }
 
         private void Skill2()
         {
-            characterSkillActivate.ActivateSkill2();
+            var boxingCharacterID = EventManager.GetData(CharacterInput.Skill2);
+            var characterID = (string) boxingCharacterID;
+            
+            characterSkillActivate.ActivateSkill2(characterID);
         }
 
         private void Skill3()
         {
-            characterSkillActivate.ActivateSkill3();
+            var boxingCharacterID = EventManager.GetData(CharacterInput.Skill3);
+            var characterID = (string) boxingCharacterID;
+            
+            characterSkillActivate.ActivateSkill3(characterID);
         }
     }
 }

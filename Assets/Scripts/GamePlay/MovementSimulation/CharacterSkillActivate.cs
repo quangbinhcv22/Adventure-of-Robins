@@ -17,9 +17,9 @@ namespace GamePlay.MovementSimulation
         [SerializeField] private float objectSize;
         [SerializeField] private float objectSizeDuration;
 
-        public void ActivateSkill1()
+        public void ActivateSkill1(string characterID)
         {
-            switch (character.Info.id)
+            switch (characterID)
             {
                 case CharacterID.Gladiator:
                 {
@@ -37,9 +37,9 @@ namespace GamePlay.MovementSimulation
             
         }
             
-        public void ActivateSkill2()
+        public void ActivateSkill2(string characterID)
         {
-            switch (character.Info.id)
+            switch (characterID)
             {
                 case CharacterID.Gladiator:
                 {
@@ -64,15 +64,15 @@ namespace GamePlay.MovementSimulation
             
         }
         
-        public void ActivateSkill3()
+        public void ActivateSkill3(string characterID)
         {
-            switch (character.Info.id)
+            switch (characterID)
             {
                 case CharacterID.Gladiator:
                 {
                     var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.BigSword, wayPoints[1].position, wayPoints[1].rotation);
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
-                    newObjectPooler.transform.DOBlendableMoveBy(new Vector3(.7f, .5f, 0), 1f);
+                    newObjectPooler.transform.DOBlendableMoveBy(new Vector3(7f, 4f, 0), 1f);
                     newObjectPooler.transform.DORotate(new Vector3(0,0,-90), 1f);
                     
                     StartCoroutine(SkillDuration(newObjectPooler,3f));
