@@ -1391,7 +1391,6 @@ GameObject:
   - component: {fileID: 1137161249476769160}
   - component: {fileID: 1137161249476769161}
   - component: {fileID: 1137161249476769166}
-  - component: {fileID: 3520461240011146253}
   m_Layer: 8
   m_Name: 'Enemy '
   m_TagString: Untagged
@@ -1486,19 +1485,6 @@ MonoBehaviour:
   runSpeed: 3
   rigidbody2D: {fileID: 1137161249476769160}
   model: {fileID: 1137161250434354335}
---- !u!114 &3520461240011146253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137161249476769165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b71a1f4b00414daa67db94da2df4bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 1137161249476769161}
 --- !u!1 &1137161249511205264
 GameObject:
   m_ObjectHideFlags: 0
