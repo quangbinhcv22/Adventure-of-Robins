@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -6,11 +7,10 @@ namespace SandBox.Scripts
     public class Arrow : MonoBehaviour
     {
         [SerializeField] private float damage;
-        [SerializeField] private GameEvent.EventName.ObjectName objectName;
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private float objectForce;
+        [SerializeField] private GameObject enemyPrefab;
 
-        
         public void ShootArrow()
         {
             var arrowFlyVelocity = rigidbody2D.velocity;
@@ -23,11 +23,25 @@ namespace SandBox.Scripts
             var targetCharacter = collider2D.GetComponent<Character>();
             if (targetCharacter)
             {
-                if (targetCharacter.Info.Team == GameEvent.EventName.CharacterTeam.Hostile)
+                if (targetCharacter.Info.Team == CharacterTeam.Hostile)
                 {
                     targetCharacter.Info.Health.Current -= damage;
+                    
+                    InstantiateParticle(enemyPrefab,targetCharacter.transform);
                 }
             }
+        }
+        private void InstantiateParticle(GameObject particlePrefab, Transform targetCharacter)
+        {
+            var newEnemyBlood = Instantiate(particlePrefab, targetCharacter.position,
+                targetCharacter.rotation);
+
+            StartCoroutine(DestroyGameobject(newEnemyBlood));
+        }
+        private IEnumerator DestroyGameobject(GameObject gameObject)
+        {
+            yield return new WaitForSeconds(1f);
+            Destroy(gameObject);
         }
     }
 }

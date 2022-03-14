@@ -1,13 +1,16 @@
-using UnityEngine;
+
+using System;
+using TMPro;
 
 namespace SandBox.Scripts
 {
-    public class CharacterInfo : MonoBehaviour
+    [Serializable]
+    public class CharacterInfo
     {
-        [SerializeField] private string id;
-        [SerializeField] private GameEvent.EventName.CharacterTeam team;
-        [SerializeField] private CharacterStat health;
-        [SerializeField] private CharacterStat damage;
+        public string id;
+        public CharacterTeam team;
+        public CharacterStat health;
+        public CharacterStat damage;
 
         public CharacterStat Health
         {
@@ -16,7 +19,7 @@ namespace SandBox.Scripts
 
         public CharacterStat Damage => damage;
 
-        public GameEvent.EventName.CharacterTeam Team => team;
+        public CharacterTeam Team => team;
 
 
         //public CharacterStats stats;
@@ -25,13 +28,10 @@ namespace SandBox.Scripts
         // [SerializeField] private CharacterStat dexterity;
         // [SerializeField] private CharacterStat intelligence;
         // [SerializeField] private CharacterStat damage;
-
-        public string ID => id;
         
         private void Start()
         {
-            health.ResetCurrentByValue();
-            damage.ResetCurrentByValue();
+            
 
             // stats.AddStat(CharacterStatType.Health,new CharacterStat(1000));
             // stats.GetStat(CharacterStatType.Health).ResetCurrentByValue();

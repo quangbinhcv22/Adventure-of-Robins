@@ -1,55 +1,31 @@
-using TigerForge;
+using Network.Events;
 using UnityEngine;
 
 namespace SandBox.Scripts
 {
     public class CharacterJump : MonoBehaviour
     {
-        [SerializeField] private float jumpSpeed;
-        [SerializeField] private new Rigidbody2D rigidbody2D;
-        [SerializeField] private Transform groundCheck;
-        [SerializeField] private LayerMask ground;
-
-        private bool _isOnGround;
-        private bool _isDoubleJump;
-        private int jumpCount;
-
-        void Update()
+        [SerializeField] private Jumper jumper;
+        
+        public void Jumping(CharacterJumpEvent characterJumpEvent)
         {
-            _isOnGround = GameEvent.EventName.CheckTouching.IsTouchingLayer(groundCheck, ground);
-        }
-
-        public void SetMaxCount(int maxCount)
-        {
-            jumpCount = maxCount;
-        }
-
-        public void SetCanJump(bool canJump)
-        {
-            _isDoubleJump = canJump;
-        }
-
-        public void SetJumpForce(float jumpForce)
-        {
-            var jumpVelocity = rigidbody2D.velocity;
-            jumpVelocity.y = jumpForce;
-
-            rigidbody2D.velocity = jumpVelocity;
-        }
-        public void Jump()
-        {
-            if (_isOnGround)
-            {
-                SetMaxCount(jumpCount);
-                SetJumpForce(jumpSpeed);
-                jumpCount--;
-                _isOnGround = false;
-                SetCanJump(_isDoubleJump);
-                if (_isDoubleJump && jumpCount > 0)
-                {
-                    SetJumpForce(jumpSpeed);
-                }
-            }
+            // switch (characterJumpEvent.characterID)
+            // {
+            //     case CharacterID.Gladiator:
+            //     {
+            //         jumper.SetCanJump(true);
+            //         jumper.SetJumpForce(20f);
+            //         jumper.SetMaxCount(2);
+            //         break;
+            //     }
+            //     case CharacterID.RobinHood:
+            //     {
+            //         jumper.SetCanJump(true);
+            //         jumper.SetJumpForce(20f);
+            //         jumper.SetMaxCount(2);
+            //         break;
+            //     }
+            // }
         }
         
     }
