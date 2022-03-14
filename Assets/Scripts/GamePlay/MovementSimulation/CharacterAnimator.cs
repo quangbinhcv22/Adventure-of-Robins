@@ -1,3 +1,4 @@
+using System;
 using SandBox.Scripts;
 using TigerForge;
 using UnityEngine;
@@ -9,20 +10,39 @@ namespace GamePlay.MovementSimulation
     {
         [SerializeField] private Animator animator;
         [SerializeField] private Character character;
-        
+        [SerializeField] private Transform groundCheck;
+        [SerializeField] private LayerMask ground;
+
+        private string currentState;
+        private bool _isOnGround;
+
+        private void FixedUpdate()
+        {
+            _isOnGround = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
+        }
+
+        private void CharacterAnimatorSwitch(string newState)
+        {
+            if (currentState == newState) return;
+            
+            animator.Play(newState);
+
+            currentState = newState;
+        }
+
         public void Idle()
         {
             switch (character.Info.heroID)
             {
                 case HeroID.Gladiator:
                 {
-                    animator.SetBool(CharacterInput.IsRunning, false);
+                    CharacterAnimatorSwitch("Idle");
 
                     break;
                 }
                 case HeroID.RobinHood:
                 {
-                    animator.SetBool(CharacterInput.IsRunning, false);
+                    CharacterAnimatorSwitch("Idle");
 
                     break;
                 }
@@ -35,13 +55,13 @@ namespace GamePlay.MovementSimulation
             {
                 case HeroID.Gladiator:
                 {
-                    animator.SetBool(CharacterInput.IsRunning, true);
+                    CharacterAnimatorSwitch("Run");
                     
                     break;
                 }
                 case HeroID.RobinHood:
                 {
-                    animator.SetBool(CharacterInput.IsRunning, true);
+                    CharacterAnimatorSwitch("Run");
                     
                     break;
                 }
@@ -54,14 +74,12 @@ namespace GamePlay.MovementSimulation
             {
                 case HeroID.Gladiator:
                 {
-                    animator.SetTrigger(CharacterInput.Jump);
-                    animator.SetTrigger(CharacterInput.Fall);
+                    CharacterAnimatorSwitch("Jump");
                     break;
                 }
                 case HeroID.RobinHood:
                 {
-                    animator.SetTrigger(CharacterInput.Jump);
-                    animator.SetTrigger(CharacterInput.Fall);
+                    CharacterAnimatorSwitch("Jump");
                     break;
                 }
             }
@@ -73,12 +91,12 @@ namespace GamePlay.MovementSimulation
             {
                 case HeroID.Gladiator:
                 {
-                    animator.SetTrigger(CharacterInput.Attack);
+                    CharacterAnimatorSwitch("Attack");
                     break;
                 }
                 case HeroID.RobinHood:
                 {
-                    animator.SetTrigger(CharacterInput.Attack);
+                    CharacterAnimatorSwitch("Attack");
                     break;
                 }
             }

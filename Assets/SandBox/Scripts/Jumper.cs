@@ -1,3 +1,4 @@
+using System;
 using TigerForge;
 using UnityEngine;
 
@@ -9,53 +10,47 @@ namespace SandBox.Scripts
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private Transform groundCheck;
         [SerializeField] private LayerMask ground;
-        
+
 
         private bool _isOnGround;
         private bool _isDoubleJump;
-        private int jumpCount;
+        private int curentJumpCount;
+        private int maxJumpCount = 1;
+
+        private void Start()
+        {
+            SetMaxCount(curentJumpCount);
+        }
 
         void Update()
         {
             _isOnGround = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
+            if (_isOnGround) curentJumpCount = 0;
         }
 
-        public void SetMaxCount(int maxCount)
+        private void SetMaxCount(int curentJumpCount)
         {
-            jumpCount = maxCount;
+            curentJumpCount = 0;
         }
 
-        public void SetCanJump(bool canJump)
+        private void SetCanJump(bool canJump)
         {
             _isDoubleJump = canJump;
         }
 
-        public void SetJumpForce(float jumpForce)
+        private void SetJumpForce(float jumpForce)
         {
             var jumpVelocity = rigidbody2D.velocity;
             jumpVelocity.y = jumpForce;
 
             rigidbody2D.velocity = jumpVelocity;
-            
-            
         }
+
         public void Jump()
         {
-            if (_isOnGround)
-            {
-                SetMaxCount(jumpCount);
-                SetJumpForce(jumpSpeed);
-                jumpCount--;
-                _isOnGround = false;
-                SetCanJump(_isDoubleJump);
-                
-                if (_isDoubleJump && jumpCount > 0)
-                {
-                    SetJumpForce(jumpSpeed);
-                    
-                }
-            }
+            if (curentJumpCount >= maxJumpCount) return;
+            SetJumpForce(jumpSpeed);
+            curentJumpCount++;
         }
-        
     }
 }

@@ -22,8 +22,8 @@ namespace GamePlay.MovementSimulation
             {
                 case HeroID.Gladiator:
                 {
-                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.RotateSword, wayPoints[0].localPosition, wayPoints[0].rotation);
-                    newObjectPooler.GetComponentInParent<Character>();
+                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.RotateSword, wayPoints[0].position, wayPoints[0].rotation);
+                    newObjectPooler.transform.SetParent(character.transform);
                     
                     StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;

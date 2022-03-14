@@ -11,7 +11,7 @@ namespace GamePlay.MovementSimulation
         [SerializeField] private Character character;
         [SerializeField] private Mover mover;
         [SerializeField] private Jumper jumper;
-
+        
         private void OnEnable()
         {
             EventManager.StartListening(EventName.Server.Character.Move, OnMove);
