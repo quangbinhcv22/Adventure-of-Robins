@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UI
+namespace UI.ScreenFlow
 {
     public class Screen : MonoBehaviour
     {
