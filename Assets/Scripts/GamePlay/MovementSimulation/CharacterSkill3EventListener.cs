@@ -26,7 +26,7 @@ namespace GamePlay.MovementSimulation
             var skill3Response = NetworkController.Instance.events.characterSkill3.Response.data;
             if (character.Info.id != skill3Response.characterId) return;
 
-            characterSkillActivate.ActivateSkill3(skill3Response.characterId);
+            characterSkillActivate.ActivateSkill3(skill3Response.characterId,SkillName.Skill3);
         }
     }
 }

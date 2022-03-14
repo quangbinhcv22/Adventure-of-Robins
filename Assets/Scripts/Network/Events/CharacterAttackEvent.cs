@@ -1,9 +1,7 @@
 using System;
 using Network.Messages;
 using Newtonsoft.Json;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Network.Events
 {

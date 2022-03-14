@@ -1,4 +1,5 @@
 using Network.Events;
+using SandBox.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,9 +20,9 @@ namespace Network.Client.UIRequest
         void SendRequest()
         {
            
-            var request = new CharacterSkill3Request { characterId = characterId};
+            var request = new CharacterSkillRequest { characterId = characterId,skillName = SkillName.Skill3};
 
-            NetworkController.Instance.events.characterSkill3.SendRequest(request);
+            NetworkController.Instance.events.characterSkill.SendRequest(request);
         }
     }
 }

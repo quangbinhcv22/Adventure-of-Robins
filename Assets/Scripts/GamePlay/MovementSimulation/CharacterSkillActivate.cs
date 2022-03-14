@@ -9,7 +9,7 @@ namespace GamePlay.MovementSimulation
     {
         [SerializeField] private ObjectPooler objectPooler;
         [SerializeField] private Character character;
-        
+        [SerializeField] private SkillName name;
         
         [SerializeField] private Transform[] wayPoints;
         [SerializeField] private new Rigidbody2D rigidbody2D;
@@ -17,8 +17,9 @@ namespace GamePlay.MovementSimulation
         [SerializeField] private float objectSize;
         [SerializeField] private float objectSizeDuration;
 
-        public void ActivateSkill1(string characterID)
+        public void ActivateSkill1(string characterID,SkillName skillName)
         {
+            if (skillName != SkillName.Skill1) return;
             switch (characterID)
             {
                 case CharacterID.Gladiator:
@@ -34,11 +35,12 @@ namespace GamePlay.MovementSimulation
                     break;
                 }
             }
-            
+
         }
             
-        public void ActivateSkill2(string characterID)
+        public void ActivateSkill2(string characterID,SkillName skillName)
         {
+            if (skillName != SkillName.Skill2) return;
             switch (characterID)
             {
                 case CharacterID.Gladiator:
@@ -64,8 +66,9 @@ namespace GamePlay.MovementSimulation
             
         }
         
-        public void ActivateSkill3(string characterID)
+        public void ActivateSkill3(string characterID,SkillName skillName)
         {
+            if (skillName != SkillName.Skill3) return;
             switch (characterID)
             {
                 case CharacterID.Gladiator:
