@@ -9,10 +9,10 @@ namespace Network.Events
         public CharacterJumpEvent characterJump;
         public CharacterMoveEvent characterMove;
         public CharacterDieEvent characterDie;
-        public CharacterSkillEvent characterSkill;
+        //public CharacterSkillEvent characterSkill;
         public CharacterSkill1Event characterSkill1;
         public CharacterSkill2Event characterSkill2;
         public CharacterSkill3Event characterSkill3;
-        public CharacterSelectEvent characterSelect;
+        //public CharacterSelectEvent characterSelect;
     }
 }

@@ -23,10 +23,22 @@ namespace GamePlay.MovementSimulation
 
         private void OnSkill()
         {
-            var skillResponse = NetworkController.Instance.events.characterSkill.Response.data;
-            if (character.Info.id != skillResponse.characterId) return;
-
-            characterSkillActivate.ActivateSkill(skillResponse.characterId);
+            // var skillResponse = NetworkController.Instance.events.characterSkill.Response.data;
+            // if (character.Info.id != skillResponse.characterId) return;
+            //
+            // switch (skillResponse.skillName)
+            // {
+            //     case SkillName.Skill1:
+            //         characterSkillActivate.ActivateSkill1(skillResponse.heroID);
+            //         break;
+            //     case SkillName.Skill2:
+            //         characterSkillActivate.ActivateSkill2(skillResponse.heroID);
+            //         break;
+            //     case SkillName.Skill3:
+            //         characterSkillActivate.ActivateSkill3(skillResponse.heroID);
+            //         break;
+            // }
+            
         }
     }
 }

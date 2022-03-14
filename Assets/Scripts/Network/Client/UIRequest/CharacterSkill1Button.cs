@@ -19,9 +19,9 @@ namespace Network.Client.UIRequest
         
         void SendRequest()
         {
-            var request = new CharacterSkillRequest {characterId = characterId,skillName = SkillName.Skill1};
+            var request = new CharacterSkill1Request {characterId = characterId};
 
-            NetworkController.Instance.events.characterSkill.SendRequest(request);
+            NetworkController.Instance.events.characterSkill1.SendRequest(request);
         }
     }
 }

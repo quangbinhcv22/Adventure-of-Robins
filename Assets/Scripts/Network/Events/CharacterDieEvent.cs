@@ -1,6 +1,7 @@
 using System;
 using Network.Messages;
 using Newtonsoft.Json;
+using SandBox.Scripts;
 using UnityEngine;
 
 namespace Network.Events

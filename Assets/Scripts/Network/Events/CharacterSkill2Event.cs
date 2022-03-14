@@ -1,6 +1,7 @@
 using System;
 using Network.Messages;
 using Newtonsoft.Json;
+using SandBox.Scripts;
 using UnityEngine;
 
 namespace Network.Events
@@ -27,11 +28,13 @@ namespace Network.Events
     public class CharacterSkill2Request
     {
         public string characterId;
+        
     }
 
     [Serializable]
     public class CharacterSkill2Response
     {
         public string characterId;
+        
     }
 }

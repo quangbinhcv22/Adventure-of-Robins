@@ -1,6 +1,7 @@
 using System;
 using Network.Messages;
 using Newtonsoft.Json;
+using SandBox.Scripts;
 using UnityEngine;
 
 namespace Network.Events
@@ -27,11 +28,13 @@ namespace Network.Events
     public class CharacterSelectRequest
     {
         public string characterId;
+        public HeroID heroID;
     }
 
     [Serializable]
     public class CharacterSelectResponse
     {
         public string characterId;
+        public HeroID heroID;
     }
 }

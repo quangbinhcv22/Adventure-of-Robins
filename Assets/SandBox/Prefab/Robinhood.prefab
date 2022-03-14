@@ -455,8 +455,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01975727, y: 0.040446162}
-  m_Size: {x: 1.2960148, y: 1.7115123}
+  m_Offset: {x: -0.01975727, y: 0.09135425}
+  m_Size: {x: 1.2960148, y: 1.6096961}
   m_Direction: 0
 --- !u!114 &1820876473
 MonoBehaviour:
@@ -473,6 +473,7 @@ MonoBehaviour:
   info:
     id: 001
     team: 1
+    heroID: 0
     health:
       BaseValue: 1000
     damage:
@@ -553,6 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPooler: {fileID: 0}
   character: {fileID: 1820876473}
+  name: 0
   wayPoints:
   - {fileID: 609514500}
   - {fileID: 207571867}

@@ -1,6 +1,7 @@
 using SandBox.Scripts;
 using TigerForge;
 using UnityEngine;
+using EventName = Network.Events.EventName;
 
 namespace GamePlay.MovementSimulation
 {
@@ -9,6 +10,7 @@ namespace GamePlay.MovementSimulation
         [SerializeField] private Animator animator;
         [SerializeField] private Transform groundCheck;
         [SerializeField] private LayerMask ground;
+        [SerializeField] private Character character;
 
         private bool _isLanding;
 
@@ -17,11 +19,11 @@ namespace GamePlay.MovementSimulation
             _isLanding = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
         }
 
-        public void Idle(string characterID)
+        public void Idle()
         {
-            switch (characterID)
+            switch (character.Info.heroID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
                     if (_isLanding)
                     {
@@ -29,7 +31,7 @@ namespace GamePlay.MovementSimulation
                     }
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     if (_isLanding)
                     {
@@ -41,11 +43,21 @@ namespace GamePlay.MovementSimulation
             
         }
 
-        public void Run(string characterID)
+        public void Run()
         {
-            switch (characterID)
+            switch (character.Info.heroID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
+                {
+                    if (_isLanding)
+                    {
+                        
+                        animator.SetBool(CharacterInput.IsRunning, true);
+                    }
+
+                    break;
+                }
+                case HeroID.RobinHood:
                 {
                     if (_isLanding)
                     {
@@ -54,29 +66,20 @@ namespace GamePlay.MovementSimulation
 
                     break;
                 }
-                case CharacterID.RobinHood:
-                {
-                    if (_isLanding)
-                    {
-                        animator.SetBool(CharacterInput.IsRunning, true);
-                    }
-
-                    break;
-                }
             }
         }
 
-        public void Jump(string characterID)
+        public void Jump(HeroID characterID)
         {
             switch (characterID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
                     animator.SetTrigger(CharacterInput.Jump);
                     animator.SetTrigger(CharacterInput.Fall);
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     animator.SetTrigger(CharacterInput.Jump);
                     animator.SetTrigger(CharacterInput.Fall);
@@ -85,16 +88,16 @@ namespace GamePlay.MovementSimulation
             }
         }
 
-        public void Attack(string characterID)
+        public void Attack(HeroID characterID)
         {
             switch (characterID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
                     animator.SetTrigger(CharacterInput.Attack);
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     animator.SetTrigger(CharacterInput.Attack);
                     break;
@@ -102,16 +105,16 @@ namespace GamePlay.MovementSimulation
             }
         }
 
-        public void Die(string characterID)
+        public void Die(HeroID characterID)
         {
             switch (characterID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
                     animator.SetTrigger(CharacterInput.Die);
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     animator.SetTrigger(CharacterInput.Die);
                     break;
@@ -120,11 +123,11 @@ namespace GamePlay.MovementSimulation
             
         }
 
-        public void Landing(string characterID)
+        public void Landing(HeroID characterID)
         {
             switch (characterID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
                     if (_isLanding)
                     {
@@ -134,7 +137,7 @@ namespace GamePlay.MovementSimulation
                     }
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     if (_isLanding)
                     {
@@ -148,11 +151,11 @@ namespace GamePlay.MovementSimulation
             
         }
 
-        public void FallDuringRun(string characterID)
+        public void FallDuringRun(HeroID characterID)
         {
             switch (characterID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
                     if (!_isLanding)
                     {
@@ -160,7 +163,7 @@ namespace GamePlay.MovementSimulation
                     }
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     if (!_isLanding)
                     {

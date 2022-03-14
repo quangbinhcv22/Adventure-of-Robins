@@ -1,6 +1,7 @@
 
 using System;
 using TMPro;
+using UnityEngine.Serialization;
 
 namespace SandBox.Scripts
 {
@@ -9,6 +10,7 @@ namespace SandBox.Scripts
     {
         public string id;
         public CharacterTeam team;
+        public HeroID heroID;
         public CharacterStat health;
         public CharacterStat damage;
 

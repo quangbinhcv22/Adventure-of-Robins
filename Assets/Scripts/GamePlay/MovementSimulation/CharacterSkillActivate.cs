@@ -9,27 +9,25 @@ namespace GamePlay.MovementSimulation
     {
         [SerializeField] private ObjectPooler objectPooler;
         [SerializeField] private Character character;
-        [SerializeField] private SkillName name;
-        
+
         [SerializeField] private Transform[] wayPoints;
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private float skillForce;
         [SerializeField] private float objectSize;
         [SerializeField] private float objectSizeDuration;
 
-        public void ActivateSkill1(string characterID,SkillName skillName)
+        public void ActivateSkill1()
         {
-            if (skillName != SkillName.Skill1) return;
-            switch (characterID)
+            switch (character.Info.heroID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
-                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.RotateSword, wayPoints[0].position, wayPoints[0].rotation);
+                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.RotateSword, wayPoints[0].localPosition, wayPoints[0].rotation);
                     
                     StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     character.Info.Damage.Current += 100;
                     break;
@@ -38,12 +36,11 @@ namespace GamePlay.MovementSimulation
 
         }
             
-        public void ActivateSkill2(string characterID,SkillName skillName)
+        public void ActivateSkill2()
         {
-            if (skillName != SkillName.Skill2) return;
-            switch (characterID)
+            switch (character.Info.heroID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
                     var jumpVelocity = rigidbody2D.velocity;
                     jumpVelocity.x = skillForce;
@@ -51,7 +48,7 @@ namespace GamePlay.MovementSimulation
                     rigidbody2D.velocity = jumpVelocity;
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     for (int i = 0; i < wayPoints.Length; i++)
                     {
@@ -66,12 +63,11 @@ namespace GamePlay.MovementSimulation
             
         }
         
-        public void ActivateSkill3(string characterID,SkillName skillName)
+        public void ActivateSkill3()
         {
-            if (skillName != SkillName.Skill3) return;
-            switch (characterID)
+            switch (character.Info.heroID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
                     var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.BigSword, wayPoints[1].position, wayPoints[1].rotation);
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
@@ -81,7 +77,7 @@ namespace GamePlay.MovementSimulation
                     StartCoroutine(SkillDuration(newObjectPooler,3f));
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.BigArrow, wayPoints[1].position, wayPoints[1].rotation);
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);

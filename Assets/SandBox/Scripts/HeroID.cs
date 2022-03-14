@@ -1,8 +1,9 @@
 namespace SandBox.Scripts
 {
-    public static class CharacterID
+    public enum HeroID
     {
-        public const string RobinHood = "001";
-        public const string Gladiator = "002";
+        RobinHood,
+        Gladiator,
+        Monster,
     }
 }

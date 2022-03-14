@@ -9,14 +9,14 @@ namespace SandBox.Scripts
         
         public void Moving(CharacterMovement characterMovement)
         {
-            switch (characterMovement.characterID)
+            switch (characterMovement.heroID)
             {
-                case CharacterID.Gladiator:
+                case HeroID.Gladiator:
                 {
                     mover.Moving(characterMovement.direction);
                     break;
                 }
-                case CharacterID.RobinHood:
+                case HeroID.RobinHood:
                 {
                     mover.Moving(characterMovement.direction);
                     break;

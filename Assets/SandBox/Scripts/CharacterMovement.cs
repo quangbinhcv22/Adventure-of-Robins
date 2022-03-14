@@ -6,6 +6,7 @@ namespace SandBox.Scripts
     {
         public string characterID;
         public Vector2 direction;
+        public object heroID;
 
         public CharacterMovement(string characterID, Vector2 direction)
         {

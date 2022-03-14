@@ -28,6 +28,7 @@ namespace Network.Events
     public class CharacterSkillRequest
     {
         public string characterId;
+        
         public SkillName skillName;
     }
 
@@ -35,6 +36,7 @@ namespace Network.Events
     public class CharacterSkillResponse
     {
         public string characterId;
+        
         public SkillName skillName;
     }
 }
