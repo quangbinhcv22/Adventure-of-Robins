@@ -3192,12 +3192,12 @@ GameObject:
   - component: {fileID: 5545696211761319111}
   - component: {fileID: 1716214842}
   - component: {fileID: 1716214841}
-  - component: {fileID: 2503057288866915705}
   - component: {fileID: 427618215}
   - component: {fileID: 427618214}
   - component: {fileID: 427618212}
   - component: {fileID: 427618211}
   - component: {fileID: 427618210}
+  - component: {fileID: 427618224}
   m_Layer: 8
   m_Name: Gladiator
   m_TagString: Untagged
@@ -3404,7 +3404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912169f9b4f098048b2b0ecfa788b15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPooler: {fileID: 2012263740335400906, guid: b0cf8d244a3a78749a372db460791052, type: 3}
+  objectPooler: {fileID: 0}
   character: {fileID: 5545696211761319111}
   wayPoints:
   - {fileID: 2795664297397135608}
@@ -3413,19 +3413,6 @@ MonoBehaviour:
   skillForce: 5
   objectSize: 5
   objectSizeDuration: 1
---- !u!114 &2503057288866915705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5545696211761319107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d6e79c4de6017c438e16aef22fd3037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterSkillActivate: {fileID: 1716214841}
 --- !u!114 &427618215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3467,6 +3454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5545696211761319111}
+  characterSkillActivate: {fileID: 1716214841}
 --- !u!114 &427618211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3480,6 +3468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5545696211761319111}
+  characterSkillActivate: {fileID: 1716214841}
 --- !u!114 &427618210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3492,4 +3481,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7fa439261142688d3a33a41b2501bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 5545696211761319111}
+  characterSkillActivate: {fileID: 1716214841}
+--- !u!114 &427618224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545696211761319107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51960e93a4954701ad85d80ad28fab04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterAnimator: {fileID: 5545696211761319114}
   character: {fileID: 5545696211761319111}

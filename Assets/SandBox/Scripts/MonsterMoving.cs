@@ -12,7 +12,6 @@ namespace SandBox.Scripts
         [SerializeField] private Transform[] wayPoints;
 
         bool facingLeft = true;
-        private bool _isMoving = true;
         private int direction = 1;
         
         private void Update()

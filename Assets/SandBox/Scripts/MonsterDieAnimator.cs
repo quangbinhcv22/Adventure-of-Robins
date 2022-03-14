@@ -7,11 +7,20 @@ namespace SandBox.Scripts
     {
         [SerializeField] private Character _character;
         [SerializeField] private Animator _animator;
+        [SerializeField] private MonsterMoving _mover;
 
         private void Update()
         {
-            if (_character.Info.health.Current == 0)
+            if (_character.Info.health.Current <= 0)
+            {
                 _animator.SetTrigger("Die");
+                Invoke(nameof(Hide),1.5f);
+                _mover.Move(new Vector2(0,0));
+            }
+        }
+        private void Hide()
+        {
+            gameObject.SetActive(false);
         }
     }
 }

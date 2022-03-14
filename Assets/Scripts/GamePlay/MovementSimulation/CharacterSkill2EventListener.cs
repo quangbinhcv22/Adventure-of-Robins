@@ -9,6 +9,7 @@ namespace GamePlay.MovementSimulation
     public class CharacterSkill2EventListener : MonoBehaviour
     {
         [SerializeField] private Character character;
+        [SerializeField] private CharacterSkillActivate characterSkillActivate;
 
         private void OnEnable()
         {
@@ -25,7 +26,7 @@ namespace GamePlay.MovementSimulation
             var skill2Response = NetworkController.Instance.events.characterSkill2.Response.data;
             if (character.Info.id != skill2Response.characterId) return;
 
-            EventManager.EmitEventData(CharacterInput.Skill2,skill2Response.characterId);
+            characterSkillActivate.ActivateSkill2(skill2Response.characterId);
         }
     }
 }
