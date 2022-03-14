@@ -3198,6 +3198,7 @@ GameObject:
   - component: {fileID: 427618211}
   - component: {fileID: 427618210}
   - component: {fileID: 427618224}
+  - component: {fileID: -299391755343987700}
   m_Layer: 8
   m_Name: Gladiator
   m_TagString: Untagged
@@ -3288,10 +3289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5545696210470993225}
-  groundCheck: {fileID: 5545696210470993224}
-  ground:
-    serializedVersion: 2
-    m_Bits: 128
+  character: {fileID: 0}
 --- !u!114 &5545696211761319109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3304,6 +3302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a358d5aeecd034d8f335a5769d02db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 0}
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &5545696211761319108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3337,6 +3339,7 @@ MonoBehaviour:
   info:
     id: 002
     team: 1
+    heroID: 0
     health:
       BaseValue: 1000
     damage:
@@ -3496,4 +3499,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterAnimator: {fileID: 5545696211761319114}
+  character: {fileID: 5545696211761319111}
+--- !u!114 &-299391755343987700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545696211761319107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebcac5ffee1c3d49a75fbcc7c807b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5545696210470993225}
   character: {fileID: 5545696211761319111}

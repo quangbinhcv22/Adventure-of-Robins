@@ -14,7 +14,7 @@ namespace SandBox.Scripts
             if (_character.Info.health.Current <= 0)
             {
                 _animator.SetTrigger("Die");
-                Invoke(nameof(Hide),1.5f);
+                Invoke(nameof(Hide),1f);
                 _mover.Move(new Vector2(0,0));
             }
         }

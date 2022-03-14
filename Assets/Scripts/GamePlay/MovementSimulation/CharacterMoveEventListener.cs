@@ -30,8 +30,9 @@ namespace GamePlay.MovementSimulation
             if (character.Info.id != moveResponse.characterId) return;
 
             mover.Moving(new Vector2(moveResponse.direction, default));
-
-            EventManager.EmitEventData(CharacterInput.StartRunAnimation,moveResponse.characterId);
+            
+            if(moveResponse.direction == 0) EventManager.EmitEventData(CharacterInput.StartIdleAnimation, moveResponse.characterId);
+            else EventManager.EmitEventData(CharacterInput.StartRunAnimation, moveResponse.characterId);
         }
 
         private void OnJump()
@@ -40,8 +41,8 @@ namespace GamePlay.MovementSimulation
             if (character.Info.id != jumpResponse.characterId) return;
 
             jumper.Jump();
-            EventManager.EmitEventData(CharacterInput.StartJumpAnimation,jumpResponse.characterId);
+
+            EventManager.EmitEventData(CharacterInput.StartJumpAnimation, jumpResponse.characterId);
         }
-        
     }
 }

@@ -8,39 +8,25 @@ namespace GamePlay.MovementSimulation
     public class CharacterAnimator : MonoBehaviour
     {
         [SerializeField] private Animator animator;
-        [SerializeField] private Transform groundCheck;
-        [SerializeField] private LayerMask ground;
         [SerializeField] private Character character;
-
-        private bool _isLanding;
-
-        private void Update()
-        {
-            _isLanding = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
-        }
-
+        
         public void Idle()
         {
             switch (character.Info.heroID)
             {
                 case HeroID.Gladiator:
                 {
-                    if (_isLanding)
-                    {
-                        animator.SetBool(CharacterInput.IsRunning, false);
-                    }
+                    animator.SetBool(CharacterInput.IsRunning, false);
+
                     break;
                 }
                 case HeroID.RobinHood:
                 {
-                    if (_isLanding)
-                    {
-                        animator.SetBool(CharacterInput.IsRunning, false);
-                    }
+                    animator.SetBool(CharacterInput.IsRunning, false);
+
                     break;
                 }
             }
-            
         }
 
         public void Run()
@@ -49,29 +35,22 @@ namespace GamePlay.MovementSimulation
             {
                 case HeroID.Gladiator:
                 {
-                    if (_isLanding)
-                    {
-                        
-                        animator.SetBool(CharacterInput.IsRunning, true);
-                    }
-
+                    animator.SetBool(CharacterInput.IsRunning, true);
+                    
                     break;
                 }
                 case HeroID.RobinHood:
                 {
-                    if (_isLanding)
-                    {
-                        animator.SetBool(CharacterInput.IsRunning, true);
-                    }
-
+                    animator.SetBool(CharacterInput.IsRunning, true);
+                    
                     break;
                 }
             }
         }
 
-        public void Jump(HeroID characterID)
+        public void Jump()
         {
-            switch (characterID)
+            switch (character.Info.heroID)
             {
                 case HeroID.Gladiator:
                 {
@@ -88,9 +67,9 @@ namespace GamePlay.MovementSimulation
             }
         }
 
-        public void Attack(HeroID characterID)
+        public void Attack()
         {
-            switch (characterID)
+            switch (character.Info.heroID)
             {
                 case HeroID.Gladiator:
                 {
@@ -105,9 +84,9 @@ namespace GamePlay.MovementSimulation
             }
         }
 
-        public void Die(HeroID characterID)
+        public void Die()
         {
-            switch (characterID)
+            switch (character.Info.heroID)
             {
                 case HeroID.Gladiator:
                 {
@@ -120,59 +99,49 @@ namespace GamePlay.MovementSimulation
                     break;
                 }
             }
-            
         }
 
-        public void Landing(HeroID characterID)
+        public void Landing()
         {
-            switch (characterID)
+            switch (character.Info.heroID)
             {
+                
                 case HeroID.Gladiator:
                 {
-                    if (_isLanding)
-                    {
-                        animator.SetBool(CharacterInput.IsLanding, true);
-                        animator.ResetTrigger(CharacterInput.Jump);
-                        animator.ResetTrigger(CharacterInput.Fall);
-                    }
+                    animator.SetBool(CharacterInput.IsLanding, true);
+                    animator.ResetTrigger(CharacterInput.Jump);
+                    animator.ResetTrigger(CharacterInput.Fall);
+
                     break;
                 }
                 case HeroID.RobinHood:
                 {
-                    if (_isLanding)
-                    {
-                        animator.SetBool(CharacterInput.IsLanding, true);
-                        animator.ResetTrigger(CharacterInput.Jump);
-                        animator.ResetTrigger(CharacterInput.Fall);
-                    }
+                    animator.SetBool(CharacterInput.IsLanding, true);
+                    animator.ResetTrigger(CharacterInput.Jump);
+                    animator.ResetTrigger(CharacterInput.Fall);
+
                     break;
                 }
             }
-            
         }
 
-        public void FallDuringRun(HeroID characterID)
+        public void FallDuringRun()
         {
-            switch (characterID)
+            switch (character.Info.heroID)
             {
                 case HeroID.Gladiator:
                 {
-                    if (!_isLanding)
-                    {
-                        animator.SetBool(CharacterInput.IsLanding, false);
-                    }
+                    animator.SetBool(CharacterInput.IsLanding, false);
+
                     break;
                 }
                 case HeroID.RobinHood:
                 {
-                    if (!_isLanding)
-                    {
-                        animator.SetBool(CharacterInput.IsLanding, false);
-                    }
+                    animator.SetBool(CharacterInput.IsLanding, false);
+
                     break;
                 }
             }
-            
         }
     }
 }

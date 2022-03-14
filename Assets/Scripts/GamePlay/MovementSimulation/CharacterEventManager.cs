@@ -6,50 +6,26 @@ namespace GamePlay.MovementSimulation
 {
     public class CharacterEventManager : MonoBehaviour
     {
-        void Update()
+        [SerializeField] private Transform groundCheck;
+        [SerializeField] private LayerMask ground;
+        
+        private bool _isLanding;
+
+        private void Update()
         {
-            if (Input.GetKey(KeyCode.A))
-            {
-                EventManager.EmitEventData(CharacterInput.Moving,-1f);
-                EventManager.EmitEvent(CharacterInput.StartRunAnimation);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                EventManager.EmitEventData(CharacterInput.Moving,1f);
-                EventManager.EmitEvent(CharacterInput.StartRunAnimation);
-            }
-            if (Input.GetKeyUp(KeyCode.D) ||Input.GetKeyUp(KeyCode.A))
-            {
-                EventManager.EmitEventData(CharacterInput.Moving,0f);
-                EventManager.EmitEvent(CharacterInput.StartIdleAnimation);
-            }
-            if (Input.GetKey(KeyCode.K))
-            {
-                EventManager.EmitEvent(CharacterInput.Jump);
-                EventManager.EmitEvent(CharacterInput.StartJumpAnimation);
-            }
-            if (Input.GetKey(KeyCode.J))
-            {
-                EventManager.EmitEvent(CharacterInput.Attack);
-                EventManager.EmitEvent(CharacterInput.StartAttackAnimation);
-            }
-            if (Input.GetKey(KeyCode.U))
-            {
-                EventManager.EmitEvent(CharacterInput.Skill1);
-            }
+            _isLanding = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
 
-            if (Input.GetKey(KeyCode.I))
+            switch (_isLanding)
             {
-                EventManager.EmitEvent(CharacterInput.Skill2);
+               
+                //EventManager.EmitEvent(CharacterInput.Fall);
+                case false:
+                    EventManager.EmitEvent(CharacterInput.FallDuringRun);
+                    break;
+                case true:
+                    EventManager.EmitEvent(CharacterInput.IsLanding);
+                    break;
             }
-
-            if (Input.GetKey(KeyCode.O))
-            {
-                EventManager.EmitEvent(CharacterInput.Skill3);
-            }
-            EventManager.EmitEvent(CharacterInput.Fall);
-            EventManager.EmitEvent(CharacterInput.FallDuringRun);
-            EventManager.EmitEvent(CharacterInput.IsLanding);
         }
     }
 }

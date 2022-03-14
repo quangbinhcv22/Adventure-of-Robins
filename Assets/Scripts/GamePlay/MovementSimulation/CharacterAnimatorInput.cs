@@ -16,9 +16,9 @@ namespace GamePlay.MovementSimulation
             EventManager.StartListening(CharacterInput.StartRunAnimation, Run);
             EventManager.StartListening(CharacterInput.StartJumpAnimation, Jump);
             EventManager.StartListening(CharacterInput.StartAttackAnimation, Attack);
-            EventManager.StartListening(CharacterInput.StartDieAnimation, Die);
+            // EventManager.StartListening(CharacterInput.StartDieAnimation, Die);
             EventManager.StartListening(CharacterInput.IsLanding, Landing);
-            EventManager.StartListening(CharacterInput.FallDuringRun, FallDuringRun);
+            // EventManager.StartListening(CharacterInput.FallDuringRun, FallDuringRun);
         }
 
         void OnDisable()
@@ -27,18 +27,18 @@ namespace GamePlay.MovementSimulation
             EventManager.StopListening(CharacterInput.StartRunAnimation, Run);
             EventManager.StopListening(CharacterInput.StartJumpAnimation, Jump);
             EventManager.StopListening(CharacterInput.StartAttackAnimation, Attack);
-            EventManager.StopListening(CharacterInput.StartDieAnimation, Die);
+            // EventManager.StopListening(CharacterInput.StartDieAnimation, Die);
             EventManager.StopListening(CharacterInput.IsLanding, Landing);
-            EventManager.StopListening(CharacterInput.FallDuringRun, FallDuringRun);
+            // EventManager.StopListening(CharacterInput.FallDuringRun, FallDuringRun);
         }
 
         private void Idle()
         {
-            var boxingCharacter = EventManager.GetData(CharacterInput.StartAttackAnimation);
+            var boxingCharacter = EventManager.GetData(CharacterInput.StartIdleAnimation);
             var characterID = (string) boxingCharacter;
             if (character.Info.id != characterID) return;
             
-            //characterAnimator.Die();
+            characterAnimator.Idle();
         }
 
         private void Run()
@@ -56,7 +56,7 @@ namespace GamePlay.MovementSimulation
             var characterID = (string) boxingCharacter;
             if (character.Info.id != characterID) return;
 
-            //characterAnimator.Jump(heroID);
+            characterAnimator.Jump();
         }
 
         private void Attack()
@@ -65,34 +65,35 @@ namespace GamePlay.MovementSimulation
             var characterID = (string) boxingCharacter;
             if (character.Info.id != characterID) return;
 
-            //characterAnimator.Attack();
+            characterAnimator.Attack();
         }
 
-        private void Die()
-        {
-            var boxingCharacter = EventManager.GetData(CharacterInput.StartAttackAnimation);
-            var characterID = (string) boxingCharacter;
-            if (character.Info.id != characterID) return;
-            
-            //characterAnimator.Die(characterID);
-        }
-
+        // private void Die()
+        // {
+        //     var boxingCharacter = EventManager.GetData(CharacterInput.StartDieAnimation);
+        //     var characterID = (string) boxingCharacter;
+        //     if (character.Info.id != characterID) return;
+        //     
+        //     characterAnimator.Die();
+        // }
+        //
         private void Landing()
         {
-            var boxingCharacter = EventManager.GetData(CharacterInput.StartAttackAnimation);
+            var boxingCharacter = EventManager.GetData(CharacterInput.IsLanding);
             var characterID = (string) boxingCharacter;
             if (character.Info.id != characterID) return;
             
-            //characterAnimator.Landing(characterID);
+            characterAnimator.Landing();
         }
-
-        private void FallDuringRun()
-        {
-            var boxingCharacter = EventManager.GetData(CharacterInput.StartAttackAnimation);
-            var characterID = (string) boxingCharacter;
-            if (character.Info.id != characterID) return;
-            
-            //characterAnimator.FallDuringRun(characterID);
-        }
+        //
+        // private void FallDuringRun()
+        // {
+        //     var boxingCharacter = EventManager.GetData(CharacterInput.FallDuringRun);
+        //     var characterID = (string) boxingCharacter;
+        //     if (character.Info.id != characterID) return;
+        //     
+        //     characterAnimator.FallDuringRun();
+        // }
+        
     }
 }
