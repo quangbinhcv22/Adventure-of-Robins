@@ -7,10 +7,23 @@ namespace GamePlay.MovementSimulation
 {
     public class CharacterAnimatorInput : MonoBehaviour
     {
-        [SerializeField] private CharacterAnimator characterAnimator;
+        [SerializeField] private Animator animator;
         [SerializeField] private Character character;
+        [SerializeField] private Transform groundCheck;
+        [SerializeField] private LayerMask ground;
 
-        void OnEnable()
+
+        private string currentState;
+        private bool _isOnGround;
+        private bool _isAttacking;
+
+        private void Update()
+        {
+            _isOnGround = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
+            Debug.Log(_isOnGround);
+        }
+
+        private void Start()
         {
             EventManager.StartListening(CharacterInput.StartIdleAnimation, Idle);
             EventManager.StartListening(CharacterInput.StartRunAnimation, Run);
@@ -20,17 +33,7 @@ namespace GamePlay.MovementSimulation
             EventManager.StartListening(CharacterInput.IsLanding, Landing);
             // EventManager.StartListening(CharacterInput.FallDuringRun, FallDuringRun);
         }
-
-        void OnDisable()
-        {
-            EventManager.StopListening(CharacterInput.StartIdleAnimation, Idle);
-            EventManager.StopListening(CharacterInput.StartRunAnimation, Run);
-            EventManager.StopListening(CharacterInput.StartJumpAnimation, Jump);
-            EventManager.StopListening(CharacterInput.StartAttackAnimation, Attack);
-            // EventManager.StopListening(CharacterInput.StartDieAnimation, Die);
-            EventManager.StopListening(CharacterInput.IsLanding, Landing);
-            // EventManager.StopListening(CharacterInput.FallDuringRun, FallDuringRun);
-        }
+        
 
         private void Idle()
         {
@@ -38,7 +41,7 @@ namespace GamePlay.MovementSimulation
             var characterID = (string) boxingCharacter;
             if (character.Info.id != characterID) return;
             
-            characterAnimator.Idle();
+            if (_isOnGround) CharacterAnimatorSwitch("Idle");
         }
 
         private void Run()
@@ -46,8 +49,8 @@ namespace GamePlay.MovementSimulation
             var boxingCharacter = EventManager.GetData(CharacterInput.StartRunAnimation);
             var characterID = (string) boxingCharacter;
             if (character.Info.id != characterID) return;
-            
-            characterAnimator.Run();
+
+            CharacterAnimatorSwitch(_isOnGround ? "Run" : "Fall During Run");
         }
 
         private void Jump()
@@ -56,7 +59,8 @@ namespace GamePlay.MovementSimulation
             var characterID = (string) boxingCharacter;
             if (character.Info.id != characterID) return;
 
-            characterAnimator.Jump();
+            CharacterAnimatorSwitch("Jump");
+            if (!_isOnGround) CharacterAnimatorSwitch("Fall With Speed");
         }
 
         private void Attack()
@@ -65,7 +69,14 @@ namespace GamePlay.MovementSimulation
             var characterID = (string) boxingCharacter;
             if (character.Info.id != characterID) return;
 
-            characterAnimator.Attack();
+
+            animator.SetTrigger(CharacterInput.Attack);
+            Invoke(nameof(AttackComplete),2f);
+        }
+
+        private void AttackComplete()
+        {
+            animator.ResetTrigger(CharacterInput.Attack);
         }
 
         // private void Die()
@@ -83,7 +94,7 @@ namespace GamePlay.MovementSimulation
             var characterID = (string) boxingCharacter;
             if (character.Info.id != characterID) return;
             
-            characterAnimator.Landing();
+            
         }
         //
         // private void FallDuringRun()
@@ -94,6 +105,13 @@ namespace GamePlay.MovementSimulation
         //     
         //     characterAnimator.FallDuringRun();
         // }
-        
+        private void CharacterAnimatorSwitch(string newState)
+        {
+            if (currentState == newState) return;
+
+            animator.Play(newState);
+
+            currentState = newState;
+        }
     }
 }
