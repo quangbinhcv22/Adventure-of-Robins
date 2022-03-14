@@ -106,6 +106,7 @@ MonoBehaviour:
   rigidbody2D: {fileID: 3461838136365894003}
   objectForce: 10
   enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
+  _character: {fileID: 1820876473, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
 --- !u!61 &3461838136365894000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,8 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4005dc03be846a7911d7863b0f59efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idObject: 1
-  size: 3
+  idObject: 0
+  size: 10
   objectPrefab: {fileID: 3461838136365894002}
 --- !u!82 &4511086982241902352
 AudioSource:

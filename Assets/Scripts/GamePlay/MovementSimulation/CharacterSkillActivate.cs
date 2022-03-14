@@ -22,7 +22,7 @@ namespace GamePlay.MovementSimulation
             {
                 case HeroID.Gladiator:
                 {
-                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.RotateSword, wayPoints[0].position, wayPoints[0].rotation);
+                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.RotateSword, wayPoints[0].localPosition, wayPoints[0].rotation);
                     newObjectPooler.GetComponentInParent<Character>();
                     
                     StartCoroutine(SkillDuration(newObjectPooler,3f));
@@ -30,7 +30,12 @@ namespace GamePlay.MovementSimulation
                 }
                 case HeroID.RobinHood:
                 {
-                    character.Info.Damage.Current += 100;
+                    var characterTransform = character.transform;
+                    var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.Skill2RobinHood,characterTransform.position, characterTransform.rotation);
+                    var activeBuff = newObjectPooler.GetComponent<Skill2RobinHood>().ActiveBuff();
+                    
+                    StartCoroutine(activeBuff);
+                    
                     break;
                 }
             }
@@ -43,17 +48,19 @@ namespace GamePlay.MovementSimulation
             {
                 case HeroID.Gladiator:
                 {
-                    var jumpVelocity = rigidbody2D.velocity;
-                    jumpVelocity.x = skillForce;
-
-                    rigidbody2D.velocity = jumpVelocity;
+                    var characterTransform = character.transform;
+                    var position = characterTransform.position;
+                    position = new Vector2(position.x + 2f, position.y);
+                    
+                    characterTransform.position = position;
+                    
                     break;
                 }
                 case HeroID.RobinHood:
                 {
                     for (int i = 0; i < wayPoints.Length; i++)
                     {
-                        var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.Arrow, wayPoints[i].position, wayPoints[i].rotation);
+                        var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.TripleArrow, wayPoints[i].position, wayPoints[i].rotation);
                         newObjectPooler.GetComponent<Arrow>().ShootArrow();
 
                         StartCoroutine(SkillDuration(newObjectPooler,3f));

@@ -13,7 +13,7 @@ namespace Network.Client.UIRequest
         private void FixedUpdate()
         {
             var direction = joystick.Direction;
-            //if (direction == Vector2.zero) return;
+            if (direction == Vector2.zero) return;
 
             var xDirection = (int)new Vector2(direction.x, default).normalized.x;
             var request = new CharacterMoveRequest { characterId = characterId, direction = xDirection };

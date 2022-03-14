@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -6,10 +7,12 @@ namespace SandBox.Scripts
 {
     public class Arrow : MonoBehaviour
     {
-        [SerializeField] private float damage;
+        [SerializeField] public float damage;
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private float objectForce;
         [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private Character _character;
+        
 
         public void ShootArrow()
         {
@@ -25,7 +28,7 @@ namespace SandBox.Scripts
             {
                 if (targetCharacter.Info.Team == CharacterTeam.Hostile)
                 {
-                    targetCharacter.Info.Health.Current -= damage;
+                    targetCharacter.Info.Health.Current -= damage + _character.Info.damage.Current;
                     
                     InstantiateParticle(enemyPrefab,targetCharacter.transform);
                 }

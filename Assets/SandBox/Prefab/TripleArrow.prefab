@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 3461838136365894003}
   - component: {fileID: 3461838136365894007}
   - component: {fileID: -6572181303484321577}
-  - component: {fileID: -397111895290418070}
+  - component: {fileID: 4511086982241902352}
   m_Layer: 9
-  m_Name: BigArrow
+  m_Name: TripleArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74b8caf728cd384a864f8923aac0442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 200
+  damage: 70
   rigidbody2D: {fileID: 3461838136365894003}
   objectForce: 10
   enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
@@ -177,10 +177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4005dc03be846a7911d7863b0f59efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idObject: 2
-  size: 1
+  idObject: 1
+  size: 3
   objectPrefab: {fileID: 3461838136365894002}
---- !u!82 &-397111895290418070
+--- !u!82 &4511086982241902352
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

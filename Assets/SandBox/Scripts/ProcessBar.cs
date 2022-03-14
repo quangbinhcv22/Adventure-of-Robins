@@ -19,6 +19,7 @@ namespace SandBox.Scripts
             }
 
             var percent = currentValue / maxValue;
+            Debug.Log($"{currentValue}/{maxValue}");
             UpdateView(percent);
         }
 

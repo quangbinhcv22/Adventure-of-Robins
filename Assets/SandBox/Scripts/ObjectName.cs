@@ -3,9 +3,12 @@ namespace SandBox.Scripts
     public enum ObjectName
     {
         // skill name
-        BigSword,
         Arrow,
+        TripleArrow,
         BigArrow,
+        Skill2RobinHood,
+        
+        BigSword,
         RotateSword,
         
         // particle name
