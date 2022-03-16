@@ -15,7 +15,7 @@ namespace SandBox.Scripts
         private bool _isOnGround;
         private bool _isDoubleJump;
         private int curentJumpCount;
-        private int maxJumpCount = 1;
+        private int maxJumpCount = 2;
 
         private void Start()
         {
