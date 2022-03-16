@@ -7,11 +7,6 @@ namespace SandBox.Scripts
         [SerializeField] public ObjectName idObject;
         [SerializeField] public int size;
         [SerializeField] public GameObject objectPrefab;
-        // [SerializeField] private Transform[] wayPoints;
-        // [SerializeField] private new Rigidbody2D rigidbody2D;
-        // [SerializeField] private float objectForce;
-        // [SerializeField] private float objectSize;
-        // [SerializeField] private float objectSizeDuration;
 
     }
 }

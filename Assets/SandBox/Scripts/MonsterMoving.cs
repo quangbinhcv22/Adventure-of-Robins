@@ -30,9 +30,10 @@ namespace SandBox.Scripts
         public void Flip()
         {
             facingLeft = !facingLeft;
-            Vector3 scale = transform.localScale;
+            var transform1 = model.transform;
+            Vector3 scale = transform1.localScale;
             scale.x *= -1;
-            transform.localScale = scale;
+            transform1.localScale = scale;
         }
 
         private void UpdateFacing()

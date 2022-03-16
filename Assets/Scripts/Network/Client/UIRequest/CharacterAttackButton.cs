@@ -18,7 +18,6 @@ namespace Network.Client.UIRequest
         
         void SendRequest()
         {
-           
             var request = new CharacterAttackRequest { characterId = characterId};
 
             NetworkController.Instance.events.characterAttack.SendRequest(request);

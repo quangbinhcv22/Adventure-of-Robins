@@ -1,7 +1,8 @@
 namespace SandBox.Scripts
 {
-    public class Side
+    public enum Side
     {
-        
+        Left,
+        Right
     }
 }
