@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Network.Events;
 using SandBox.Scripts;
 using TMPro;
@@ -11,6 +13,12 @@ namespace Network.Client.UIRequest
         [SerializeField] private Button button;
         [SerializeField] private string characterId => characterIdInput.text;
         [SerializeField] private TMP_InputField characterIdInput;
+        [SerializeField] private Image skillIcon;
+        [SerializeField] private float duration;
+
+        private float lastTime;
+        private bool _isCoolingDown;
+        
         
         private void Awake()
         {
@@ -22,6 +30,28 @@ namespace Network.Client.UIRequest
             var request = new CharacterSkill1Request {characterId = characterId};
 
             NetworkController.Instance.events.characterSkill1.SendRequest(request);
+        }
+        
+        public void StartCoolDownSkill(Button button)
+        {
+            StartCoroutine(CharacterCoolDownSkill.CoolDownSkill(button,duration));
+            _isCoolingDown = true;
+            lastTime = Time.time;
+        }
+
+        private void Update()
+        {
+            if (!_isCoolingDown) return;
+            var elapsedTime = Time.time - lastTime;
+
+            if (elapsedTime >= duration)
+            {
+                _isCoolingDown = false;
+            }
+            else
+            {
+                skillIcon.fillAmount = elapsedTime / duration;
+            }
         }
     }
 }

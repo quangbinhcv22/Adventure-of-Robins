@@ -28,13 +28,11 @@ namespace Network.Events
     public class CharacterAttackRequest
     {
         public string characterId;
-        public Side side;
     }
 
     [Serializable]
     public class CharacterAttackResponse
     {
         public string characterId;
-        public Side side;
     }
 }
