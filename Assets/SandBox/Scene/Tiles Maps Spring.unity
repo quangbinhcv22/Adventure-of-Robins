@@ -59796,6 +59796,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5545696210372657508, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
+      propertyPath: objectPooler
+      value: 
+      objectReference: {fileID: 624740829}
     - target: {fileID: 5545696210500509735, guid: 3498a6a1df7f18845acfea81c7ab46d5, type: 3}
       propertyPath: m_Mesh
       value: 

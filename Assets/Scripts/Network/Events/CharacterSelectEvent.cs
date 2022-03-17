@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Network.Events
 {
-    [CreateAssetMenu(fileName = nameof(CharacterSelectEvent), menuName = "Server/Event/CharacterAttack")]
+    [CreateAssetMenu(fileName = nameof(CharacterSelectEvent), menuName = "Server/Event/CharacterSelect")]
     public class CharacterSelectEvent : ScriptableObject
     {
         [NonSerialized] private Response<CharacterSelectResponse> response;

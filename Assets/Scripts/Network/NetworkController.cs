@@ -97,6 +97,9 @@ namespace Network
                 case EventName.Server.Character.Move:
                     events.characterMove.OnResponse(message);
                     break;
+                case EventName.Server.Character.New:
+                    events.characterNew.OnResponse(message);
+                    break;
                 // case EventName.Server.Character.Skill:
                 //     events.characterSkill.OnResponse(message);
                 //     break;
@@ -108,6 +111,9 @@ namespace Network
                     break;
                 case EventName.Server.Character.Skill3:
                     events.characterSkill3.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Select:
+                    events.characterSelect.SelectCharacter(message);
                     break;
             }
 

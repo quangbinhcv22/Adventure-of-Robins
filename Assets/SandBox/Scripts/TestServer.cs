@@ -15,11 +15,11 @@ namespace SandBox.Scripts
             //     new CharacterMovement(HeroID.Gladiator,new Vector2(0,1)) );
             //EventManager.EmitEventData("CharacterAttack",CharacterAttack);
             // EventManager.EmitEventData("CharacterTakeDame",CharacterTakeDame);
-            if (Input.GetKey(KeyCode.Space))
-            {
-               var newDamageText = objectPooler.SpawnFromPool(ObjectName.PopUptext, transform.position, transform.rotation);
-               newDamageText.gameObject.GetComponent<PopUpText>().SetUp(100);
-            }
+            // if (Input.GetKey(KeyCode.Space))
+            // {
+            //    var newDamageText = objectPooler.SpawnFromPool(ObjectName.PopUptext, transform.position, transform.rotation);
+            //    newDamageText.gameObject.GetComponent<PopUpText>().SetUp(100);
+            // }
         }
     }
 }
