@@ -7,13 +7,13 @@ using EventName = Network.Events.EventName;
 
 namespace GamePlay.MovementSimulation
 {
-    public class CharacterNewListener
+    public class CharacterNewListener : MonoBehaviour
     {
         [SerializeField] private Character character;
 
         private void OnEnable()
         {
-            EventManager.StartListening(EventName.Server.Character.New, OnNew);
+            EventManager.StartListening(EventName.Server.Character.Select, OnNew);
         }
 
         private void OnDisable()
