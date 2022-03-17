@@ -769,7 +769,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 100
   enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
-  objectPooler: {fileID: 0}
 --- !u!82 &4028165744586156012
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3329,6 +3328,7 @@ MonoBehaviour:
       BaseValue: 1000
     damage:
       BaseValue: 0
+  objectPooler: {fileID: 2012263740335400906, guid: b0cf8d244a3a78749a372db460791052, type: 3}
 --- !u!212 &1716214842
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3392,7 +3392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912169f9b4f098048b2b0ecfa788b15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPooler: {fileID: 0}
+  objectPooler: {fileID: 2012263740335400906, guid: b0cf8d244a3a78749a372db460791052, type: 3}
   character: {fileID: 5545696211761319111}
   wayPoints:
   - {fileID: 2795664297397135608}
@@ -3483,9 +3483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51960e93a4954701ad85d80ad28fab04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 5545696210470993225}
   character: {fileID: 5545696211761319111}
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 5545696210470993224}
   ground:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128

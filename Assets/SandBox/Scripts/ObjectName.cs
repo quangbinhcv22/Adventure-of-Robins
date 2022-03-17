@@ -16,6 +16,9 @@ namespace SandBox.Scripts
         RobinHoodBloodParticle,
         GladiatorBloodParticle,
         
+        // explosion
+        Explosion,
+        
         // popuptext
         PopUptext,
     }

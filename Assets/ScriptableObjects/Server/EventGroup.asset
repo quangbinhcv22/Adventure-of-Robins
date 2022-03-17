@@ -19,3 +19,5 @@ MonoBehaviour:
   characterSkill1: {fileID: 11400000, guid: 25f45c4665cc1a447b02239985a6d017, type: 2}
   characterSkill2: {fileID: 11400000, guid: b731d61b7a69a6a4ebe741045519b52f, type: 2}
   characterSkill3: {fileID: 11400000, guid: 9f02e03a0673be74d8bbd284594a8880, type: 2}
+  characterSelect: {fileID: 11400000, guid: 573f6eaf596d21d4f88a19d5273d4e58, type: 2}
+  characterNew: {fileID: 11400000, guid: c0e90c45810dcf5488b5a9e36b1a31b5, type: 2}

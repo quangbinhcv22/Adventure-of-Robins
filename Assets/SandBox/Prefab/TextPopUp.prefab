@@ -198,5 +198,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idObject: 10
-  size: 999
+  size: 10
   objectPrefab: {fileID: 8712248195641248512}

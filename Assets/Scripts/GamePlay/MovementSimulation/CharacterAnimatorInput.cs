@@ -20,7 +20,6 @@ namespace GamePlay.MovementSimulation
         private void Update()
         {
             _isOnGround = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
-            Debug.Log(_isOnGround);
         }
 
         private void Start()

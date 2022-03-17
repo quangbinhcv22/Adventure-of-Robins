@@ -2,6 +2,7 @@
 
 using GamePlay.MovementSimulation;
 using Network.Events;
+using Photon.Pun;
 using SandBox.Scripts;
 using TMPro;
 using UnityEngine;
@@ -12,9 +13,7 @@ namespace Network.Client.UIRequest
     public class CharacterDieButton : MonoBehaviour
     {
         [SerializeField] private Character  character;
-        [SerializeField] private string characterId => characterIdInput.text;
-        [SerializeField] private TMP_InputField characterIdInput;
-        
+
         private void Awake()
         {
             if (character.Info.health.Current == 0) SendRequest();
@@ -23,9 +22,7 @@ namespace Network.Client.UIRequest
         
         void SendRequest()
         {
-           
-            var request = new CharacterDieRequest { characterId = characterId};
-
+            var request = new CharacterDieRequest { characterId = PhotonNetwork.AuthValues.UserId};
             NetworkController.Instance.events.characterDie.SendRequest(request);
         }
     }

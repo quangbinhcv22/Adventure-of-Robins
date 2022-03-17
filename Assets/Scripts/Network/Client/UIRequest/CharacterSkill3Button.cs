@@ -1,4 +1,5 @@
 using Network.Events;
+using Photon.Pun;
 using SandBox.Scripts;
 using TMPro;
 using UnityEngine;
@@ -9,8 +10,6 @@ namespace Network.Client.UIRequest
     public class CharacterSkill3Button : MonoBehaviour
     {
         [SerializeField] private Button button;
-        [SerializeField] private string characterId => characterIdInput.text;
-        [SerializeField] private TMP_InputField characterIdInput;
         [SerializeField] private Image skillIcon;
         [SerializeField] private float duration;
 
@@ -24,9 +23,7 @@ namespace Network.Client.UIRequest
         
         void SendRequest()
         {
-           
-            var request = new CharacterSkill3Request { characterId = characterId};
-
+            var request = new CharacterSkill3Request { characterId = PhotonNetwork.AuthValues.UserId};
             NetworkController.Instance.events.characterSkill3.SendRequest(request);
         }
         

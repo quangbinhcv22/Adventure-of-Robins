@@ -107,6 +107,7 @@ MonoBehaviour:
   _character: {fileID: 13426104344584213}
   _animator: {fileID: 13426105840917487}
   _mover: {fileID: 13426104344584211}
+  explosionPrefab: {fileID: 3488322193607480085, guid: bed5279498e699844911fdd06d18eac3, type: 3}
 --- !u!114 &13426104344584213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,22 +128,7 @@ MonoBehaviour:
       BaseValue: 1000
     damage:
       BaseValue: 0
-  objectPooler: {fileID: 0}
-  PopUpText:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 13426104344584213}
-        m_TargetAssemblyTypeName: SandBox.Scripts.Character, Assembly-CSharp
-        m_MethodName: PopUpTakeDamage
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 100
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  objectPooler: {fileID: 3857204922706722799, guid: 364f2d772f104394bb4fddf633f3d856, type: 3}
 --- !u!1 &13426104347680150
 GameObject:
   m_ObjectHideFlags: 0

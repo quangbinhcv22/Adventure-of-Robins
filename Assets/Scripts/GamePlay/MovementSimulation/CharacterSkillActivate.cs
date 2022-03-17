@@ -9,10 +9,7 @@ namespace GamePlay.MovementSimulation
     {
         [SerializeField] private ObjectPooler objectPooler;
         [SerializeField] private Character character;
-
         [SerializeField] private Transform[] wayPoints;
-        [SerializeField] private new Rigidbody2D rigidbody2D;
-        [SerializeField] private float skillForce;
         [SerializeField] private float objectSize;
         [SerializeField] private float objectSizeDuration;
 
@@ -22,6 +19,7 @@ namespace GamePlay.MovementSimulation
             {
                 case HeroID.Gladiator:
                 {
+                    
                     var newObjectPooler = objectPooler.SpawnFromPool(ObjectName.RotateSword, wayPoints[0].position, wayPoints[0].rotation);
                     newObjectPooler.transform.SetParent(character.transform);
                     

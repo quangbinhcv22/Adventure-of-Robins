@@ -1,6 +1,6 @@
-using System;
+
 using System.Collections;
-using DG.Tweening;
+using Photon.Pun;
 using UnityEngine;
 
 namespace SandBox.Scripts
@@ -47,5 +47,7 @@ namespace SandBox.Scripts
             yield return new WaitForSeconds(1f);
             Destroy(gameObject);
         }
+        
+        
     }
 }

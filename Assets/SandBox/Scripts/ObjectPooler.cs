@@ -32,7 +32,8 @@ namespace SandBox.Scripts
         public GameObject SpawnFromPool(ObjectName objectName, Vector3 position,
             Quaternion rotation)
         {
-            GameObject objectToSpawn = poolDictionary[objectName].Dequeue();
+            
+            var objectToSpawn = poolDictionary[objectName].Dequeue();
             
             objectToSpawn.SetActive(true);
             objectToSpawn.transform.position = position;

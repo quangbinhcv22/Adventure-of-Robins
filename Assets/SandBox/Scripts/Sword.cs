@@ -15,7 +15,7 @@ namespace SandBox.Scripts
         [SerializeField] private GameObject enemyPrefab;
        
 
-        private void OnTriggerEnter2D(Collider2D collider2D)
+        private void OnTriggerStay2D(Collider2D collider2D)
         {
             var targetCharacter = collider2D.GetComponent<Character>();
             if (targetCharacter)

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace SandBox.Scripts
@@ -8,17 +9,28 @@ namespace SandBox.Scripts
         [SerializeField] private Character _character;
         [SerializeField] private Animator _animator;
         [SerializeField] private MonsterMoving _mover;
+        [SerializeField] private ObjectPooler particlePooler;
 
         private void Update()
         {
             if (_character.Info.health.Current <= 0)
             {
                 _animator.SetTrigger("Die");
-                Invoke(nameof(Hide),1f);
                 _mover.Move(new Vector2(0,0));
+                StartCoroutine(HideGameObject(gameObject,1f));
+                
+                var newExplosion = particlePooler.SpawnFromPool(ObjectName.Explosion, transform.position, transform.rotation);
+               
+                StartCoroutine(HideGameObject(newExplosion.gameObject,1f));
             }
         }
-        private void Hide()
+
+        private IEnumerator HideGameObject(GameObject gameObject,float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            Hide(gameObject);
+        }
+        private void Hide(GameObject gameObject)
         {
             gameObject.SetActive(false);
         }
