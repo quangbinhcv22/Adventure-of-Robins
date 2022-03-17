@@ -13,6 +13,7 @@ namespace SandBox.Scripts
         [SerializeField] private GameObject enemyPrefab;
         [SerializeField] private Character _character;
         
+        
 
         public void ShootArrow()
         {

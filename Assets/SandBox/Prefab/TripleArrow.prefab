@@ -107,6 +107,7 @@ MonoBehaviour:
   objectForce: 10
   enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
   _character: {fileID: 1820876473, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
+  objectPooler: {fileID: 2012263740335400906, guid: b0cf8d244a3a78749a372db460791052, type: 3}
 --- !u!61 &3461838136365894000
 BoxCollider2D:
   m_ObjectHideFlags: 0

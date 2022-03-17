@@ -35,7 +35,7 @@ namespace GamePlay.MovementSimulation
                     var activeBuff = newObjectPooler.GetComponent<Skill2RobinHood>().ActiveBuff();
                     
                     StartCoroutine(activeBuff);
-                    
+                    StartCoroutine(PopUpDamage(100));
                     break;
                 }
             }
@@ -101,6 +101,30 @@ namespace GamePlay.MovementSimulation
         {
             yield return new WaitForSeconds(duration);
             gameObject.SetActive(false);
+        }
+
+        private IEnumerator PopUpDamage(float damage)
+        {
+            BuffDamageText(damage);
+            yield return new WaitForSeconds(5f);
+            DebuffDamageText(damage);
+        }
+        private void BuffDamageText(float damage)
+        {
+            var newDamageText = objectPooler.SpawnFromPool(ObjectName.PopUptext, character.gameObject.transform.position, character.gameObject.transform.rotation);
+            newDamageText.gameObject.GetComponent<PopUpText>().SetUp(damage);
+            newDamageText.transform.DOMove(
+                new Vector2(character.transform.position.x, character.transform.position.y + 2), 1f);
+            StartCoroutine(SkillDuration(newDamageText,3f));
+        }
+        
+        private void DebuffDamageText(float damage)
+        {
+            var newDamageText = objectPooler.SpawnFromPool(ObjectName.PopUptext, character.gameObject.transform.position, character.gameObject.transform.rotation);
+            newDamageText.gameObject.GetComponent<PopUpText>().SetUp(-damage);
+            newDamageText.transform.DOMove(
+                new Vector2(character.transform.position.x, character.transform.position.y + 2), 1f);
+            StartCoroutine(SkillDuration(newDamageText,3f));
         }
     }
 }

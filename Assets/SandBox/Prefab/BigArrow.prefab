@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3461838136365894006}
   - component: {fileID: 3461838136365894001}
   - component: {fileID: 169496020170330984}
+  - component: {fileID: -6572181303484321577}
   - component: {fileID: 3461838136365894000}
   - component: {fileID: 3461838136365894003}
   - component: {fileID: 3461838136365894007}
-  - component: {fileID: -6572181303484321577}
   - component: {fileID: -397111895290418070}
   m_Layer: 9
   m_Name: BigArrow
@@ -107,6 +107,21 @@ MonoBehaviour:
   objectForce: 10
   enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
   _character: {fileID: 1820876473, guid: 9e6ea91622e57fd40b65c90914322610, type: 3}
+--- !u!114 &-6572181303484321577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461838136365894002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4005dc03be846a7911d7863b0f59efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idObject: 2
+  size: 1
+  objectPrefab: {fileID: 3461838136365894002}
 --- !u!61 &3461838136365894000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,21 +180,6 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
---- !u!114 &-6572181303484321577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461838136365894002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4005dc03be846a7911d7863b0f59efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idObject: 2
-  size: 1
-  objectPrefab: {fileID: 3461838136365894002}
 --- !u!82 &-397111895290418070
 AudioSource:
   m_ObjectHideFlags: 0

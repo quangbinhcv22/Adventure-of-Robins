@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 namespace SandBox.Scripts
@@ -10,6 +13,7 @@ namespace SandBox.Scripts
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private Transform model;
         [SerializeField] private Transform[] wayPoints;
+        
 
         bool facingLeft = true;
         private int direction = 1;
@@ -61,5 +65,7 @@ namespace SandBox.Scripts
             
             Move(new Vector2(runSpeed * direction, 0));
         }
+
+       
     }
 }

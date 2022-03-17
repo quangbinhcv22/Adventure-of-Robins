@@ -1,16 +1,19 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using TigerForge;
+using TMPro;
 using UnityEngine;
 
 namespace SandBox.Scripts
 {
     public class Sword : MonoBehaviour
     {
-        [SerializeField] private float damage;
+        [SerializeField] public float damage;
         // [SerializeField] private Character character;
         // [SerializeField] private ObjectName objectName;
         [SerializeField] private GameObject enemyPrefab;
+       
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
@@ -23,7 +26,6 @@ namespace SandBox.Scripts
                     
                     InstantiateParticle(enemyPrefab,targetCharacter.transform);
                 }
-                
             }
         }
         

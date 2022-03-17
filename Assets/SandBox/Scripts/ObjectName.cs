@@ -7,7 +7,6 @@ namespace SandBox.Scripts
         TripleArrow,
         BigArrow,
         Skill2RobinHood,
-        
         BigSword,
         RotateSword,
         
@@ -16,6 +15,9 @@ namespace SandBox.Scripts
         EnemyBloodParticle,
         RobinHoodBloodParticle,
         GladiatorBloodParticle,
+        
+        // popuptext
+        PopUptext,
     }
 
 }
