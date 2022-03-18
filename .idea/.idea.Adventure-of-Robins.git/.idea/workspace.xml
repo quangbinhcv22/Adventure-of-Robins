@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="16705329-7939-49e2-85a1-b797f676da59" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterAttackEventListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterAttackEventListener.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterDieEventListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterDieEventListener.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterSkill1EventListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterSkill1EventListener.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterSkill3EventListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterSkill3EventListener.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterAttackButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterAttackButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterDie.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterDie.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterSkill1Button.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterSkill1Button.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterSkill2Button.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterSkill2Button.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterSkill3Button.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterSkill3Button.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterAttackEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterAttackEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterDieEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterDieEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterSkill1Event.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterSkill1Event.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterSkill2Event.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterSkill2Event.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterSkill3Event.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/CharacterSkill3Event.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Adventure-of-Robins.git/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Adventure-of-Robins.git/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BayatGames/Platform Game Assets Ultimate/Animations/Characters/Enemies/Anima2D Animation/Armored Enemy_1/Armored Enemy_1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BayatGames/Platform Game Assets Ultimate/Animations/Characters/Enemies/Anima2D Animation/Armored Enemy_1/Armored Enemy_1.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Prefab/Enemy .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SandBox/Prefab/Enemy .prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Prefab/Gladiator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SandBox/Prefab/Gladiator.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Prefab/Robinhood.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SandBox/Prefab/Robinhood.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scene/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SandBox/Scene/New Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterAnimationActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterAnimationActivate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterAnimator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterAttack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterAttack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterEventListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterEventListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterEventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterEventManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterEventManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterEventManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterGetHit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterGetHit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterGetHitting.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterGetHitting.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterJump.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterJumping.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterJumping.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterMoveInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterMoveEventListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterMoveInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterMoveEventListener.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterSkillActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterSkillActivate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterSkillActivate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterSkillActivate.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterSkillAttack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterSkillAttack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterSkillAttacking.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterSkillAttacking.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterSkillInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterSkillInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SandBox/Scripts/CharacterSkillInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterSkillInput.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Server/EventGroup.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Server/EventGroup.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterMoveJoystick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Client/UIRequest/CharacterMoveJoystick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Events/EventGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/EventGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Events/EventName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Events/EventName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/NetworkController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/NetworkController.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/MovementSimulation/CharacterMoveEventListener.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="25vKCczcS4y50eItrKOpVZrnve6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="16705329-7939-49e2-85a1-b797f676da59" name="Changes" comment="" />
+      <created>1646402004832</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646402004832</updated>
+      <workItem from="1646402009205" duration="3202000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

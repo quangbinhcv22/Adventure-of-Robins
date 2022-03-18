@@ -1,3 +1,7 @@
+
+
+using UnityEngine;
+
 namespace GameEvent
 {
     public static class EventName
@@ -6,5 +10,8 @@ namespace GameEvent
         {
             public const string Connected = "ServerConnected";
         }
+        
+
+       
     }
 }
