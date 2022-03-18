@@ -21,6 +21,10 @@ namespace SandBox.Scripts
         
         // popuptext
         PopUptext,
+        
+        //Object name
+        Saw,
+        Mace
     }
 
 }

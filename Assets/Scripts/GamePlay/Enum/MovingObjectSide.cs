@@ -1,7 +1,8 @@
-namespace SandBox.Scripts
+namespace GamePlay.Enum
 {
-    public class MovingObjectSide
+    public enum MovingObjectSide
     {
-        
+        LeftRight,
+        UpDown,
     }
 }

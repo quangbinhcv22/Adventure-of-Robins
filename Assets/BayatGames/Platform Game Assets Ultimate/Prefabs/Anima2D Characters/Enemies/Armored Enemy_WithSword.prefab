@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &455297360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 455297361}
+  m_Layer: 10
+  m_Name: EndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &455297361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455297360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4, y: -0.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5322009355588993710}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &564398942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 564398943}
+  m_Layer: 10
+  m_Name: StartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &564398943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564398942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.5, y: -0.19, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5322009355588993710}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5322009354359179001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,7 +2004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.2100001
+  m_Length: 0.21000032
   m_ChildTransform: {fileID: 5322009354907828553}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &5322009355438425045
@@ -2165,6 +2225,8 @@ Transform:
   - {fileID: 5322009354993143549}
   - {fileID: 5322009355492534087}
   - {fileID: 5322009354436384359}
+  - {fileID: 455297361}
+  - {fileID: 564398943}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2264,7 +2326,7 @@ MonoBehaviour:
   groundCheck: {fileID: 5322009355711789274}
   barrierLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128
   rigidbody2d: {fileID: 5322009355588993705}
   animator: {fileID: 5322009355588993706}
   health: {fileID: 5322009355588993717}
@@ -2281,13 +2343,13 @@ MonoBehaviour:
   minRange: 1.58
   followRange: 12
   jumpStrength: 8
-  chaseCharacter: 0
+  chaseCharacter: 1
   runWhenTargetInRange: 0
   patrol: 1
-  startPosition: {fileID: 0}
-  endPosition: {fileID: 0}
+  startPosition: {fileID: 564398943}
+  endPosition: {fileID: 455297361}
   inRange: 0
-  canAttack: 0
+  canAttack: 1
 --- !u!114 &5322009355588993717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2303,8 +2365,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 5
   armor: 5
-  m_bloodParticle: {fileID: 3485885686177369051, guid: 8d6da9e0db7007340a49b99c59c4d356,
-    type: 3}
+  m_bloodParticle: {fileID: 3485885686177369051, guid: 8d6da9e0db7007340a49b99c59c4d356, type: 3}
   healthBarDamageTakenEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2338,9 +2399,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6599dbabfa1b15c40bfd585feafdfb57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  demage: 20
+  damage: 0
   hitRange: 1.85
   hitRayPosition: {fileID: 5322009355588993710}
+  enemyBloodPrefab: {fileID: 0}
 --- !u!1 &5322009355711789275
 GameObject:
   m_ObjectHideFlags: 0

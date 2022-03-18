@@ -1,8 +1,5 @@
-using System;
+
 using System.Collections;
-using DG.Tweening;
-using TigerForge;
-using TMPro;
 using UnityEngine;
 
 namespace SandBox.Scripts
@@ -12,7 +9,7 @@ namespace SandBox.Scripts
         [SerializeField] public float damage;
         // [SerializeField] private Character character;
         // [SerializeField] private ObjectName objectName;
-        [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private GameObject enemyBloodPrefab;
        
 
         private void OnTriggerStay2D(Collider2D collider2D)
@@ -24,7 +21,7 @@ namespace SandBox.Scripts
                 {
                     targetCharacter.Info.Health.Current -= damage;
                     
-                    InstantiateParticle(enemyPrefab,targetCharacter.transform);
+                    InstantiateParticle(enemyBloodPrefab,targetCharacter.transform);
                 }
             }
         }
