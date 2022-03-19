@@ -194,6 +194,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &646175265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 646175267}
+  - component: {fileID: 646175266}
+  m_Layer: 0
+  m_Name: CharacterManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &646175266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646175265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310d03a9c5ba3b845b23ee7b28108ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 7895088010602704001, guid: 0242077bf6ec73c4789aad98fde6d6a9, type: 3}
+--- !u!4 &646175267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646175265}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &737304948
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947844696}
   - component: {fileID: 947844695}
+  - component: {fileID: 947844697}
   m_Layer: 0
   m_Name: Network
   m_TagString: Untagged
@@ -320,11 +365,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 947844694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9daeb2cd38bb9fc4a8c37ac62d014d41, type: 3}
+  m_Script: {fileID: 11500000, guid: c9e09c85ebaafa042844bc198329303e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  events: {fileID: 11400000, guid: a0acc1fc80e15b3459af5c449d4b19e0, type: 2}
-  connectOnAwake: 1
 --- !u!4 &947844696
 Transform:
   m_ObjectHideFlags: 0
@@ -339,6 +382,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &947844697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947844694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9daeb2cd38bb9fc4a8c37ac62d014d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events: {fileID: 11400000, guid: a0acc1fc80e15b3459af5c449d4b19e0, type: 2}
+  connectOnAwake: 1
+  logText: {fileID: 0}
 --- !u!1001 &1334892661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,6 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 1706579817}
+  characterIdInput: {fileID: 0}
 --- !u!114 &1706579817 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230, type: 3}

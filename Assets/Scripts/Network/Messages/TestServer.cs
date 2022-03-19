@@ -18,7 +18,7 @@ namespace Network.Messages
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                NetworkController.Instance.events.characterMove.SendRequest(new CharacterMoveRequest{characterId = "Valhein", direction = 1});
+                // NetworkController.Instance.events.characterMove.SendRequest(new CharacterMoveRequest{characterId = "Valhein", direction = 1});
             }
         }
 
