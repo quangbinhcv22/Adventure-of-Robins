@@ -34,6 +34,18 @@ namespace GamePlay.AI
                             transform.DOMove(new Vector3(endPoint.position.x, transform.position.y, 0), duration)
                                 .SetLoops(-1, LoopType.Yoyo);
                             break;
+                        case ObjectName.SpringMovingPlatform:
+                            transform.DOMove(new Vector3(endPoint.position.x, transform.position.y, 0), duration)
+                                .SetLoops(-1, LoopType.Yoyo);
+                            break;
+                        case ObjectName.AutumnMovingPlatForm:
+                            transform.DOMove(new Vector3(endPoint.position.x, transform.position.y, 0), duration)
+                                .SetLoops(-1, LoopType.Yoyo);
+                            break;
+                        case ObjectName.WinterMovingPlatForm:
+                            transform.DOMove(new Vector3(endPoint.position.x, transform.position.y, 0), duration)
+                                .SetLoops(-1, LoopType.Yoyo);
+                            break;
                     }
                     break;
                 case MovingObjectSide.UpDown:
@@ -44,6 +56,18 @@ namespace GamePlay.AI
                                 .SetLoops(-1, LoopType.Yoyo);
                             break;
                         case ObjectName.Mace:
+                            transform.DOMove(new Vector3(transform.position.x, endPoint.position.y, 0), duration)
+                                .SetLoops(-1, LoopType.Yoyo);
+                            break;
+                        case ObjectName.SpringMovingPlatform:
+                            transform.DOMove(new Vector3(transform.position.x, endPoint.position.y, 0), duration)
+                                .SetLoops(-1, LoopType.Yoyo);
+                            break;
+                        case ObjectName.AutumnMovingPlatForm:
+                            transform.DOMove(new Vector3(transform.position.x, endPoint.position.y, 0), duration)
+                                .SetLoops(-1, LoopType.Yoyo);
+                            break;
+                        case ObjectName.WinterMovingPlatForm:
                             transform.DOMove(new Vector3(transform.position.x, endPoint.position.y, 0), duration)
                                 .SetLoops(-1, LoopType.Yoyo);
                             break;

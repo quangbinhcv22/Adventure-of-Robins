@@ -24,7 +24,11 @@ namespace GamePlay.Enum
         
         //Object name
         Saw,
-        Mace
+        Mace,
+        SpringMovingPlatform,
+        AutumnMovingPlatForm,
+        WinterMovingPlatForm,
+        CloudRotating
     }
 
 }
