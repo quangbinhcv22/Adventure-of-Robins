@@ -44,8 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPools:
-  - {fileID: 7009879690821711000, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
-  - {fileID: 211885535785416987, guid: 98e3fdeacf2e595449fb515d3d82e701, type: 3}
-  - {fileID: 7311042859339302522, guid: 24e97e59ce90d574f92fda7868dac570, type: 3}
-  - {fileID: 8379675401268085435, guid: 0970a60acee5e064a9fa538c31cad566, type: 3}
-  - {fileID: 678202655141168262, guid: bed5279498e699844911fdd06d18eac3, type: 3}
+    defaultValue: {fileID: 0}
+    customPairs:
+    - key: 11
+      value: {fileID: 8712248195641248512, guid: a96327e7cf0f9c848809a9abc063b38e, type: 3}
+    - key: 6
+      value: {fileID: 984476569126890623, guid: 0970a60acee5e064a9fa538c31cad566, type: 3}
+    - key: 7
+      value: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
+    - key: 8
+      value: {fileID: 5016258761356222393, guid: 98e3fdeacf2e595449fb515d3d82e701, type: 3}
+    - key: 9
+      value: {fileID: 319538406527825066, guid: 24e97e59ce90d574f92fda7868dac570, type: 3}

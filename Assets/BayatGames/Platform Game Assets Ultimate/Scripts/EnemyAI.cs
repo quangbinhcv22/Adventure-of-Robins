@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GamePlay.Character;
 using SandBox.Scripts;
 using UnityEngine;
 using UnityEngine.Events;
@@ -36,6 +37,7 @@ namespace BayatGames
         [SerializeField] protected Transform startPosition;
         [SerializeField] protected Transform endPosition;
 
+        
 
         public bool inRange = false;
         bool inCenter;
@@ -129,6 +131,7 @@ namespace BayatGames
 
             if (Vector3.Distance(transform.position, target.transform.position) < 2f)
             {
+                
                 StartCoroutine(AttackPlayer());
             }
         }

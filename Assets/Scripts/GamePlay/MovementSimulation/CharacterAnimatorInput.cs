@@ -8,7 +8,7 @@ namespace GamePlay.MovementSimulation
     public class CharacterAnimatorInput : MonoBehaviour
     {
         [SerializeField] private Animator animator;
-        [SerializeField] private Character character;
+        [SerializeField] private Character.Character character;
         [SerializeField] private Transform groundCheck;
         [SerializeField] private LayerMask ground;
 

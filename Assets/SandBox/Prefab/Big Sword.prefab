@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8471242139454765344}
   - component: {fileID: 8471242139454765346}
   - component: {fileID: 2499220160877210619}
+  - component: {fileID: -3509491961629143649}
   - component: {fileID: -6115651719015346634}
   - component: {fileID: -2523162107503858402}
   - component: {fileID: 7064090105271985427}
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 200
-  enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
+  enemyBloodPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
 --- !u!114 &2499220160877210619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,8 +115,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idObject: 4
-  size: 1
-  objectPrefab: {fileID: 8471242139454765345}
+--- !u!114 &-3509491961629143649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8471242139454765345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1acee2e50d5c74987b251352fdb5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPooler: {fileID: 3857204922706722799, guid: 364f2d772f104394bb4fddf633f3d856, type: 3}
 --- !u!61 &-6115651719015346634
 BoxCollider2D:
   m_ObjectHideFlags: 0

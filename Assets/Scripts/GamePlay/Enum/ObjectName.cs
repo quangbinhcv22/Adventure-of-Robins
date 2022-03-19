@@ -1,4 +1,4 @@
-namespace SandBox.Scripts
+namespace GamePlay.Enum
 {
     public enum ObjectName
     {

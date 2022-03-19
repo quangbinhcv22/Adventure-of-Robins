@@ -118,7 +118,7 @@ namespace Network
             }
 
             EventManager.EmitEventData(eventName: response.id, response);
-            Debug.Log($"Response: <color=yellow>{photonEvent.CustomData}</color>");
+            //Debug.Log($"Response: <color=yellow>{photonEvent.CustomData}</color>");
         }
     }
 }

@@ -1,37 +1,31 @@
 using System;
 using System.Collections;
-using DG.Tweening;
+using SandBox.Scripts;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace GamePlay.Object
 {
     public class Skill2RobinHood : MonoBehaviour
     {
-        [SerializeField] private Character character;
-        [SerializeField] private ObjectPooler objectPooler;
+        [SerializeField] private Arrow arrow;
         
         public IEnumerator ActiveBuff()
         {
             Buff();
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
             Debuff();
-        }
-
-        private void Update()
-        {
-            Buff();
+            
         }
 
         private void Debuff()
         {
-            character.Info.damage.Current -= 100;
-            
+            arrow.CurrentDamage -= 100;
         }
 
         private void Buff()
         {
-            character.Info.damage.Current += 100;
-            
+            arrow.CurrentDamage += 100;
         }
+
     }
 }

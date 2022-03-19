@@ -44,10 +44,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPools:
-  - {fileID: -6572181303484321577, guid: 24faeadf2a76ff14e926894ece980efa, type: 3}
-  - {fileID: -6572181303484321577, guid: cd30ff41bbb423e49baa8cacbd72f95a, type: 3}
-  - {fileID: 2499220160877210619, guid: f2268de96db84cd4fabf748c4213e394, type: 3}
-  - {fileID: 2499220160877210619, guid: 31c6aba714cf7a744a616ceba554987d, type: 3}
-  - {fileID: -6572181303484321577, guid: e0647382342e3404996eab4547be1134, type: 3}
-  - {fileID: 2307260730090871786, guid: 7bb374552e533da44bae572908abbc7e, type: 3}
-  - {fileID: 6081172352643890527, guid: a96327e7cf0f9c848809a9abc063b38e, type: 3}
+    defaultValue: {fileID: 0}
+    customPairs:
+    - key: 0
+      value: {fileID: 3461838136365894002, guid: 24faeadf2a76ff14e926894ece980efa, type: 3}
+    - key: 1
+      value: {fileID: 3461838136365894002, guid: e0647382342e3404996eab4547be1134, type: 3}
+    - key: 2
+      value: {fileID: 3461838136365894002, guid: cd30ff41bbb423e49baa8cacbd72f95a, type: 3}
+    - key: 3
+      value: {fileID: 706328248242487872, guid: 7bb374552e533da44bae572908abbc7e, type: 3}
+    - key: 4
+      value: {fileID: 8471242139454765345, guid: 31c6aba714cf7a744a616ceba554987d, type: 3}
+    - key: 5
+      value: {fileID: 8471242139454765345, guid: f2268de96db84cd4fabf748c4213e394, type: 3}
+    - key: 11
+      value: {fileID: 8712248195641248512, guid: a96327e7cf0f9c848809a9abc063b38e, type: 3}

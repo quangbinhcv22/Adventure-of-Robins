@@ -8,7 +8,7 @@ namespace GamePlay.MovementSimulation
 {
     public class CharacterSelectEventListener : MonoBehaviour
     {
-        [SerializeField] private Character character;
+        [SerializeField] private Character.Character character;
 
         private void OnEnable()
         {

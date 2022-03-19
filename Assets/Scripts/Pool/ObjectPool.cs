@@ -1,6 +1,7 @@
+using GamePlay.Enum;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace Pool
 {
     public class ObjectPool : MonoBehaviour
     {

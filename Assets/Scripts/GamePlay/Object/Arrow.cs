@@ -1,9 +1,10 @@
-
+using System;
 using System.Collections;
-using Photon.Pun;
+using SandBox.Scripts;
+using TMPro;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace GamePlay.Object
 {
     public class Arrow : MonoBehaviour
     {
@@ -11,9 +12,19 @@ namespace SandBox.Scripts
         [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private float objectForce;
         [SerializeField] private GameObject enemyPrefab;
-        [SerializeField] private Character _character;
-        
-        
+
+        private float _currentDamage;
+
+        public float CurrentDamage
+        {
+            get => _currentDamage;
+            set => _currentDamage = value;
+        }
+
+        private void Start()
+        {
+            _currentDamage = 0;
+        }
 
         public void ShootArrow()
         {
@@ -24,16 +35,12 @@ namespace SandBox.Scripts
         }
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            var targetCharacter = collider2D.GetComponent<Character>();
-            if (targetCharacter)
-            {
-                if (targetCharacter.Info.Team == CharacterTeam.Hostile)
-                {
-                    targetCharacter.Info.Health.Current -= damage + _character.Info.damage.Current;
+            var targetCharacter = collider2D.GetComponent<Character.Character>();
+            if (!targetCharacter) return;
+            if (targetCharacter.Info.Team != CharacterTeam.Hostile) return;
+            targetCharacter.Info.Health.Current -= damage + _currentDamage;
                     
-                    InstantiateParticle(enemyPrefab,targetCharacter.transform);
-                }
-            }
+            InstantiateParticle(enemyPrefab,targetCharacter.transform);
         }
         private void InstantiateParticle(GameObject particlePrefab, Transform targetCharacter)
         {

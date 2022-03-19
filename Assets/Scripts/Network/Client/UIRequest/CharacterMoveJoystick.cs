@@ -11,6 +11,7 @@ namespace Network.Client.UIRequest
 
         private void FixedUpdate()
         {
+            if (PhotonNetwork.InRoom is false) return;
             if (PhotonNetwork.AuthValues is null) return;
             
             var direction = joystick.Direction;
@@ -21,6 +22,7 @@ namespace Network.Client.UIRequest
             
             var request = new CharacterMoveRequest { characterId = characterId, direction = xDirection };
 
+            
             NetworkController.Instance.events.characterMove.SendRequest(request);
         }
     }

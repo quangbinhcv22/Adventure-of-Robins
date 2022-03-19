@@ -54,7 +54,7 @@ namespace GamePlay.AI
 
         private void OnCollisionEnter2D(Collision2D collision2D)
         {
-            var characterTarget = collision2D.transform.GetComponent<Character>();
+            var characterTarget = collision2D.transform.GetComponent<Character.Character>();
             if (!characterTarget || characterTarget.Info.heroID == HeroID.Monster) return;
 
             characterTarget.Info.Health.Current -= 100;

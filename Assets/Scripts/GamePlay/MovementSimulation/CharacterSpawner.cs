@@ -10,7 +10,7 @@ namespace GamePlay.MovementSimulation
 {
     public class CharacterSpawner : MonoBehaviour
     {
-        [SerializeField] private List<Character> characterPrefabs;
+        [SerializeField] private List<Character.Character> characterPrefabs;
 
         private void OnEnable()
         {

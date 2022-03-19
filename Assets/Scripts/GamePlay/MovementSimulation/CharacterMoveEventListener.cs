@@ -8,7 +8,7 @@ namespace GamePlay.MovementSimulation
 {
     public class CharacterMoveEventListener : MonoBehaviour
     {
-        [SerializeField] private Character character;
+        [SerializeField] private Character.Character character;
         [SerializeField] private Mover mover;
         [SerializeField] private Jumper jumper;
         

@@ -1,12 +1,13 @@
-using System;
 using System.Collections;
+using GamePlay.Enum;
+using SandBox.Scripts;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace GamePlay.AI
 {
     public class MonsterDieAnimator : MonoBehaviour
     {
-        [SerializeField] private Character _character;
+        [SerializeField] private Character.Character _character;
         [SerializeField] private Animator _animator;
         [SerializeField] private MonsterMoving _mover;
         [SerializeField] private ObjectPooler particlePooler;

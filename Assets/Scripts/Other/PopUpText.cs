@@ -1,9 +1,7 @@
-using System;
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace Other
 {
     public class PopUpText : MonoBehaviour
     {

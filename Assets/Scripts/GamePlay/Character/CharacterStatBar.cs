@@ -1,5 +1,6 @@
 
 using System;
+using GamePlay.Character;
 using UnityEngine;
 
 namespace SandBox.Scripts

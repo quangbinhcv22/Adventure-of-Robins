@@ -1,6 +1,9 @@
+using GamePlay.Enum;
+using GamePlay.Object;
+using SandBox.Scripts;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace GamePlay.Character
 {
     public class CharacterAnimatorEvent : MonoBehaviour
     {

@@ -8,7 +8,7 @@ namespace GamePlay.MovementSimulation
 {
     public class CharacterSkillEventListener : MonoBehaviour
     {
-        [SerializeField] private Character character;
+        [SerializeField] private Character.Character character;
         [SerializeField] private CharacterSkillActivate characterSkillActivate;
 
         private void OnEnable()

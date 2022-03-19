@@ -1,7 +1,9 @@
 
+using SandBox.Scripts;
 using UnityEngine;
+using CharacterInfo = SandBox.Scripts.CharacterInfo;
 
-namespace SandBox.Scripts
+namespace GamePlay.Character
 {
     public class Character : MonoBehaviour
     {

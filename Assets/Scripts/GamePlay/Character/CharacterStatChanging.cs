@@ -1,3 +1,4 @@
+using GamePlay.Enum;
 using UnityEngine;
 
 namespace SandBox.Scripts

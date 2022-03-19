@@ -1,5 +1,6 @@
 
 
+using GamePlay.Character;
 using GamePlay.MovementSimulation;
 using Network.Events;
 using Photon.Pun;

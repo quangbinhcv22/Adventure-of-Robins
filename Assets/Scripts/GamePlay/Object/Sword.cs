@@ -1,8 +1,8 @@
-
 using System.Collections;
+using SandBox.Scripts;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace GamePlay.Object
 {
     public class Sword : MonoBehaviour
     {
@@ -12,7 +12,7 @@ namespace SandBox.Scripts
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            var targetCharacter = collider2D.GetComponent<Character>();
+            var targetCharacter = collider2D.GetComponent<Character.Character>();
             if (!targetCharacter) return;
             if (targetCharacter.Info.Team != CharacterTeam.Hostile) return;
             targetCharacter.Info.Health.Current -= damage;
