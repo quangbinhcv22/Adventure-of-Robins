@@ -10,7 +10,9 @@ namespace SandBox.Scripts
         
         public void InstantiateArrow()
         {
-            var newArrow = objectPooler.SpawnFromPool(ObjectName.Arrow, shootPoint.position, shootPoint.rotation);
+            //var newArrow = objectPooler.SpawnFromPool(ObjectName.Arrow, shootPoint.position, shootPoint.rotation);
+            var newArrow = objectPooler.GetPooledObject(ObjectName.Arrow);
+            
             newArrow.GetComponent<Arrow>().ShootArrow();
         }
     }

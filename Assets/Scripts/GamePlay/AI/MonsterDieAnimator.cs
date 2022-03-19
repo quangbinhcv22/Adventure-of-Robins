@@ -19,7 +19,8 @@ namespace SandBox.Scripts
                 _mover.Move(new Vector2(0,0));
                 StartCoroutine(HideGameObject(gameObject,1f));
                 
-                var newExplosion = particlePooler.SpawnFromPool(ObjectName.Explosion, transform.position, transform.rotation);
+                //var newExplosion = particlePooler.SpawnFromPool(ObjectName.Explosion, transform.position, transform.rotation);
+                var newExplosion = particlePooler.GetPooledObject(ObjectName.Explosion);
                
                 StartCoroutine(HideGameObject(newExplosion.gameObject,1f));
             }
