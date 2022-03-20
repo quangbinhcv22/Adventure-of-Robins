@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using DG.Tweening;
 using GamePlay.Enum;
 using GamePlay.Object;
 using Other;
 using SandBox.Scripts;
+using UnityEditorInternal;
 using UnityEngine;
 
 namespace GamePlay.MovementSimulation
@@ -49,12 +52,7 @@ namespace GamePlay.MovementSimulation
             {
                 case HeroID.Gladiator:
                 {
-                    var characterTransform = character.transform;
-                    var position = characterTransform.position;
-                    position = new Vector2(position.x + 2f, position.y);
-
-                    characterTransform.position = position;
-
+                    transform.DOMove(new Vector3((transform.position.x + 4f * (int)character.Info.side),transform.position.y,transform.position.z),1f);
                     break;
                 }
                 case HeroID.RobinHood:
@@ -85,11 +83,11 @@ namespace GamePlay.MovementSimulation
                     var newObjectPooler = objectPooler.GetPooledObject(ObjectName.BigSword);
                     newObjectPooler.transform.SetParent(transform);
                     
-                    newObjectPooler.transform.position = wayPoints[1].position;
-                    newObjectPooler.transform.rotation = wayPoints[1].rotation;
+                    newObjectPooler.transform.position = character.transform.position;
+                    newObjectPooler.transform.rotation = Quaternion.Euler(0, 180 * (int)character.Info.side,0);
                     
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
-                    newObjectPooler.transform.DOBlendableMoveBy(new Vector3(7f, 4f, 0), 1f);
+                    newObjectPooler.transform.DOBlendableMoveBy(new Vector3(10f* (int)character.Info.side, 4f, 0), 1f);
                     newObjectPooler.transform.DORotate(new Vector3(0, 0, -90), 1f);
 
                     var hideObject = objectPooler.HideObject(newObjectPooler, 3f);
@@ -101,8 +99,8 @@ namespace GamePlay.MovementSimulation
                     var newObjectPooler = objectPooler.GetPooledObject(ObjectName.BigArrow);
                     newObjectPooler.transform.SetParent(transform);
                     
-                    newObjectPooler.transform.position = wayPoints[1].position;
-                    newObjectPooler.transform.rotation = wayPoints[1].rotation;
+                    newObjectPooler.transform.position = character.transform.position;
+                    newObjectPooler.transform.rotation = character.transform.rotation;
                     
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
                     newObjectPooler.GetComponent<Arrow>().ShootArrow(character.Info.side);

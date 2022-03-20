@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GamePlay.Character;
 using SandBox.Scripts;
+using UI.Network;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -131,7 +132,6 @@ namespace BayatGames
 
             if (Vector3.Distance(transform.position, target.transform.position) < 2f)
             {
-                
                 StartCoroutine(AttackPlayer());
             }
         }
