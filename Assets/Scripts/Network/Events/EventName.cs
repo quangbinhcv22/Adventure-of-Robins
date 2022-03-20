@@ -16,7 +16,11 @@ namespace Network.Events
                 public const string Skill1 = "CharacterSkill1";
                 public const string Skill2 = "CharacterSkill2";
                 public const string Skill3 = "CharacterSkill3";
-                
+            }
+
+            public static class Battle
+            {
+                public const string Start = "StartBattle";
             }
         }
     }

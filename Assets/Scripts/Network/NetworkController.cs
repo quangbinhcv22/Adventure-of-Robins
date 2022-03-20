@@ -9,6 +9,7 @@ using Photon.Realtime;
 using TigerForge;
 using TMPro;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 using EventName = Network.Events.EventName;
 using Random = UnityEngine.Random;
 
@@ -125,7 +126,7 @@ namespace Network
             }
 
             EventManager.EmitEventData(eventName: response.id, response);
-            //Debug.Log($"Response: <color=yellow>{photonEvent.CustomData}</color>");
+            Debug.Log($"Response: <color=yellow>{photonEvent.CustomData}</color>");
         }
     }
 }

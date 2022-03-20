@@ -32,7 +32,7 @@ namespace Network.Messages
             var raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.All };
             PhotonNetwork.RaiseEvent(StandardEvent, request, raiseEventOptions, SendOptions.SendReliable);
 
-            //Debug.Log($"Request: <color=cyan>{request}</color>");
+            Debug.Log($"Request: <color=cyan>{request}</color>");
         }
 
         public static Message Instance()

@@ -14,6 +14,6 @@ namespace UI.ScreenFlow
 
         SettingsPopup = 1010,
         StatsBattlePopup = 1020,
-        UpdateLatterPopup = 2020
+        UpdateLatterPopup = 2020,
     }
 }

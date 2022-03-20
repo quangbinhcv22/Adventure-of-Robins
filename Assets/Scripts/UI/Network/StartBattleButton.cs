@@ -1,5 +1,6 @@
 using System.Linq;
 using ExitGames.Client.Photon;
+using Network;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -40,6 +41,7 @@ namespace UI.Network
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
             
+            NetworkController.Instance.events.startGame.SendRequest();
             print("Start Battle");
         }
     }

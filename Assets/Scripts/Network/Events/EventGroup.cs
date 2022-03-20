@@ -15,5 +15,7 @@ namespace Network.Events
         public CharacterSkill3Event characterSkill3;
         public CharacterSelectEvent characterSelect;
         public CharacterNewEvent characterNew;
+
+        public StartGameEvent startGame;
     }
 }

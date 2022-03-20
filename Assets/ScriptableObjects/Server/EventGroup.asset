@@ -21,3 +21,4 @@ MonoBehaviour:
   characterSkill3: {fileID: 11400000, guid: 9f02e03a0673be74d8bbd284594a8880, type: 2}
   characterSelect: {fileID: 11400000, guid: 573f6eaf596d21d4f88a19d5273d4e58, type: 2}
   characterNew: {fileID: 11400000, guid: c0e90c45810dcf5488b5a9e36b1a31b5, type: 2}
+  startGame: {fileID: 11400000, guid: 02cf6ef423d062d4c8de7bae61b1377e, type: 2}

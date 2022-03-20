@@ -768,7 +768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  enemyPrefab: {fileID: 8599542709717456268, guid: 91a6544d0c1f40345bf144afda009964, type: 3}
+  enemyBloodPrefab: {fileID: 0}
 --- !u!82 &4028165744586156012
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3197,6 +3197,7 @@ GameObject:
   - component: {fileID: 427618211}
   - component: {fileID: 427618210}
   - component: {fileID: 427618224}
+  - component: {fileID: -740748653064779792}
   m_Layer: 8
   m_Name: Gladiator
   m_TagString: Untagged
@@ -3324,6 +3325,7 @@ MonoBehaviour:
     id: 002
     team: 1
     heroID: 1
+    side: 0
     health:
       BaseValue: 1000
     damage:
@@ -3397,8 +3399,6 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 2795664297397135608}
   - {fileID: 506003767}
-  rigidbody2D: {fileID: 5545696211761319113}
-  skillForce: 5
   objectSize: 5
   objectSizeDuration: 1
 --- !u!114 &427618215
@@ -3489,3 +3489,25 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &-740748653064779792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545696211761319107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
