@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-namespace UI.Login
+namespace UI.Network
 {
     public class SetNickNamePanel : MonoBehaviour
     {
