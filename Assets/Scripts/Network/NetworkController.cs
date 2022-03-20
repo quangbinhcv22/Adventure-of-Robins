@@ -1,7 +1,6 @@
 using System;
 using System.Diagnostics;
 using ExitGames.Client.Photon;
-using GameEvent;
 using Network.Events;
 using Network.Messages;
 using Newtonsoft.Json;
@@ -10,8 +9,8 @@ using Photon.Realtime;
 using TigerForge;
 using TMPro;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 using EventName = Network.Events.EventName;
+using Random = UnityEngine.Random;
 
 namespace Network
 {
@@ -31,6 +30,7 @@ namespace Network
 
         [SerializeField] private bool connectOnAwake = true;
         [SerializeField] private TMP_Text logText;
+        [SerializeField] private bool autoJoinRoom = true;
 
 
         private void Awake()
@@ -69,13 +69,13 @@ namespace Network
         public override void OnJoinedLobby()
         {
             logText.SetText("On joined lobby");
-            PhotonNetwork.JoinRandomRoom();
+            if (autoJoinRoom) PhotonNetwork.JoinRandomRoom();
         }
 
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
             var roomOptions = new RoomOptions { MaxPlayers = 3, CleanupCacheOnLeave = false };
-            PhotonNetwork.CreateRoom(Guid.NewGuid().ToString(), roomOptions);
+            PhotonNetwork.CreateRoom(Random.Range(111111, 999999).ToString(), roomOptions);
         }
 
         public override void OnJoinedRoom()

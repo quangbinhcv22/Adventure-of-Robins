@@ -696,10 +696,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 3706858123037597672}
-  secondsLeft: 30
   request:
     action: 4
     id: 50
+  secondsLeft: 3
 --- !u!1 &8335514803681690509
 GameObject:
   m_ObjectHideFlags: 0

@@ -151,7 +151,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 3
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -240,7 +240,7 @@ RectTransform:
   m_Children:
   - {fileID: 8650569815172694477}
   m_Father: {fileID: 4664972202163298909}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -618,6 +618,7 @@ GameObject:
   - component: {fileID: 4664972202163298909}
   - component: {fileID: 1942385922421328434}
   - component: {fileID: 2328103351359904503}
+  - component: {fileID: 3013918134421185125}
   m_Layer: 5
   m_Name: EnterWindow
   m_TagString: Untagged
@@ -637,8 +638,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 284643835416019748}
-  - {fileID: 5770380279318234712}
   - {fileID: 4386129183601972476}
+  - {fileID: 5770380279318234712}
   m_Father: {fileID: 8264775242647195846}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -685,6 +686,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3013918134421185125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5320098614048035884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5929131d8021124498dd74c5c76f2976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nickNameInput: {fileID: 7393137312724436657}
+  confirmButton: {fileID: 2091046109534010108}
 --- !u!1 &6362583723157113250
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +788,7 @@ GameObject:
   - component: {fileID: 4824488639490362445}
   - component: {fileID: 7393137312724436657}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: NameInout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -792,7 +807,7 @@ RectTransform:
   m_Children:
   - {fileID: 1049888821851893503}
   m_Father: {fileID: 4664972202163298909}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
