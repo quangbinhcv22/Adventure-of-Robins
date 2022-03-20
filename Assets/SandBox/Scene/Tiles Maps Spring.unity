@@ -42283,6 +42283,7 @@ MonoBehaviour:
   events: {fileID: 11400000, guid: a0acc1fc80e15b3459af5c449d4b19e0, type: 2}
   connectOnAwake: 1
   logText: {fileID: 839029528}
+  autoJoinRoom: 1
 --- !u!4 &947844696
 Transform:
   m_ObjectHideFlags: 0
@@ -83374,6 +83375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armored Enemy_WithSword
       objectReference: {fileID: 0}
+    - target: {fileID: 7742514440773252824, guid: 842f33d454e476f4ea63a37ad8b4a847, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7742514440925288367, guid: 842f33d454e476f4ea63a37ad8b4a847, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -99506,6 +99511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saw
       objectReference: {fileID: 0}
+    - target: {fileID: 875364042330282022, guid: 45d9c054e734946459c98dd96e182308, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d9c054e734946459c98dd96e182308, type: 3}
 --- !u!1001 &3355442575190158199
@@ -99563,6 +99572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterMovingPlatForm
       objectReference: {fileID: 0}
+    - target: {fileID: 3355442575165895701, guid: 8af24cd68f73b134c9ea3f539d0dec3a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af24cd68f73b134c9ea3f539d0dec3a, type: 3}
 --- !u!1001 &5004897769652101491
@@ -99575,6 +99588,10 @@ PrefabInstance:
     - target: {fileID: 5004897770910310634, guid: ed391231f57c526469361a9ea335c70b, type: 3}
       propertyPath: m_Name
       value: AutumnMovingPlatForm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004897770910310634, guid: ed391231f57c526469361a9ea335c70b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5004897770910310639, guid: ed391231f57c526469361a9ea335c70b, type: 3}
       propertyPath: m_RootOrder
@@ -99677,6 +99694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CloudRotating
       objectReference: {fileID: 0}
+    - target: {fileID: 6709783683364715095, guid: 1fecb37075fa6ed499806bf59ecf88ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fecb37075fa6ed499806bf59ecf88ca, type: 3}
 --- !u!1001 &7506338047548038529
@@ -99689,6 +99710,10 @@ PrefabInstance:
     - target: {fileID: 7506338048426612235, guid: 8fd67ee7b915eca4995c6edd02ed4228, type: 3}
       propertyPath: m_Name
       value: Mace
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506338048426612235, guid: 8fd67ee7b915eca4995c6edd02ed4228, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7506338048426612237, guid: 8fd67ee7b915eca4995c6edd02ed4228, type: 3}
       propertyPath: m_RootOrder
@@ -99819,6 +99844,10 @@ PrefabInstance:
     - target: {fileID: 8979039802346305312, guid: 3f8fe22874318a343b6a8bf6015b3ac4, type: 3}
       propertyPath: m_Name
       value: SpringMovingPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979039802346305312, guid: 3f8fe22874318a343b6a8bf6015b3ac4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8979039802346305325, guid: 3f8fe22874318a343b6a8bf6015b3ac4, type: 3}
       propertyPath: m_RootOrder

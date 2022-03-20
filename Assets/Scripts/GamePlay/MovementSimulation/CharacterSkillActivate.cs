@@ -64,8 +64,8 @@ namespace GamePlay.MovementSimulation
                         var newObjectPooler = objectPooler.GetPooledObject(ObjectName.TripleArrow);
                         newObjectPooler.transform.position = arrow.position;
                         newObjectPooler.transform.rotation = arrow.rotation;
-                        Debug.Log(character.Info.Damage.Current);
-                        newObjectPooler.GetComponent<Arrow>().ShootArrow();
+                        
+                        newObjectPooler.GetComponent<Arrow>().ShootArrow(character.Info.side);
                         
                         var hideSkill = objectPooler.HideObject(newObjectPooler, 3f);
                         StartCoroutine(hideSkill);
@@ -105,7 +105,7 @@ namespace GamePlay.MovementSimulation
                     newObjectPooler.transform.rotation = wayPoints[1].rotation;
                     
                     newObjectPooler.transform.DOScale(objectSize, objectSizeDuration);
-                    newObjectPooler.GetComponent<Arrow>().ShootArrow();
+                    newObjectPooler.GetComponent<Arrow>().ShootArrow(character.Info.side);
 
                     var hideObject = objectPooler.HideObject(newObjectPooler, 3f);
                     StartCoroutine(hideObject);

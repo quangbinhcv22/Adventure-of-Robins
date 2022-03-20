@@ -28,6 +28,7 @@ namespace Network.Events
     public class CharacterSkill3Request
     {
         public string characterId;
+        public HeroID side;
         
     }
 
@@ -35,6 +36,7 @@ namespace Network.Events
     public class CharacterSkill3Response
     {
         public string characterId;
+        public HeroID side;
         
     }
 }

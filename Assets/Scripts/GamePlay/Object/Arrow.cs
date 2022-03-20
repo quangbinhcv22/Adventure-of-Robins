@@ -26,10 +26,10 @@ namespace GamePlay.Object
             _currentDamage = 0;
         }
 
-        public void ShootArrow()
+        public void ShootArrow(Side side)
         {
             var arrowFlyVelocity = rigidbody2D.velocity;
-            arrowFlyVelocity.x = objectForce;
+            arrowFlyVelocity.x = objectForce * (int)side;
 
             rigidbody2D.velocity = arrowFlyVelocity;
         }

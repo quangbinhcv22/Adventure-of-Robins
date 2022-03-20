@@ -70,11 +70,12 @@ namespace GamePlay.MovementSimulation
 
 
             animator.SetTrigger(CharacterInput.Attack);
-            Invoke(nameof(AttackComplete),2f);
+            Invoke(nameof(AttackComplete),.8f);
         }
 
         private void AttackComplete()
         {
+            animator.Play("Idle");
             animator.ResetTrigger(CharacterInput.Attack);
         }
 

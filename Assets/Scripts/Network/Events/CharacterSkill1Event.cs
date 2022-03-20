@@ -28,11 +28,13 @@ namespace Network.Events
     public class CharacterSkill1Request
     {
         public string characterId;
+        public HeroID side;
     }
 
     [Serializable]
     public class CharacterSkill1Response
     {
         public string characterId;
+        public HeroID side;
     }
 }

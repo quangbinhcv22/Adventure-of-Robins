@@ -1,7 +1,7 @@
 
 using SandBox.Scripts;
 using UnityEngine;
-using CharacterInfo = SandBox.Scripts.CharacterInfo;
+using CharacterInfo = GamePlay.Character.CharacterInfo;
 
 namespace GamePlay.Character
 {

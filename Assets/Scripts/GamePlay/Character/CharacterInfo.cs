@@ -1,9 +1,7 @@
-
 using System;
-using TMPro;
-using UnityEngine.Serialization;
+using SandBox.Scripts;
 
-namespace SandBox.Scripts
+namespace GamePlay.Character
 {
     [Serializable]
     public class CharacterInfo
@@ -11,6 +9,7 @@ namespace SandBox.Scripts
         public string id;
         public CharacterTeam team;
         public HeroID heroID;
+        public Side side;
         public CharacterStat health;
         public CharacterStat damage;
 

@@ -545,8 +545,6 @@ MonoBehaviour:
   - {fileID: 609514500}
   - {fileID: 207571867}
   - {fileID: 1915539294}
-  rigidbody2D: {fileID: 3461838136365894003, guid: 24faeadf2a76ff14e926894ece980efa, type: 3}
-  skillForce: 20
   objectSize: 7
   objectSizeDuration: 0.5
 --- !u!212 &2657554079628369845
@@ -1092,11 +1090,6 @@ PrefabInstance:
     - {fileID: 3298141482510006427, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
     - {fileID: 3298141482510006375, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
---- !u!1 &5186894733772119030 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3298141482510006371, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
-  m_PrefabInstance: {fileID: 7655793306943218581}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5186894733772119025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3298141482510006372, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
@@ -1112,17 +1105,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3298141483126771828, guid: 051acbd6e3445514d9f36136b8ade161, type: 3}
   m_PrefabInstance: {fileID: 7655793306943218581}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &571563996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5186894733772119030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 375c30f571f42d44d89dd48e8020d33b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPooler: {fileID: 0}
-  shootPoint: {fileID: 207571867}
