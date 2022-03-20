@@ -699,7 +699,7 @@ MonoBehaviour:
   request:
     action: 4
     id: 50
-  secondsLeft: 3
+  secondsLeft: 1
 --- !u!1 &8335514803681690509
 GameObject:
   m_ObjectHideFlags: 0

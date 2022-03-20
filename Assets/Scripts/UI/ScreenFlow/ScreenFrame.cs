@@ -58,7 +58,7 @@ namespace UI.ScreenFlow
             if (screen is null) return null;
 
             var newScreen = GameObject.Instantiate(screen, this.transform);
-            newScreen.gameObject.SetActive(false);
+            // newScreen.gameObject.SetActive(false);
 
             _createdScreens.Add(newScreen);
             SortScreensBasedOnOrder(screen.ID);
