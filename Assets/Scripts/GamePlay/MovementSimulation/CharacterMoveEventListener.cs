@@ -1,3 +1,4 @@
+using GamePlay.Enum;
 using Network;
 using SandBox.Scripts;
 using TigerForge;
@@ -28,8 +29,10 @@ namespace GamePlay.MovementSimulation
         {
             var moveResponse = NetworkController.Instance.events.characterMove.Response.data;
             if (character.Info.id != moveResponse.characterId) return;
-
+            
+            
             mover.Moving(new Vector2(moveResponse.direction, default));
+            if(moveResponse.direction != 0) character.Info.side = (Side)moveResponse.direction;
             
             if(moveResponse.direction == 0) EventManager.EmitEventData(CharacterInput.StartIdleAnimation, moveResponse.characterId);
             else EventManager.EmitEventData(CharacterInput.StartRunAnimation, moveResponse.characterId);

@@ -1,8 +1,8 @@
-namespace SandBox.Scripts
+namespace GamePlay.Enum
 {
     public enum Side
     {
-        Left,
-        Right
+        Left = -1,
+        Right = 1
     }
 }

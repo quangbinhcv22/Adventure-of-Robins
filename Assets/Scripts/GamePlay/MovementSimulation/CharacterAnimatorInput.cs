@@ -1,3 +1,4 @@
+using Network.Events;
 using SandBox.Scripts;
 using TigerForge;
 using UnityEngine;
@@ -65,9 +66,8 @@ namespace GamePlay.MovementSimulation
         private void Attack()
         {
             var boxingCharacter = EventManager.GetData(CharacterInput.StartAttackAnimation);
-            var characterID = (string) boxingCharacter;
-            if (character.Info.id != characterID) return;
-
+            var characterID = (CharacterAttackResponse) boxingCharacter;
+            if (character.Info.id != characterID.characterId) return;
 
             animator.SetTrigger(CharacterInput.Attack);
             Invoke(nameof(AttackComplete),.8f);

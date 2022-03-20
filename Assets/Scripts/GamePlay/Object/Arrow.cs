@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using GamePlay.Enum;
 using SandBox.Scripts;
 using TMPro;
 using UnityEngine;

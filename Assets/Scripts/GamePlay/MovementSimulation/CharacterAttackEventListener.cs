@@ -25,7 +25,7 @@ namespace GamePlay.MovementSimulation
             var attackResponse = NetworkController.Instance.events.characterAttack.Response.data;
             if (character.Info.id != attackResponse.characterId) return;
 
-            EventManager.EmitEventData(CharacterInput.StartAttackAnimation,attackResponse.characterId);
+            EventManager.EmitEventData(CharacterInput.StartAttackAnimation,attackResponse);
         }
     }
 }
