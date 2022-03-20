@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using ExitGames.Client.Photon;
 using GameEvent;
@@ -68,7 +69,13 @@ namespace Network
         public override void OnJoinedLobby()
         {
             logText.SetText("On joined lobby");
-            PhotonNetwork.JoinRandomOrCreateRoom();
+            PhotonNetwork.JoinRandomRoom();
+        }
+
+        public override void OnJoinRandomFailed(short returnCode, string message)
+        {
+            var roomOptions = new RoomOptions { MaxPlayers = 3, CleanupCacheOnLeave = false };
+            PhotonNetwork.CreateRoom(Guid.NewGuid().ToString(), roomOptions);
         }
 
         public override void OnJoinedRoom()
