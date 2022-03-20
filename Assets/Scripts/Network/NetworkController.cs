@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using ExitGames.Client.Photon;
 using GameEvent;
@@ -68,7 +69,13 @@ namespace Network
         public override void OnJoinedLobby()
         {
             logText.SetText("On joined lobby");
-            PhotonNetwork.JoinRandomOrCreateRoom();
+            PhotonNetwork.JoinRandomRoom();
+        }
+
+        public override void OnJoinRandomFailed(short returnCode, string message)
+        {
+            var roomOptions = new RoomOptions { MaxPlayers = 3, CleanupCacheOnLeave = false };
+            PhotonNetwork.CreateRoom(Guid.NewGuid().ToString(), roomOptions);
         }
 
         public override void OnJoinedRoom()
@@ -85,13 +92,40 @@ namespace Network
 
             switch (response.id)
             {
+                case EventName.Server.Character.Attack:
+                    events.characterAttack.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Die:
+                    events.characterDie.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Jump:
+                    events.characterJump.OnResponse(message);
+                    break;
                 case EventName.Server.Character.Move:
                     events.characterMove.OnResponse(message);
+                    break;
+                case EventName.Server.Character.New:
+                    events.characterNew.OnResponse(message);
+                    break;
+                // case EventName.Server.Character.Skill:
+                //     events.characterSkill.OnResponse(message);
+                //     break;
+                case EventName.Server.Character.Skill1:
+                    events.characterSkill1.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Skill2:
+                    events.characterSkill2.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Skill3:
+                    events.characterSkill3.OnResponse(message);
+                    break;
+                case EventName.Server.Character.Select:
+                    events.characterSelect.SelectCharacter(message);
                     break;
             }
 
             EventManager.EmitEventData(eventName: response.id, response);
-            Debug.Log($"Response: <color=yellow>{photonEvent.CustomData}</color>");
+            //Debug.Log($"Response: <color=yellow>{photonEvent.CustomData}</color>");
         }
     }
 }

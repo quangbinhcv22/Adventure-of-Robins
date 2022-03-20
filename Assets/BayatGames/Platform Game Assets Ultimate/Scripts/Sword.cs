@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using SandBox.Scripts;
 using UnityEngine;
 
 namespace BayatGames
@@ -7,12 +9,11 @@ namespace BayatGames
     public class Sword : MonoBehaviour
     {
         [SerializeField]
-        protected float demage = 20;
+        protected float damage;
         [SerializeField]
         protected float hitRange = 1f;
         [SerializeField]
         protected Transform hitRayPosition;
-
 
         public float HitRange
         {
@@ -25,7 +26,7 @@ namespace BayatGames
         {
             get
             {
-                return this.demage;
+                return this.damage;
             }
 
         }
@@ -36,5 +37,9 @@ namespace BayatGames
             Gizmos.DrawLine(hitRayPosition.position, hitRayPosition.position + (Vector3.right * hitRange));
         }
 
+        private void Update()
+        {
+            
+        }
     }
 }

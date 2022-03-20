@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9bf5f351-9969-43d0-8048-332668d48435" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AdventureOfRobins/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AdventureOfRobins/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Screens/LoadingScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Screens/LoadingScreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Screens/LobbyScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Screens/LobbyScreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Asap-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Asap-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Screens/LoginScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Screens/LoginScreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Screens/Popups/SettingsPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Screens/Popups/SettingsPopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Screens/SelectCharacterScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Screens/SelectCharacterScreen.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Screens/WaitingScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Screens/WaitingScreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SceneLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Screens/WaitingScreen.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Screens/WaitingScreen.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/ScreenFrameSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/ScreenFrameSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/c7/1392b34b/PlayerPrefs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/04/a8b087e7/SerializeField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -80,6 +84,9 @@
       <workItem from="1646649621692" duration="7553000" />
       <workItem from="1646735209410" duration="647000" />
       <workItem from="1646765739370" duration="1597000" />
+      <workItem from="1646984250294" duration="6575000" />
+      <workItem from="1647105922041" duration="11870000" />
+      <workItem from="1647225004727" duration="2722000" />
     </task>
     <servers />
   </component>
@@ -89,6 +96,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
