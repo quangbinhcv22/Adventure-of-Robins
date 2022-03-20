@@ -887,6 +887,7 @@ GameObject:
   - component: {fileID: 7676850794859746956}
   - component: {fileID: 7676850794859746957}
   - component: {fileID: 7954868556279447283}
+  - component: {fileID: 9019566506354771710}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1012,6 +1013,19 @@ MonoBehaviour:
   request:
     action: 4
     id: 40
+--- !u!114 &9019566506354771710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7676850794859746955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad054fb8af513f94fb5ab73953bcc097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPlayer: 3
 --- !u!1 &7676850794996081927
 GameObject:
   m_ObjectHideFlags: 0

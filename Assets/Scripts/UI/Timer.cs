@@ -1,3 +1,4 @@
+using System;
 using SandBox.UI;
 using TigerForge;
 using TMPro;
@@ -8,33 +9,44 @@ namespace UI
 {
     public class Timer : MonoBehaviour
     {
+        private const int OneSecond = 1;
+        private static readonly TimeSpan OneSecondTimeSpan = TimeSpan.FromSeconds(OneSecond);
+        private static readonly TimeSpan EndCountdownTimeSpan = TimeSpan.FromSeconds(-OneSecond);
+
+
         [SerializeField] private TMP_Text timerText;
-        [SerializeField] private float secondsLeft = 15;
         [SerializeField] private ScreenRequest request;
-        private bool _stopTimer;
+        [SerializeField] private int secondsLeft = 15;
 
-        private void Start()
+
+        private TimeSpan _countdownTimeSpan = new TimeSpan();
+
+        private TimeSpan CountdownTimeSpan
         {
-            _stopTimer = false;
-        }
+            get => _countdownTimeSpan;
 
-        void Update()
-        {
-            var time = secondsLeft - Time.time;
-            var minutes = Mathf.FloorToInt(time / 60);
-            var seconds = Mathf.FloorToInt(time - minutes * 60f);
-            var textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
-
-            if (time <= 0)
+            set
             {
-                _stopTimer = true;
-                EventManager.EmitEventData(UIEventName.RequestScreen,request);
-            }
+                _countdownTimeSpan = value;
+                timerText.SetText(_countdownTimeSpan.ToString());
 
-            if (_stopTimer == false)
-            {
-                timerText.text = textTime;
+                if (_countdownTimeSpan != EndCountdownTimeSpan) return;
+                EventManager.EmitEventData(UIEventName.RequestScreen, request);
             }
         }
+
+
+        private void OnEnable() => ReCountdown();
+        private void OnDisable() => StopCountdown();
+
+        private void ReCountdown()
+        {
+            CountdownTimeSpan = TimeSpan.FromSeconds(secondsLeft);
+            InvokeRepeating(nameof(Countdown), OneSecond, OneSecond);
+        }
+
+        private void Countdown() => CountdownTimeSpan -= OneSecondTimeSpan;
+
+        private void StopCountdown() => CancelInvoke(nameof(Countdown));
     }
 }
