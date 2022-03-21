@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using GamePlay.AI;
 using Network;
 using Photon.Pun;
 using SandBox.Scripts;
@@ -45,9 +46,15 @@ namespace GamePlay.MovementSimulation
             var characterPrefab = characterPrefabs.Find(prefab => prefab.Info.heroID == selectedHeroID);
 
             var newCharacter = PhotonNetwork.Instantiate(characterPrefab.name, spawnPoint, quaternion.identity);
+            var character = newCharacter.GetComponent<Character.Character>();
+            
             Debug.Log(characterPrefab.name);
-            // newCharacter.Info.team = newResponse.team;
-            // newCharacter.Info.id = newResponse.characterId;
+            
+            character.Info.team = CharacterTeam.Blue;
+            character.Info.id = PhotonNetwork.LocalPlayer.UserId;
+            
+            CurrentCamera.Instance.FollowTarget(character.transform);
         }
+        
     }
 }
