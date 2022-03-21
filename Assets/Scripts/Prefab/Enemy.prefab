@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 13426104344584208}
   - component: {fileID: 13426104344584209}
   - component: {fileID: 13426104344584210}
-  - component: {fileID: 13426104344584211}
   - component: {fileID: 13426104344584212}
   - component: {fileID: 13426104344584213}
+  - component: {fileID: 6765242420424010260}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -74,24 +74,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &13426104344584211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13426104344584214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e63dcc747307db54d86e9fd0ca6c3daf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runSpeed: 3
-  rigidbody2D: {fileID: 13426104344584210}
-  model: {fileID: 13426105840917485}
-  wayPoints:
-  - {fileID: 13426105784257695}
-  - {fileID: 13426104998395594}
 --- !u!114 &13426104344584212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: 13426104344584213}
   _animator: {fileID: 13426105840917487}
-  _mover: {fileID: 13426104344584211}
+  _mover: {fileID: 0}
   particlePooler: {fileID: 0}
 --- !u!114 &13426104344584213
 MonoBehaviour:
@@ -130,6 +112,48 @@ MonoBehaviour:
     damage:
       BaseValue: 0
   objectPooler: {fileID: 3857204922706722799, guid: 364f2d772f104394bb4fddf633f3d856, type: 3}
+--- !u!114 &6765242420424010260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13426104344584214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80566cfbca3acc34483cbbf9159fd1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGrounded:
+    m_PersistentCalls:
+      m_Calls: []
+  target: {fileID: 0}
+  groundCheck: {fileID: 13426105071065654}
+  barrierLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  rigidbody2d: {fileID: 13426104344584210}
+  animator: {fileID: 13426105840917487}
+  health: {fileID: 0}
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  m_Sword: {fileID: 0}
+  attack: 0
+  m_gameObject: []
+  walkSpeed: 1
+  runSpeed: 1.8
+  barrierHitRange: 3
+  minRange: 3
+  followRange: 10
+  jumpStrength: 5
+  chaseCharacter: 0
+  runWhenTargetInRange: 1
+  patrol: 0
+  startPosition: {fileID: 13426105784257695}
+  endPosition: {fileID: 13426104998395594}
+  inRange: 0
+  canAttack: 0
 --- !u!1 &13426104347680150
 GameObject:
   m_ObjectHideFlags: 0

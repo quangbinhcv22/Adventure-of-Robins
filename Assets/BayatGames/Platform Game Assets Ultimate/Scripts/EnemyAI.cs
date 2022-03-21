@@ -10,6 +10,7 @@ namespace BayatGames
 {
     public class EnemyAI : MonoBehaviour
     {
+        
         [SerializeField] protected GroundedEvent onGrounded;
         [SerializeField] protected Character target;
         [SerializeField] protected Transform groundCheck;

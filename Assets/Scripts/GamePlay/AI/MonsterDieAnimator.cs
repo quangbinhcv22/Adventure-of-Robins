@@ -1,5 +1,6 @@
 using System.Collections;
 using BayatGames;
+using GamePlay.Character.Offline;
 using GamePlay.Enum;
 using SandBox.Scripts;
 using UnityEngine;
@@ -8,10 +9,12 @@ namespace GamePlay.AI
 {
     public class MonsterDieAnimator : MonoBehaviour
     {
+        
         [SerializeField] private Character.Character _character;
         [SerializeField] private Animator _animator;
         [SerializeField] private EnemyAI _mover;
         [SerializeField] private ObjectPooler particlePooler;
+        
 
         private void Update()
         {

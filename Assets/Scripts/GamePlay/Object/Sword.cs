@@ -1,4 +1,5 @@
 using System.Collections;
+using GamePlay.Character.Offline;
 using SandBox.Scripts;
 using UnityEngine;
 
@@ -16,7 +17,10 @@ namespace GamePlay.Object
             if (!targetCharacter) return;
             if (targetCharacter.Info.Team != CharacterTeam.Hostile) return;
             targetCharacter.Info.Health.Current -= damage;
-                    
+            if (targetCharacter.Info.Health.Current <= 0)
+            {
+                Scoring.AddPoint(targetCharacter.point);
+            }
             InstantiateParticle(enemyBloodPrefab,targetCharacter.transform);
         }
         
