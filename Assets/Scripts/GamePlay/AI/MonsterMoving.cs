@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace GamePlay.AI
 {
     public class 
         MonsterMoving : MonoBehaviour

@@ -107,7 +107,7 @@ MonoBehaviour:
   _character: {fileID: 13426104344584213}
   _animator: {fileID: 13426105840917487}
   _mover: {fileID: 13426104344584211}
-  explosionPrefab: {fileID: 3488322193607480085, guid: bed5279498e699844911fdd06d18eac3, type: 3}
+  particlePooler: {fileID: 0}
 --- !u!114 &13426104344584213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
     id: Enemy
     team: 9
     heroID: 2
+    side: 0
     health:
       BaseValue: 1000
     damage:
@@ -1128,7 +1129,7 @@ GameObject:
   m_Layer: 8
   m_Name: EndPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3180,7 +3181,7 @@ GameObject:
   m_Layer: 8
   m_Name: StartPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

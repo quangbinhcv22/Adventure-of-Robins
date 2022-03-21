@@ -1,5 +1,7 @@
+using GamePlay.Character;
 using Network.Events;
 using Photon.Pun;
+using SandBox.Scripts;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +10,7 @@ namespace Network.Client.UIRequest
     public class CharacterMoveJoystick : MonoBehaviour
     {
         [SerializeField] private VariableJoystick joystick;
+        [SerializeField] private Character character;
 
         private void FixedUpdate()
         {

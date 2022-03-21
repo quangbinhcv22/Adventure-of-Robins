@@ -37,9 +37,8 @@ namespace BayatGames
         public bool patrol = false;
         [SerializeField] protected Transform startPosition;
         [SerializeField] protected Transform endPosition;
-
         
-
+        
         public bool inRange = false;
         bool inCenter;
         bool isDead = false;
