@@ -1,9 +1,7 @@
-
-using System;
-using GamePlay.Character;
+using SandBox.Scripts;
 using UnityEngine;
 
-namespace SandBox.Scripts
+namespace GamePlay.Character
 {
     public class CharacterStatBar : MonoBehaviour
     {

@@ -14,19 +14,21 @@ namespace Network.Client.UIRequest
 
         private void FixedUpdate()
         {
-            if (PhotonNetwork.InRoom is false) return;
-            if (PhotonNetwork.AuthValues is null) return;
+            // if (PhotonNetwork.InRoom is false) return;
+            // if (PhotonNetwork.AuthValues is null) return;
             
-            var direction = joystick.Direction;
+            //var direction = joystick.Direction;
             //if (direction == Vector2.zero) return;
 
-            var xDirection = (int)new Vector2(direction.x, default).normalized.x;
-            var characterId = PhotonNetwork.AuthValues.UserId;
+            // var xDirection = (int)new Vector2(direction.x, default).normalized.x;
+            // var characterId = PhotonNetwork.AuthValues.UserId;
+            //
+            // var request = new CharacterMoveRequest { characterId = characterId, direction = xDirection };
+            //
+            //
+            // NetworkController.Instance.events.characterMove.SendRequest(request);
             
-            var request = new CharacterMoveRequest { characterId = characterId, direction = xDirection };
-
-            
-            NetworkController.Instance.events.characterMove.SendRequest(request);
+            var direction = joystick.Direction;
         }
     }
 }

@@ -255,7 +255,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3122971575372280164}
-  - component: {fileID: 3122971575372280167}
   m_Layer: 0
   m_Name: Decor
   m_TagString: Untagged
@@ -318,20 +317,6 @@ Transform:
   m_Father: {fileID: 3122971577281664579}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3122971575372280167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122971575372280165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88016721b3b43bb42ba5af580565a6a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0
 --- !u!1 &3122971575377456982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5952,7 +5937,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3122971576349789659}
   - component: {fileID: 3122971576349789658}
-  - component: {fileID: 3122971576349789653}
   m_Layer: 0
   m_Name: Sky Backround
   m_TagString: Untagged
@@ -6025,20 +6009,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3122971576349789653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122971576349789656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88016721b3b43bb42ba5af580565a6a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 1
 --- !u!1 &3122971576373123327
 GameObject:
   m_ObjectHideFlags: 0
@@ -10241,7 +10211,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3122971577057998417}
-  - component: {fileID: 3122971577057998416}
   m_Layer: 0
   m_Name: SeasonBackground
   m_TagString: Untagged
@@ -10296,20 +10265,6 @@ Transform:
   m_Father: {fileID: 3122971577281664579}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3122971577057998416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122971577057998422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88016721b3b43bb42ba5af580565a6a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0
 --- !u!1 &3122971577060088179
 GameObject:
   m_ObjectHideFlags: 0
@@ -12487,7 +12442,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3122971577341267362}
-  - component: {fileID: 3122971577341267293}
   m_Layer: 0
   m_Name: CloudBackground
   m_TagString: Untagged
@@ -12537,20 +12491,6 @@ Transform:
   m_Father: {fileID: 3122971577281664579}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3122971577341267293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122971577341267363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88016721b3b43bb42ba5af580565a6a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0.5
 --- !u!1 &3122971577352446152
 GameObject:
   m_ObjectHideFlags: 0

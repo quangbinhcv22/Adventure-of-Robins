@@ -11,53 +11,41 @@ namespace GamePlay.Character.Offline
         [SerializeField] private LayerMask ground;
 
         private bool _isOnGround;
+        private string currentState;
+        private bool _isAttacking;
+
         void Start()
         {
-            EventManager.StartListening("IdleAnimator",IdleAnimator);
-            EventManager.StartListening("RunAnimator",RunAnimator);
-            EventManager.StartListening("AttackAnimator",AttackAnimator);
-            EventManager.StartListening("JumpAnimator",JumpAnimator);
-            EventManager.StartListening("FallAfterRunAnimator",FallAfterRunAnimator);
-            EventManager.StartListening("DieAnimation",DieAnimator);
+            EventManager.StartListening("IdleAnimator", IdleAnimator);
+            EventManager.StartListening("RunAnimator", RunAnimator);
+            EventManager.StartListening("AttackAnimator", AttackAnimator);
+            EventManager.StartListening("JumpAnimator", JumpAnimator);
+            EventManager.StartListening("DieAnimation", DieAnimator);
         }
-    
+
         void Update()
         {
             _isOnGround = CharacterCheckTounching.IsTouchingLayer(groundCheck, ground);
         }
-    
+
         private void IdleAnimator()
         {
-            animator.SetBool("Move",false);
-            
+            animator.SetBool("isRunning", false);
         }
-    
+
         private void RunAnimator()
         {
-            animator.SetBool("Move",true);
+            animator.SetBool("isRunning", true);
         }
 
         private void AttackAnimator()
         {
             animator.SetTrigger("Attack");
         }
-    
+
         private void JumpAnimator()
         {
-            if (_isOnGround)
-            {
-                animator.SetTrigger("Jump");
-                
-            }
-        }
-    
-        private void FallAfterRunAnimator()
-        {
-            if (!_isOnGround)
-            {
-                animator.SetTrigger("FallAfterRun");
-                animator.SetBool("Move",false);
-            }
+            animator.SetTrigger("Jump");
         }
 
         private void DieAnimator()
