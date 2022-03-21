@@ -5,7 +5,7 @@ namespace GamePlay.Character.Offline
 {
     public class CharacterJump : MonoBehaviour
     {
-        [SerializeField] private float jumpSpeed;
+        [SerializeField] public float jumpSpeed;
         [SerializeField] private Transform groundCheck;
         [SerializeField] private LayerMask ground;
         [SerializeField] private new Rigidbody2D rigidbody2D;

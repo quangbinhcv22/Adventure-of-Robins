@@ -7,7 +7,7 @@ namespace GamePlay.Character.Offline
 {
     public class CharacterMove : MonoBehaviour
     {
-        [SerializeField] private float runSpeed;
+        [SerializeField] public float runSpeed;
         [SerializeField] private Transform model;
         [SerializeField] private new Rigidbody2D rigidbody2D;
 

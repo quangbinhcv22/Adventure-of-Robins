@@ -64,6 +64,32 @@ namespace GamePlay.Character.Offline
             {
                 character.Info.Health.Current += 1000;
             }
+            
+            //// cheat
+            if (Input.GetKey(KeyCode.Keypad1))
+            {
+                EventManager.EmitEvent("TangTocDoChay");
+            }
+            if (Input.GetKey(KeyCode.Keypad2))
+            {
+                EventManager.EmitEvent("TangMau");
+            }
+            if (Input.GetKey(KeyCode.Keypad3))
+            {
+                EventManager.EmitEvent("TangLucNhay");
+            }
+            if (Input.GetKey(KeyCode.Keypad4))
+            {
+                EventManager.EmitEvent("TangDamage");
+            }
+            if (Input.GetKey(KeyCode.Keypad5))
+            {
+                EventManager.EmitEvent("GiamTocDoChay");
+            }
+            if (Input.GetKey(KeyCode.Keypad6))
+            {
+                EventManager.EmitEvent("GiamLucNhay");
+            }
         }
     }
 }
