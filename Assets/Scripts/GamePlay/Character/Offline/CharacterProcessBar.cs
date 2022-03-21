@@ -9,7 +9,7 @@ namespace GamePlay.Character.Offline
 
         private void Awake()
         {
-            character.onValueChanged += OnHealthChangeValue;
+            character.Info.health.OnValueChanged += OnHealthChangeValue;
         }
 
         private void OnHealthChangeValue()
@@ -17,7 +17,7 @@ namespace GamePlay.Character.Offline
             switch (processBar.processBarName)
             {
                 case ProcessBarName.HealthBar:
-                    processBar.UpdateProcessBar(character.CurrentHealth,character.MaxHealth);
+                    processBar.UpdateProcessBar(character.Info.Health.Percent,character.Info.health.BaseValue);
                     break;
             }
         }

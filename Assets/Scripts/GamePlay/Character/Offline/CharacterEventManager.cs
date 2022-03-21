@@ -55,14 +55,14 @@ namespace GamePlay.Character.Offline
                 EventManager.EmitEvent("Skill3");
             }
 
-            if (character.CurrentHealth == 0)
+            if (character.Info.Health.Current == 0)
             {
                 EventManager.EmitEvent("DieAnimation");
             }
 
             if (Input.GetKey(KeyCode.Space))
             {
-                character.CurrentHealth += 1000;
+                character.Info.Health.Current += 1000;
             }
         }
     }

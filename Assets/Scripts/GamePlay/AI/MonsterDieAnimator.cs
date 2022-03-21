@@ -1,4 +1,5 @@
 using System.Collections;
+using BayatGames;
 using GamePlay.Enum;
 using SandBox.Scripts;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace GamePlay.AI
     {
         [SerializeField] private Character.Character _character;
         [SerializeField] private Animator _animator;
-        [SerializeField] private MonsterMoving _mover;
+        [SerializeField] private EnemyAI _mover;
         [SerializeField] private ObjectPooler particlePooler;
 
         private void Update()
@@ -18,12 +19,15 @@ namespace GamePlay.AI
             {
                 _animator.SetTrigger("Die");
                 _mover.Move(new Vector2(0,0));
-                StartCoroutine(HideGameObject(gameObject,1f));
+                StartCoroutine(HideGameObject(gameObject,.1f));
                 
                 //var newExplosion = particlePooler.SpawnFromPool(ObjectName.Explosion, transform.position, transform.rotation);
-                var newExplosion = particlePooler.GetPooledObject(ObjectName.Explosion);
-               
-                StartCoroutine(HideGameObject(newExplosion.gameObject,1f));
+                var newExplosion = particlePooler.GetPooledObject(ObjectName.DirtParticle);
+                
+                newExplosion.transform.position = transform.position;
+                newExplosion.transform.rotation = transform.rotation;
+                
+                StartCoroutine(HideGameObject(newExplosion,.8f));
             }
         }
 
