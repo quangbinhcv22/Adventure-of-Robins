@@ -1134,8 +1134,6 @@ GameObject:
   - component: {fileID: 5979413960518548022}
   - component: {fileID: 5979413960518548041}
   - component: {fileID: 5979413960518548040}
-  - component: {fileID: 5979413960518548042}
-  - component: {fileID: 5979413960518548045}
   - component: {fileID: 5979413960518548021}
   m_Layer: 8
   m_Name: Gladiator
@@ -1263,30 +1261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterMove: {fileID: 5979413960518548041}
   characterJump: {fileID: 5979413960518548022}
---- !u!114 &5979413960518548042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5979413960518548044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b462ac64e74a444fafaccd45d0a6d70d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5979413960518548045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5979413960518548044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6a3086ffa54d3cac3f2ee1739eb86b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  character: {fileID: 0}
 --- !u!114 &5979413960518548021
 MonoBehaviour:
   m_ObjectHideFlags: 0

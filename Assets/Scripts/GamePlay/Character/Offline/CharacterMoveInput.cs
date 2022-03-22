@@ -1,3 +1,4 @@
+using GamePlay.Enum;
 using TigerForge;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ namespace GamePlay.Character.Offline
     {
         [SerializeField] private CharacterMove characterMove;
         [SerializeField] private CharacterJump characterJump;
+        [SerializeField] private Character character;
         private void Start()
         {
             EventManager.StartListening("Moving",Moving);
@@ -25,6 +27,8 @@ namespace GamePlay.Character.Offline
             var movingValue = (int) boxingMovingValue;
         
             characterMove.Moving(movingValue);
+            if (movingValue == 0) return;
+            character.Info.side = (Side)movingValue;
         }
 
         private void Jumping()
